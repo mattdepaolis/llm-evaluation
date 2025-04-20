@@ -301,7 +301,7 @@ Please ensure your code adheres to the project's style guidelines and includes t
 
 ## License
 
-(Specify your license here, e.g., MIT, Apache 2.0, or leave as placeholder if undecided)
+Apache 2.0
 
 ```
 Placeholder for License Information.
