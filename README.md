@@ -60,8 +60,8 @@ This structure promotes maintainability and allows developers to easily extend s
 1.  **Clone the necessary repositories**:
     ```bash
     # Clone this framework repository (if you haven't already)
-    # git clone <your-repository-url>
-    # cd <repository-directory>
+    # git clone https://github.com/mattdepaolis/llm-evaluation.git
+    # cd llm-evaluation
 
     # Clone the required lm-evaluation-harness library
     git clone https://github.com/EleutherAI/lm-evaluation-harness.git
