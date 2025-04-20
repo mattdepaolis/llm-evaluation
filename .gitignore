@@ -1,0 +1,30 @@
+# Python standard ignores
+__pycache__/
+*.py[cod]
+*.class
+
+# Environments
+.env
+.venv/
+venv/
+env/
+ENV/
+
+# IDE / Editor specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store*
+Thumbs.db
+
+# Dependencies (managed externally)
+lm-evaluation-harness/
+
+# Default output directories (users should decide if they want to commit specific results/reports)
+results/
+reports/
+
+# Add other files/directories to ignore below:
