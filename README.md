@@ -303,10 +303,6 @@ Please ensure your code adheres to the project's style guidelines and includes t
 
 Apache 2.0
 
-```
-Placeholder for License Information.
-```
-
 ## Support
 
 For questions or issues, please open an issue on the GitHub repository.
