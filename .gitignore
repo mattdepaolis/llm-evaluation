@@ -24,7 +24,7 @@ Thumbs.db
 lm-evaluation-harness/
 
 # Default output directories (users should decide if they want to commit specific results/reports)
-results/
-reports/
+#results/
+#reports/
 
 # Add other files/directories to ignore below:
