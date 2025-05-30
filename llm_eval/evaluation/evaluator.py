@@ -50,7 +50,8 @@ def evaluate_model(
     gpu_memory_utilization: float = 0.9,
     vllm_quantization: Optional[str] = None,
     additional_model_args: Optional[str] = None,
-    preserve_default_fewshot: bool = False
+    preserve_default_fewshot: bool = False,
+    report_format: str = "professional"
 ) -> Tuple[Dict[str, Any], Optional[str]]:
     """
     Evaluate a language model on specified tasks.
@@ -74,6 +75,7 @@ def evaluate_model(
         vllm_quantization: Quantization method for vLLM
         additional_model_args: Additional arguments for the model
         preserve_default_fewshot: Whether to preserve default few-shot settings for tasks
+        report_format: Report format to use ('professional' or 'standard')
         
     Returns:
         Tuple of (evaluation results, output path)
@@ -164,7 +166,8 @@ def evaluate_model(
             # Generate markdown report if requested
             report_path = None
             if generate_report:
-                report_path = create_report(clean_results, output_path, generate_markdown=True)
+                use_professional = (report_format == "professional")
+                report_path = create_report(clean_results, output_path, generate_markdown=True, use_professional_format=use_professional)
             
             # Clear GPU memory before returning
             clear_gpu_memory()

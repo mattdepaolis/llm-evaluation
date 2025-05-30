@@ -1,0 +1,810 @@
+{
+  "results": {
+    "leaderboard_mmlu_pro": {
+      "alias": "leaderboard_mmlu_pro",
+      "acc,none": 0.25,
+      "acc_stderr,none": 0.25
+    }
+  },
+  "group_subtasks": {
+    "leaderboard_mmlu_pro": []
+  },
+  "configs": {
+    "leaderboard_mmlu_pro": {
+      "task": "leaderboard_mmlu_pro",
+      "dataset_path": "TIGER-Lab/MMLU-Pro",
+      "test_split": "test",
+      "fewshot_split": "validation",
+      "doc_to_text": "def doc_to_text(doc):\n    doc_to_text = f\"{doc['question']}\\n\"\n\n    for i in range(len(doc[\"options\"])):\n        doc_to_text += f\"{string.ascii_uppercase[i]}. {doc['options'][i]}\\n\"\n\n    doc_to_text += \"Answer:\"\n    return doc_to_text\n",
+      "doc_to_target": "answer",
+      "unsafe_code": false,
+      "doc_to_choice": "def doc_to_choice(doc):\n    return [string.ascii_uppercase[i] for i in range(len(doc[\"options\"]))]\n",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "first_n"
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 0.1,
+        "pretrained": "mistralai/Mistral-7B-v0.1"
+      }
+    }
+  },
+  "versions": {
+    "leaderboard_mmlu_pro": 0.1
+  },
+  "n-shot": {
+    "leaderboard_mmlu_pro": 0
+  },
+  "higher_is_better": {
+    "leaderboard_mmlu_pro": {
+      "acc": true
+    }
+  },
+  "n-samples": {
+    "leaderboard_mmlu_pro": {
+      "original": 12032,
+      "effective": 4
+    }
+  },
+  "samples": {
+    "leaderboard_mmlu_pro": [
+      {
+        "doc_id": 0,
+        "doc": {
+          "question_id": 70,
+          "question": "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.",
+          "options": [
+            "Safe practices, Fear, Jealousy, Trivial",
+            "Unsafe practices, Distress, Joy, Trivial",
+            "Safe practices, Wants, Jealousy, Trivial",
+            "Safe practices, Distress, Fear, Trivial",
+            "Unsafe practices, Wants, Jealousy, Serious",
+            "Safe practices, Distress, Jealousy, Serious",
+            "Safe practices, Wants, Fear, Serious",
+            "Unsafe practices, Wants, Fear, Trivial",
+            "Unsafe practices, Distress, Fear, Serious"
+          ],
+          "answer": "I",
+          "answer_index": 8,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-business_ethics"
+        },
+        "target": "I",
+        "arguments": [
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " A"
+          ],
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " B"
+          ],
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " C"
+          ],
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " D"
+          ],
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " E"
+          ],
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " F"
+          ],
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " G"
+          ],
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " H"
+          ],
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " I"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -2.859375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.546875,
+              false
+            ]
+          ],
+          [
+            [
+              -2.921875,
+              false
+            ]
+          ],
+          [
+            [
+              -2.359375,
+              false
+            ]
+          ],
+          [
+            [
+              -2.859375,
+              false
+            ]
+          ],
+          [
+            [
+              -2.546875,
+              false
+            ]
+          ],
+          [
+            [
+              -2.609375,
+              false
+            ]
+          ],
+          [
+            [
+              -2.359375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.234375,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -2.859375,
+            false
+          ],
+          [
+            -3.546875,
+            false
+          ],
+          [
+            -2.921875,
+            false
+          ],
+          [
+            -2.359375,
+            false
+          ],
+          [
+            -2.859375,
+            false
+          ],
+          [
+            -2.546875,
+            false
+          ],
+          [
+            -2.609375,
+            false
+          ],
+          [
+            -2.359375,
+            false
+          ],
+          [
+            -3.234375,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "e76278dd0ccead5c5627f7ce955c0f41dba515e027e0801d6956e2e1dcdcf11d",
+        "prompt_hash": "e3499126c13e82f19d6771901915eff6bb44ab9290fac9da41305e6e0369e13a",
+        "target_hash": "a83dd0ccbffe39d071cc317ddf6e97f5c6b1c87af91919271f9fa140b0508c6c",
+        "acc": 0.0
+      },
+      {
+        "doc_id": 1,
+        "doc": {
+          "question_id": 71,
+          "question": "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.",
+          "options": [
+            "Shareholders, Diligence, Self-interest",
+            "Shareholders, Self-interest, Care and Skill",
+            "Stakeholders, Care and skill, Self-interest",
+            "Stakeholders, Diligence, Care and Skill",
+            "Customers, Care and Skill, Diligence",
+            "Shareholders, Care and Skill, Diligence",
+            "Shareholders, Self-interest, Diligence",
+            "Employees, Care and Skill, Diligence",
+            "Stakeholders, Self-interest, Diligence",
+            "Stakeholder, Care and Skill, Diligence"
+          ],
+          "answer": "F",
+          "answer_index": 5,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-business_ethics"
+        },
+        "target": "F",
+        "arguments": [
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " A"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " B"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " C"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " D"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " E"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " F"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " G"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " H"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " I"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -3.390625,
+              false
+            ]
+          ],
+          [
+            [
+              -2.515625,
+              false
+            ]
+          ],
+          [
+            [
+              -4.15625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.640625,
+              false
+            ]
+          ],
+          [
+            [
+              -5.15625,
+              false
+            ]
+          ],
+          [
+            [
+              -1.890625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.640625,
+              false
+            ]
+          ],
+          [
+            [
+              -4.28125,
+              false
+            ]
+          ],
+          [
+            [
+              -5.53125,
+              false
+            ]
+          ],
+          [
+            [
+              -4.84375,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -3.390625,
+            false
+          ],
+          [
+            -2.515625,
+            false
+          ],
+          [
+            -4.15625,
+            false
+          ],
+          [
+            -3.640625,
+            false
+          ],
+          [
+            -5.15625,
+            false
+          ],
+          [
+            -1.890625,
+            false
+          ],
+          [
+            -3.640625,
+            false
+          ],
+          [
+            -4.28125,
+            false
+          ],
+          [
+            -5.53125,
+            false
+          ],
+          [
+            -4.84375,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "584b3be58922f5456c2217c2a43c420d7eb8b70354f3ceafbcaa4e418c4c4241",
+        "prompt_hash": "0ea25c8dc94e1a7c20486161b00f13ac8554dc65612ee0ab8869bdc6cb7410f1",
+        "target_hash": "f67ab10ad4e4c53121b6a5fe4da9c10ddee905b978d3788d2723d7bfacbe28a9",
+        "acc": 1.0
+      },
+      {
+        "doc_id": 2,
+        "doc": {
+          "question_id": 72,
+          "question": "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.",
+          "options": [
+            "Down, Autonomy, Remuneration, Benefit",
+            "Down, Involvement, Independence, Benefit",
+            "Up, Independence, Involvement, Benefit",
+            "Down, Privacy, Autonomy, Benefit",
+            "Up, Involvement, Autonomy, Compensation",
+            "Down, Independence, Autonomy, Compensation",
+            "Up, Involvement, Remuneration, Severance",
+            "Up, Privacy, Remuneration, Severance",
+            "Up, Autonomy, Remuneration, Compensation",
+            "Down, Involvement, Remuneration, Compensation"
+          ],
+          "answer": "J",
+          "answer_index": 9,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-business_ethics"
+        },
+        "target": "J",
+        "arguments": [
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " A"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " B"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " C"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " D"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " E"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " F"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " G"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " H"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " I"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -3.015625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.703125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.828125,
+              false
+            ]
+          ],
+          [
+            [
+              -2.078125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.265625,
+              false
+            ]
+          ],
+          [
+            [
+              -2.078125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.515625,
+              false
+            ]
+          ],
+          [
+            [
+              -2.765625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.203125,
+              false
+            ]
+          ],
+          [
+            [
+              -2.765625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -3.015625,
+            false
+          ],
+          [
+            -3.703125,
+            false
+          ],
+          [
+            -3.828125,
+            false
+          ],
+          [
+            -2.078125,
+            false
+          ],
+          [
+            -3.265625,
+            false
+          ],
+          [
+            -2.078125,
+            false
+          ],
+          [
+            -3.515625,
+            false
+          ],
+          [
+            -2.765625,
+            false
+          ],
+          [
+            -3.203125,
+            false
+          ],
+          [
+            -2.765625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "40b321e7a333dc4b210b78a230b3681525a551abe9b3b63e84f5da5602815a2f",
+        "prompt_hash": "e60aa2f9ad1ec2d039da36eac00280bef1a675291b1b85d8c39e584a1a8155cd",
+        "target_hash": "6da43b944e494e885e69af021f93c6d9331c78aa228084711429160a5bbd15b5",
+        "acc": 0.0
+      },
+      {
+        "doc_id": 3,
+        "doc": {
+          "question_id": 73,
+          "question": "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.",
+          "options": [
+            "Ethical egoism",
+            "Ethics of duty",
+            "Postmodern ethics",
+            "Consequentialist ethics",
+            "Utilitarian ethics",
+            "Deontological ethics",
+            "Virtue ethics",
+            "Ethics of care",
+            "Ethics of rights",
+            "Relativist ethics"
+          ],
+          "answer": "C",
+          "answer_index": 2,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-business_ethics"
+        },
+        "target": "C",
+        "arguments": [
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " A"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " B"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " C"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " D"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " E"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " F"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " G"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " H"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " I"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -3.203125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.328125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.328125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.078125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.140625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.390625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.140625,
+              false
+            ]
+          ],
+          [
+            [
+              -1.9453125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.640625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.765625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -3.203125,
+            false
+          ],
+          [
+            -3.328125,
+            false
+          ],
+          [
+            -3.328125,
+            false
+          ],
+          [
+            -3.078125,
+            false
+          ],
+          [
+            -3.140625,
+            false
+          ],
+          [
+            -3.390625,
+            false
+          ],
+          [
+            -3.140625,
+            false
+          ],
+          [
+            -1.9453125,
+            false
+          ],
+          [
+            -3.640625,
+            false
+          ],
+          [
+            -3.765625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "70076312615f566fb02df2fd2c0842afb56af8a06dbde5d299b52c8fc1f44ceb",
+        "prompt_hash": "9cb83d8731b268e83ef142de55b5b09732463c8b19474aba172a69bf3d75dc39",
+        "target_hash": "6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d",
+        "acc": 0.0
+      }
+    ]
+  },
+  "config": {
+    "model": "hf",
+    "model_args": "pretrained=mistralai/Mistral-7B-v0.1",
+    "model_num_parameters": 7241732096,
+    "model_dtype": "torch.bfloat16",
+    "model_revision": "main",
+    "model_sha": "7231864981174d9bee8c7687c24c8344414eae6b",
+    "batch_size": 1,
+    "batch_sizes": [],
+    "device": "cuda",
+    "use_cache": null,
+    "limit": 4,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": null,
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": "5831ca9",
+  "date": 1748610404.93551,
+  "pretty_env_info": "PyTorch version: 2.7.0+cu128\nIs debug build: False\nCUDA used to build PyTorch: 12.8\nROCM used to build PyTorch: N/A\n\nOS: Ubuntu 24.04.2 LTS (x86_64)\nGCC version: (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0\nClang version: Could not collect\nCMake version: version 3.31.6\nLibc version: glibc-2.39\n\nPython version: 3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0] (64-bit runtime)\nPython platform: Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39\nIs CUDA available: True\nCUDA runtime version: 12.9.41\nCUDA_MODULE_LOADING set to: LAZY\nGPU models and configuration: \nGPU 0: NVIDIA GeForce RTX 5090\nGPU 1: NVIDIA GeForce RTX 4090\n\nNvidia driver version: 576.52\ncuDNN version: Probably one of the following:\n/usr/lib/x86_64-linux-gnu/libcudnn.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_adv.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_cnn.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_engines_precompiled.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_engines_runtime_compiled.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_graph.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_heuristic.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_ops.so.9.9.0\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: True\n\nCPU:\nArchitecture:                         x86_64\nCPU op-mode(s):                       32-bit, 64-bit\nAddress sizes:                        46 bits physical, 48 bits virtual\nByte Order:                           Little Endian\nCPU(s):                               28\nOn-line CPU(s) list:                  0-27\nVendor ID:                            GenuineIntel\nModel name:                           13th Gen Intel(R) Core(TM) i9-13900K\nCPU family:                           6\nModel:                                183\nThread(s) per core:                   2\nCore(s) per socket:                   14\nSocket(s):                            1\nStepping:                             1\nBogoMIPS:                             5990.39\nFlags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves avx_vnni umip waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize flush_l1d arch_capabilities\nVirtualization:                       VT-x\nHypervisor vendor:                    Microsoft\nVirtualization type:                  full\nL1d cache:                            672 KiB (14 instances)\nL1i cache:                            448 KiB (14 instances)\nL2 cache:                             28 MiB (14 instances)\nL3 cache:                             36 MiB (1 instance)\nVulnerability Gather data sampling:   Not affected\nVulnerability Itlb multihit:          Not affected\nVulnerability L1tf:                   Not affected\nVulnerability Mds:                    Not affected\nVulnerability Meltdown:               Not affected\nVulnerability Mmio stale data:        Not affected\nVulnerability Reg file data sampling: Mitigation; Clear Register File\nVulnerability Retbleed:               Mitigation; Enhanced IBRS\nVulnerability Spec rstack overflow:   Not affected\nVulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl and seccomp\nVulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:             Mitigation; Enhanced / Automatic IBRS; IBPB conditional; RSB filling; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S\nVulnerability Srbds:                  Not affected\nVulnerability Tsx async abort:        Not affected\n\nVersions of relevant libraries:\n[pip3] numpy==1.26.4\n[pip3] nvidia-cublas-cu12==12.6.4.1\n[pip3] nvidia-cuda-cupti-cu12==12.6.80\n[pip3] nvidia-cuda-nvrtc-cu12==12.6.77\n[pip3] nvidia-cuda-runtime-cu12==12.6.77\n[pip3] nvidia-cudnn-cu12==9.5.1.17\n[pip3] nvidia-cufft-cu12==11.3.0.4\n[pip3] nvidia-curand-cu12==10.3.7.77\n[pip3] nvidia-cusolver-cu12==11.7.1.2\n[pip3] nvidia-cusparse-cu12==12.5.4.2\n[pip3] nvidia-cusparselt-cu12==0.6.3\n[pip3] nvidia-nccl-cu12==2.26.2\n[pip3] nvidia-nvjitlink-cu12==12.6.85\n[pip3] nvidia-nvtx-cu12==12.6.77\n[pip3] torch==2.7.0+cu128\n[pip3] torchaudio==2.7.0+cu128\n[pip3] torchvision==0.22.0+cu128\n[pip3] triton==3.3.0\n[conda] Could not collect",
+  "transformers_version": "4.52.4",
+  "lm_eval_version": "0.4.8",
+  "upper_git_hash": null,
+  "tokenizer_pad_token": [
+    "<unk>",
+    "0"
+  ],
+  "tokenizer_eos_token": [
+    "</s>",
+    "2"
+  ],
+  "tokenizer_bos_token": [
+    "<s>",
+    "1"
+  ],
+  "eot_token_id": 2,
+  "max_length": 32768,
+  "normalized_scores": {
+    "normalized_leaderboard_mmlu_pro": 16.666666666666664,
+    "normalized_overall_average": 16.666666666666664
+  }
+}

@@ -139,6 +139,10 @@ def main():
     
     # Add additional model args option
     parser.add_argument("--additional_model_args", type=str, help="Additional arguments to pass to the model in the format key=value,key2=value2,...")
+    
+    # Add report format option
+    parser.add_argument("--report_format", type=str, choices=["standard", "professional"], default="professional", 
+                       help="Report format to use: 'professional' for enhanced visual reports or 'standard' for basic reports")
 
     args = parser.parse_args()
     
@@ -235,7 +239,8 @@ def main():
             gpu_memory_utilization=args.gpu_memory_utilization,
             vllm_quantization=args.vllm_quantization,
             additional_model_args=args.additional_model_args,
-            preserve_default_fewshot=is_leaderboard_task
+            preserve_default_fewshot=is_leaderboard_task,
+            report_format=args.report_format
         )
     except KeyboardInterrupt:
         print("\nEvaluation interrupted by user. Exiting...")
