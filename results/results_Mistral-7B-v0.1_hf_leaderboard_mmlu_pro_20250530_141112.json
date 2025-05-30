@@ -1,0 +1,3674 @@
+{
+  "results": {
+    "leaderboard_mmlu_pro": {
+      "alias": "leaderboard_mmlu_pro",
+      "acc,none": 0.4,
+      "acc_stderr,none": 0.11239029738980327
+    }
+  },
+  "group_subtasks": {
+    "leaderboard_mmlu_pro": []
+  },
+  "configs": {
+    "leaderboard_mmlu_pro": {
+      "task": "leaderboard_mmlu_pro",
+      "dataset_path": "TIGER-Lab/MMLU-Pro",
+      "test_split": "test",
+      "fewshot_split": "validation",
+      "doc_to_text": "def doc_to_text(doc):\n    doc_to_text = f\"{doc['question']}\\n\"\n\n    for i in range(len(doc[\"options\"])):\n        doc_to_text += f\"{string.ascii_uppercase[i]}. {doc['options'][i]}\\n\"\n\n    doc_to_text += \"Answer:\"\n    return doc_to_text\n",
+      "doc_to_target": "answer",
+      "unsafe_code": false,
+      "doc_to_choice": "def doc_to_choice(doc):\n    return [string.ascii_uppercase[i] for i in range(len(doc[\"options\"]))]\n",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "first_n"
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 0.1,
+        "pretrained": "mistralai/Mistral-7B-v0.1"
+      }
+    }
+  },
+  "versions": {
+    "leaderboard_mmlu_pro": 0.1
+  },
+  "n-shot": {
+    "leaderboard_mmlu_pro": 0
+  },
+  "higher_is_better": {
+    "leaderboard_mmlu_pro": {
+      "acc": true
+    }
+  },
+  "n-samples": {
+    "leaderboard_mmlu_pro": {
+      "original": 12032,
+      "effective": 20
+    }
+  },
+  "samples": {
+    "leaderboard_mmlu_pro": [
+      {
+        "doc_id": 0,
+        "doc": {
+          "question_id": 70,
+          "question": "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.",
+          "options": [
+            "Safe practices, Fear, Jealousy, Trivial",
+            "Unsafe practices, Distress, Joy, Trivial",
+            "Safe practices, Wants, Jealousy, Trivial",
+            "Safe practices, Distress, Fear, Trivial",
+            "Unsafe practices, Wants, Jealousy, Serious",
+            "Safe practices, Distress, Jealousy, Serious",
+            "Safe practices, Wants, Fear, Serious",
+            "Unsafe practices, Wants, Fear, Trivial",
+            "Unsafe practices, Distress, Fear, Serious"
+          ],
+          "answer": "I",
+          "answer_index": 8,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-business_ethics"
+        },
+        "target": "I",
+        "arguments": [
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " A"
+          ],
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " B"
+          ],
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " C"
+          ],
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " D"
+          ],
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " E"
+          ],
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " F"
+          ],
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " G"
+          ],
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " H"
+          ],
+          [
+            "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\nA. Safe practices, Fear, Jealousy, Trivial\nB. Unsafe practices, Distress, Joy, Trivial\nC. Safe practices, Wants, Jealousy, Trivial\nD. Safe practices, Distress, Fear, Trivial\nE. Unsafe practices, Wants, Jealousy, Serious\nF. Safe practices, Distress, Jealousy, Serious\nG. Safe practices, Wants, Fear, Serious\nH. Unsafe practices, Wants, Fear, Trivial\nI. Unsafe practices, Distress, Fear, Serious\nAnswer:",
+            " I"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -2.859375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.609375,
+              false
+            ]
+          ],
+          [
+            [
+              -2.921875,
+              false
+            ]
+          ],
+          [
+            [
+              -2.296875,
+              false
+            ]
+          ],
+          [
+            [
+              -2.859375,
+              false
+            ]
+          ],
+          [
+            [
+              -2.546875,
+              false
+            ]
+          ],
+          [
+            [
+              -2.609375,
+              false
+            ]
+          ],
+          [
+            [
+              -2.359375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.234375,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -2.859375,
+            false
+          ],
+          [
+            -3.609375,
+            false
+          ],
+          [
+            -2.921875,
+            false
+          ],
+          [
+            -2.296875,
+            false
+          ],
+          [
+            -2.859375,
+            false
+          ],
+          [
+            -2.546875,
+            false
+          ],
+          [
+            -2.609375,
+            false
+          ],
+          [
+            -2.359375,
+            false
+          ],
+          [
+            -3.234375,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "e76278dd0ccead5c5627f7ce955c0f41dba515e027e0801d6956e2e1dcdcf11d",
+        "prompt_hash": "e3499126c13e82f19d6771901915eff6bb44ab9290fac9da41305e6e0369e13a",
+        "target_hash": "a83dd0ccbffe39d071cc317ddf6e97f5c6b1c87af91919271f9fa140b0508c6c",
+        "acc": 0.0
+      },
+      {
+        "doc_id": 1,
+        "doc": {
+          "question_id": 71,
+          "question": "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.",
+          "options": [
+            "Shareholders, Diligence, Self-interest",
+            "Shareholders, Self-interest, Care and Skill",
+            "Stakeholders, Care and skill, Self-interest",
+            "Stakeholders, Diligence, Care and Skill",
+            "Customers, Care and Skill, Diligence",
+            "Shareholders, Care and Skill, Diligence",
+            "Shareholders, Self-interest, Diligence",
+            "Employees, Care and Skill, Diligence",
+            "Stakeholders, Self-interest, Diligence",
+            "Stakeholder, Care and Skill, Diligence"
+          ],
+          "answer": "F",
+          "answer_index": 5,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-business_ethics"
+        },
+        "target": "F",
+        "arguments": [
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " A"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " B"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " C"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " D"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " E"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " F"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " G"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " H"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " I"
+          ],
+          [
+            "Managers are entrusted to run the company in the best interest of ________. Specifically, they have a duty to act for the benefit of the company, as well as a duty of ________ and of _______.\nA. Shareholders, Diligence, Self-interest\nB. Shareholders, Self-interest, Care and Skill\nC. Stakeholders, Care and skill, Self-interest\nD. Stakeholders, Diligence, Care and Skill\nE. Customers, Care and Skill, Diligence\nF. Shareholders, Care and Skill, Diligence\nG. Shareholders, Self-interest, Diligence\nH. Employees, Care and Skill, Diligence\nI. Stakeholders, Self-interest, Diligence\nJ. Stakeholder, Care and Skill, Diligence\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -3.359375,
+              false
+            ]
+          ],
+          [
+            [
+              -2.546875,
+              false
+            ]
+          ],
+          [
+            [
+              -4.09375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.609375,
+              false
+            ]
+          ],
+          [
+            [
+              -5.09375,
+              false
+            ]
+          ],
+          [
+            [
+              -1.8515625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.671875,
+              false
+            ]
+          ],
+          [
+            [
+              -4.21875,
+              false
+            ]
+          ],
+          [
+            [
+              -5.40625,
+              false
+            ]
+          ],
+          [
+            [
+              -4.78125,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -3.359375,
+            false
+          ],
+          [
+            -2.546875,
+            false
+          ],
+          [
+            -4.09375,
+            false
+          ],
+          [
+            -3.609375,
+            false
+          ],
+          [
+            -5.09375,
+            false
+          ],
+          [
+            -1.8515625,
+            false
+          ],
+          [
+            -3.671875,
+            false
+          ],
+          [
+            -4.21875,
+            false
+          ],
+          [
+            -5.40625,
+            false
+          ],
+          [
+            -4.78125,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "584b3be58922f5456c2217c2a43c420d7eb8b70354f3ceafbcaa4e418c4c4241",
+        "prompt_hash": "0ea25c8dc94e1a7c20486161b00f13ac8554dc65612ee0ab8869bdc6cb7410f1",
+        "target_hash": "f67ab10ad4e4c53121b6a5fe4da9c10ddee905b978d3788d2723d7bfacbe28a9",
+        "acc": 1.0
+      },
+      {
+        "doc_id": 2,
+        "doc": {
+          "question_id": 72,
+          "question": "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.",
+          "options": [
+            "Down, Autonomy, Remuneration, Benefit",
+            "Down, Involvement, Independence, Benefit",
+            "Up, Independence, Involvement, Benefit",
+            "Down, Privacy, Autonomy, Benefit",
+            "Up, Involvement, Autonomy, Compensation",
+            "Down, Independence, Autonomy, Compensation",
+            "Up, Involvement, Remuneration, Severance",
+            "Up, Privacy, Remuneration, Severance",
+            "Up, Autonomy, Remuneration, Compensation",
+            "Down, Involvement, Remuneration, Compensation"
+          ],
+          "answer": "J",
+          "answer_index": 9,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-business_ethics"
+        },
+        "target": "J",
+        "arguments": [
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " A"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " B"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " C"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " D"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " E"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " F"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " G"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " H"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " I"
+          ],
+          [
+            "There are two main issues associated with _____ sizing. _______ is a key issue as due to the information policy of the corporation it can be argued that employees have a right to know if they are being made redundant. _______ is a second issue, particularly the ________ package that employees receive when laid off.\nA. Down, Autonomy, Remuneration, Benefit\nB. Down, Involvement, Independence, Benefit\nC. Up, Independence, Involvement, Benefit\nD. Down, Privacy, Autonomy, Benefit\nE. Up, Involvement, Autonomy, Compensation\nF. Down, Independence, Autonomy, Compensation\nG. Up, Involvement, Remuneration, Severance\nH. Up, Privacy, Remuneration, Severance\nI. Up, Autonomy, Remuneration, Compensation\nJ. Down, Involvement, Remuneration, Compensation\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -3.03125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.71875,
+              false
+            ]
+          ],
+          [
+            [
+              -3.84375,
+              false
+            ]
+          ],
+          [
+            [
+              -2.09375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.28125,
+              false
+            ]
+          ],
+          [
+            [
+              -2.09375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.59375,
+              false
+            ]
+          ],
+          [
+            [
+              -2.78125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.28125,
+              false
+            ]
+          ],
+          [
+            [
+              -2.71875,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -3.03125,
+            false
+          ],
+          [
+            -3.71875,
+            false
+          ],
+          [
+            -3.84375,
+            false
+          ],
+          [
+            -2.09375,
+            false
+          ],
+          [
+            -3.28125,
+            false
+          ],
+          [
+            -2.09375,
+            false
+          ],
+          [
+            -3.59375,
+            false
+          ],
+          [
+            -2.78125,
+            false
+          ],
+          [
+            -3.28125,
+            false
+          ],
+          [
+            -2.71875,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "40b321e7a333dc4b210b78a230b3681525a551abe9b3b63e84f5da5602815a2f",
+        "prompt_hash": "e60aa2f9ad1ec2d039da36eac00280bef1a675291b1b85d8c39e584a1a8155cd",
+        "target_hash": "6da43b944e494e885e69af021f93c6d9331c78aa228084711429160a5bbd15b5",
+        "acc": 0.0
+      },
+      {
+        "doc_id": 3,
+        "doc": {
+          "question_id": 73,
+          "question": "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.",
+          "options": [
+            "Ethical egoism",
+            "Ethics of duty",
+            "Postmodern ethics",
+            "Consequentialist ethics",
+            "Utilitarian ethics",
+            "Deontological ethics",
+            "Virtue ethics",
+            "Ethics of care",
+            "Ethics of rights",
+            "Relativist ethics"
+          ],
+          "answer": "C",
+          "answer_index": 2,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-business_ethics"
+        },
+        "target": "C",
+        "arguments": [
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " A"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " B"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " C"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " D"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " E"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " F"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " G"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " H"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " I"
+          ],
+          [
+            "_______ locate morality beyond the sphere of rationality in an emotional 'moral impulse' towards others.\nA. Ethical egoism\nB. Ethics of duty\nC. Postmodern ethics\nD. Consequentialist ethics\nE. Utilitarian ethics\nF. Deontological ethics\nG. Virtue ethics\nH. Ethics of care\nI. Ethics of rights\nJ. Relativist ethics\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -3.203125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.328125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.328125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.078125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.140625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.328125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.140625,
+              false
+            ]
+          ],
+          [
+            [
+              -1.9453125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.640625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.765625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -3.203125,
+            false
+          ],
+          [
+            -3.328125,
+            false
+          ],
+          [
+            -3.328125,
+            false
+          ],
+          [
+            -3.078125,
+            false
+          ],
+          [
+            -3.140625,
+            false
+          ],
+          [
+            -3.328125,
+            false
+          ],
+          [
+            -3.140625,
+            false
+          ],
+          [
+            -1.9453125,
+            false
+          ],
+          [
+            -3.640625,
+            false
+          ],
+          [
+            -3.765625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "70076312615f566fb02df2fd2c0842afb56af8a06dbde5d299b52c8fc1f44ceb",
+        "prompt_hash": "9cb83d8731b268e83ef142de55b5b09732463c8b19474aba172a69bf3d75dc39",
+        "target_hash": "6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d",
+        "acc": 0.0
+      },
+      {
+        "doc_id": 4,
+        "doc": {
+          "question_id": 74,
+          "question": " Some of key differences between Islamic finance and conventional finance include - prohibition of charging and paying _______, prohibition on ______ and ______ transactions, prohibition of sinful investment and requirement for all financial products to be backed by __________.",
+          "options": [
+            "Interest, Certain, Assured, Both tangible and intangible assets",
+            "Interest, Uncertain, Assured, Both tangible and intangible assets",
+            "Interest, Uncertain, Speculative, Intangible assets",
+            "Interest, Certain, Assured, Tangible assets",
+            "Interest, Uncertain, Assured, Intangible assets",
+            "Profit, Uncertain, Speculative, Tangible assets",
+            "Interest, Uncertain, Speculative, Tangible assets",
+            "Interest, Certain, Speculative, Intangible assets",
+            "Profit, Certain, Assured, Tangible assets",
+            "Interest, Certain, Speculative, Both tangible and intangible assets"
+          ],
+          "answer": "G",
+          "answer_index": 6,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-business_ethics"
+        },
+        "target": "G",
+        "arguments": [
+          [
+            " Some of key differences between Islamic finance and conventional finance include - prohibition of charging and paying _______, prohibition on ______ and ______ transactions, prohibition of sinful investment and requirement for all financial products to be backed by __________.\nA. Interest, Certain, Assured, Both tangible and intangible assets\nB. Interest, Uncertain, Assured, Both tangible and intangible assets\nC. Interest, Uncertain, Speculative, Intangible assets\nD. Interest, Certain, Assured, Tangible assets\nE. Interest, Uncertain, Assured, Intangible assets\nF. Profit, Uncertain, Speculative, Tangible assets\nG. Interest, Uncertain, Speculative, Tangible assets\nH. Interest, Certain, Speculative, Intangible assets\nI. Profit, Certain, Assured, Tangible assets\nJ. Interest, Certain, Speculative, Both tangible and intangible assets\nAnswer:",
+            " A"
+          ],
+          [
+            " Some of key differences between Islamic finance and conventional finance include - prohibition of charging and paying _______, prohibition on ______ and ______ transactions, prohibition of sinful investment and requirement for all financial products to be backed by __________.\nA. Interest, Certain, Assured, Both tangible and intangible assets\nB. Interest, Uncertain, Assured, Both tangible and intangible assets\nC. Interest, Uncertain, Speculative, Intangible assets\nD. Interest, Certain, Assured, Tangible assets\nE. Interest, Uncertain, Assured, Intangible assets\nF. Profit, Uncertain, Speculative, Tangible assets\nG. Interest, Uncertain, Speculative, Tangible assets\nH. Interest, Certain, Speculative, Intangible assets\nI. Profit, Certain, Assured, Tangible assets\nJ. Interest, Certain, Speculative, Both tangible and intangible assets\nAnswer:",
+            " B"
+          ],
+          [
+            " Some of key differences between Islamic finance and conventional finance include - prohibition of charging and paying _______, prohibition on ______ and ______ transactions, prohibition of sinful investment and requirement for all financial products to be backed by __________.\nA. Interest, Certain, Assured, Both tangible and intangible assets\nB. Interest, Uncertain, Assured, Both tangible and intangible assets\nC. Interest, Uncertain, Speculative, Intangible assets\nD. Interest, Certain, Assured, Tangible assets\nE. Interest, Uncertain, Assured, Intangible assets\nF. Profit, Uncertain, Speculative, Tangible assets\nG. Interest, Uncertain, Speculative, Tangible assets\nH. Interest, Certain, Speculative, Intangible assets\nI. Profit, Certain, Assured, Tangible assets\nJ. Interest, Certain, Speculative, Both tangible and intangible assets\nAnswer:",
+            " C"
+          ],
+          [
+            " Some of key differences between Islamic finance and conventional finance include - prohibition of charging and paying _______, prohibition on ______ and ______ transactions, prohibition of sinful investment and requirement for all financial products to be backed by __________.\nA. Interest, Certain, Assured, Both tangible and intangible assets\nB. Interest, Uncertain, Assured, Both tangible and intangible assets\nC. Interest, Uncertain, Speculative, Intangible assets\nD. Interest, Certain, Assured, Tangible assets\nE. Interest, Uncertain, Assured, Intangible assets\nF. Profit, Uncertain, Speculative, Tangible assets\nG. Interest, Uncertain, Speculative, Tangible assets\nH. Interest, Certain, Speculative, Intangible assets\nI. Profit, Certain, Assured, Tangible assets\nJ. Interest, Certain, Speculative, Both tangible and intangible assets\nAnswer:",
+            " D"
+          ],
+          [
+            " Some of key differences between Islamic finance and conventional finance include - prohibition of charging and paying _______, prohibition on ______ and ______ transactions, prohibition of sinful investment and requirement for all financial products to be backed by __________.\nA. Interest, Certain, Assured, Both tangible and intangible assets\nB. Interest, Uncertain, Assured, Both tangible and intangible assets\nC. Interest, Uncertain, Speculative, Intangible assets\nD. Interest, Certain, Assured, Tangible assets\nE. Interest, Uncertain, Assured, Intangible assets\nF. Profit, Uncertain, Speculative, Tangible assets\nG. Interest, Uncertain, Speculative, Tangible assets\nH. Interest, Certain, Speculative, Intangible assets\nI. Profit, Certain, Assured, Tangible assets\nJ. Interest, Certain, Speculative, Both tangible and intangible assets\nAnswer:",
+            " E"
+          ],
+          [
+            " Some of key differences between Islamic finance and conventional finance include - prohibition of charging and paying _______, prohibition on ______ and ______ transactions, prohibition of sinful investment and requirement for all financial products to be backed by __________.\nA. Interest, Certain, Assured, Both tangible and intangible assets\nB. Interest, Uncertain, Assured, Both tangible and intangible assets\nC. Interest, Uncertain, Speculative, Intangible assets\nD. Interest, Certain, Assured, Tangible assets\nE. Interest, Uncertain, Assured, Intangible assets\nF. Profit, Uncertain, Speculative, Tangible assets\nG. Interest, Uncertain, Speculative, Tangible assets\nH. Interest, Certain, Speculative, Intangible assets\nI. Profit, Certain, Assured, Tangible assets\nJ. Interest, Certain, Speculative, Both tangible and intangible assets\nAnswer:",
+            " F"
+          ],
+          [
+            " Some of key differences between Islamic finance and conventional finance include - prohibition of charging and paying _______, prohibition on ______ and ______ transactions, prohibition of sinful investment and requirement for all financial products to be backed by __________.\nA. Interest, Certain, Assured, Both tangible and intangible assets\nB. Interest, Uncertain, Assured, Both tangible and intangible assets\nC. Interest, Uncertain, Speculative, Intangible assets\nD. Interest, Certain, Assured, Tangible assets\nE. Interest, Uncertain, Assured, Intangible assets\nF. Profit, Uncertain, Speculative, Tangible assets\nG. Interest, Uncertain, Speculative, Tangible assets\nH. Interest, Certain, Speculative, Intangible assets\nI. Profit, Certain, Assured, Tangible assets\nJ. Interest, Certain, Speculative, Both tangible and intangible assets\nAnswer:",
+            " G"
+          ],
+          [
+            " Some of key differences between Islamic finance and conventional finance include - prohibition of charging and paying _______, prohibition on ______ and ______ transactions, prohibition of sinful investment and requirement for all financial products to be backed by __________.\nA. Interest, Certain, Assured, Both tangible and intangible assets\nB. Interest, Uncertain, Assured, Both tangible and intangible assets\nC. Interest, Uncertain, Speculative, Intangible assets\nD. Interest, Certain, Assured, Tangible assets\nE. Interest, Uncertain, Assured, Intangible assets\nF. Profit, Uncertain, Speculative, Tangible assets\nG. Interest, Uncertain, Speculative, Tangible assets\nH. Interest, Certain, Speculative, Intangible assets\nI. Profit, Certain, Assured, Tangible assets\nJ. Interest, Certain, Speculative, Both tangible and intangible assets\nAnswer:",
+            " H"
+          ],
+          [
+            " Some of key differences between Islamic finance and conventional finance include - prohibition of charging and paying _______, prohibition on ______ and ______ transactions, prohibition of sinful investment and requirement for all financial products to be backed by __________.\nA. Interest, Certain, Assured, Both tangible and intangible assets\nB. Interest, Uncertain, Assured, Both tangible and intangible assets\nC. Interest, Uncertain, Speculative, Intangible assets\nD. Interest, Certain, Assured, Tangible assets\nE. Interest, Uncertain, Assured, Intangible assets\nF. Profit, Uncertain, Speculative, Tangible assets\nG. Interest, Uncertain, Speculative, Tangible assets\nH. Interest, Certain, Speculative, Intangible assets\nI. Profit, Certain, Assured, Tangible assets\nJ. Interest, Certain, Speculative, Both tangible and intangible assets\nAnswer:",
+            " I"
+          ],
+          [
+            " Some of key differences between Islamic finance and conventional finance include - prohibition of charging and paying _______, prohibition on ______ and ______ transactions, prohibition of sinful investment and requirement for all financial products to be backed by __________.\nA. Interest, Certain, Assured, Both tangible and intangible assets\nB. Interest, Uncertain, Assured, Both tangible and intangible assets\nC. Interest, Uncertain, Speculative, Intangible assets\nD. Interest, Certain, Assured, Tangible assets\nE. Interest, Uncertain, Assured, Intangible assets\nF. Profit, Uncertain, Speculative, Tangible assets\nG. Interest, Uncertain, Speculative, Tangible assets\nH. Interest, Certain, Speculative, Intangible assets\nI. Profit, Certain, Assured, Tangible assets\nJ. Interest, Certain, Speculative, Both tangible and intangible assets\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -2.53125,
+              false
+            ]
+          ],
+          [
+            [
+              -2.53125,
+              false
+            ]
+          ],
+          [
+            [
+              -2.59375,
+              false
+            ]
+          ],
+          [
+            [
+              -2.71875,
+              false
+            ]
+          ],
+          [
+            [
+              -3.21875,
+              false
+            ]
+          ],
+          [
+            [
+              -2.90625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.40625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.34375,
+              false
+            ]
+          ],
+          [
+            [
+              -2.90625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.15625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -2.53125,
+            false
+          ],
+          [
+            -2.53125,
+            false
+          ],
+          [
+            -2.59375,
+            false
+          ],
+          [
+            -2.71875,
+            false
+          ],
+          [
+            -3.21875,
+            false
+          ],
+          [
+            -2.90625,
+            false
+          ],
+          [
+            -3.40625,
+            false
+          ],
+          [
+            -3.34375,
+            false
+          ],
+          [
+            -2.90625,
+            false
+          ],
+          [
+            -3.15625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "b6ec6fcc046d783fe22839d3a95d6b0cb1f23c78c9102d750871b8833abedec9",
+        "prompt_hash": "e7c44e6b3d3a20785a001ba6fcd2da9cbf329eccaf65a4609c8c8d89099b0616",
+        "target_hash": "333e0a1e27815d0ceee55c473fe3dc93d56c63e3bee2b3b4aee8eed6d70191a3",
+        "acc": 0.0
+      },
+      {
+        "doc_id": 5,
+        "doc": {
+          "question_id": 75,
+          "question": " Which of the following are the three broad groups of organizational characteristics segmentation criteria?",
+          "options": [
+            "Organizational size, industry type, and geographical location.",
+            "Organizational size, industry type, and age of company.",
+            "Organizational size, industry type, and customer base.",
+            "Organizational size, industry type, and annual revenue.",
+            "Organizational size, industry type, and business strategy.",
+            "None of the above.",
+            "Organizational size, industry type, and gender.",
+            "Organizational size, industry type, and number of branches.",
+            "Psychographics, purchaser, and behavioural criteria.",
+            "Organizational size, industry type, and number of employees."
+          ],
+          "answer": "A",
+          "answer_index": 0,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-marketing"
+        },
+        "target": "A",
+        "arguments": [
+          [
+            " Which of the following are the three broad groups of organizational characteristics segmentation criteria?\nA. Organizational size, industry type, and geographical location.\nB. Organizational size, industry type, and age of company.\nC. Organizational size, industry type, and customer base.\nD. Organizational size, industry type, and annual revenue.\nE. Organizational size, industry type, and business strategy.\nF. None of the above.\nG. Organizational size, industry type, and gender.\nH. Organizational size, industry type, and number of branches.\nI. Psychographics, purchaser, and behavioural criteria.\nJ. Organizational size, industry type, and number of employees.\nAnswer:",
+            " A"
+          ],
+          [
+            " Which of the following are the three broad groups of organizational characteristics segmentation criteria?\nA. Organizational size, industry type, and geographical location.\nB. Organizational size, industry type, and age of company.\nC. Organizational size, industry type, and customer base.\nD. Organizational size, industry type, and annual revenue.\nE. Organizational size, industry type, and business strategy.\nF. None of the above.\nG. Organizational size, industry type, and gender.\nH. Organizational size, industry type, and number of branches.\nI. Psychographics, purchaser, and behavioural criteria.\nJ. Organizational size, industry type, and number of employees.\nAnswer:",
+            " B"
+          ],
+          [
+            " Which of the following are the three broad groups of organizational characteristics segmentation criteria?\nA. Organizational size, industry type, and geographical location.\nB. Organizational size, industry type, and age of company.\nC. Organizational size, industry type, and customer base.\nD. Organizational size, industry type, and annual revenue.\nE. Organizational size, industry type, and business strategy.\nF. None of the above.\nG. Organizational size, industry type, and gender.\nH. Organizational size, industry type, and number of branches.\nI. Psychographics, purchaser, and behavioural criteria.\nJ. Organizational size, industry type, and number of employees.\nAnswer:",
+            " C"
+          ],
+          [
+            " Which of the following are the three broad groups of organizational characteristics segmentation criteria?\nA. Organizational size, industry type, and geographical location.\nB. Organizational size, industry type, and age of company.\nC. Organizational size, industry type, and customer base.\nD. Organizational size, industry type, and annual revenue.\nE. Organizational size, industry type, and business strategy.\nF. None of the above.\nG. Organizational size, industry type, and gender.\nH. Organizational size, industry type, and number of branches.\nI. Psychographics, purchaser, and behavioural criteria.\nJ. Organizational size, industry type, and number of employees.\nAnswer:",
+            " D"
+          ],
+          [
+            " Which of the following are the three broad groups of organizational characteristics segmentation criteria?\nA. Organizational size, industry type, and geographical location.\nB. Organizational size, industry type, and age of company.\nC. Organizational size, industry type, and customer base.\nD. Organizational size, industry type, and annual revenue.\nE. Organizational size, industry type, and business strategy.\nF. None of the above.\nG. Organizational size, industry type, and gender.\nH. Organizational size, industry type, and number of branches.\nI. Psychographics, purchaser, and behavioural criteria.\nJ. Organizational size, industry type, and number of employees.\nAnswer:",
+            " E"
+          ],
+          [
+            " Which of the following are the three broad groups of organizational characteristics segmentation criteria?\nA. Organizational size, industry type, and geographical location.\nB. Organizational size, industry type, and age of company.\nC. Organizational size, industry type, and customer base.\nD. Organizational size, industry type, and annual revenue.\nE. Organizational size, industry type, and business strategy.\nF. None of the above.\nG. Organizational size, industry type, and gender.\nH. Organizational size, industry type, and number of branches.\nI. Psychographics, purchaser, and behavioural criteria.\nJ. Organizational size, industry type, and number of employees.\nAnswer:",
+            " F"
+          ],
+          [
+            " Which of the following are the three broad groups of organizational characteristics segmentation criteria?\nA. Organizational size, industry type, and geographical location.\nB. Organizational size, industry type, and age of company.\nC. Organizational size, industry type, and customer base.\nD. Organizational size, industry type, and annual revenue.\nE. Organizational size, industry type, and business strategy.\nF. None of the above.\nG. Organizational size, industry type, and gender.\nH. Organizational size, industry type, and number of branches.\nI. Psychographics, purchaser, and behavioural criteria.\nJ. Organizational size, industry type, and number of employees.\nAnswer:",
+            " G"
+          ],
+          [
+            " Which of the following are the three broad groups of organizational characteristics segmentation criteria?\nA. Organizational size, industry type, and geographical location.\nB. Organizational size, industry type, and age of company.\nC. Organizational size, industry type, and customer base.\nD. Organizational size, industry type, and annual revenue.\nE. Organizational size, industry type, and business strategy.\nF. None of the above.\nG. Organizational size, industry type, and gender.\nH. Organizational size, industry type, and number of branches.\nI. Psychographics, purchaser, and behavioural criteria.\nJ. Organizational size, industry type, and number of employees.\nAnswer:",
+            " H"
+          ],
+          [
+            " Which of the following are the three broad groups of organizational characteristics segmentation criteria?\nA. Organizational size, industry type, and geographical location.\nB. Organizational size, industry type, and age of company.\nC. Organizational size, industry type, and customer base.\nD. Organizational size, industry type, and annual revenue.\nE. Organizational size, industry type, and business strategy.\nF. None of the above.\nG. Organizational size, industry type, and gender.\nH. Organizational size, industry type, and number of branches.\nI. Psychographics, purchaser, and behavioural criteria.\nJ. Organizational size, industry type, and number of employees.\nAnswer:",
+            " I"
+          ],
+          [
+            " Which of the following are the three broad groups of organizational characteristics segmentation criteria?\nA. Organizational size, industry type, and geographical location.\nB. Organizational size, industry type, and age of company.\nC. Organizational size, industry type, and customer base.\nD. Organizational size, industry type, and annual revenue.\nE. Organizational size, industry type, and business strategy.\nF. None of the above.\nG. Organizational size, industry type, and gender.\nH. Organizational size, industry type, and number of branches.\nI. Psychographics, purchaser, and behavioural criteria.\nJ. Organizational size, industry type, and number of employees.\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -2.109375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.796875,
+              false
+            ]
+          ],
+          [
+            [
+              -3.171875,
+              false
+            ]
+          ],
+          [
+            [
+              -3.796875,
+              false
+            ]
+          ],
+          [
+            [
+              -4.125,
+              false
+            ]
+          ],
+          [
+            [
+              -5.1875,
+              false
+            ]
+          ],
+          [
+            [
+              -3.921875,
+              false
+            ]
+          ],
+          [
+            [
+              -3.359375,
+              false
+            ]
+          ],
+          [
+            [
+              -2.171875,
+              false
+            ]
+          ],
+          [
+            [
+              -3.609375,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -2.109375,
+            false
+          ],
+          [
+            -3.796875,
+            false
+          ],
+          [
+            -3.171875,
+            false
+          ],
+          [
+            -3.796875,
+            false
+          ],
+          [
+            -4.125,
+            false
+          ],
+          [
+            -5.1875,
+            false
+          ],
+          [
+            -3.921875,
+            false
+          ],
+          [
+            -3.359375,
+            false
+          ],
+          [
+            -2.171875,
+            false
+          ],
+          [
+            -3.609375,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "324cf4df932570492346b4d9df81d3912fa253aa28a05620cf33aab13eee4310",
+        "prompt_hash": "24aa256f237f172853db91fb6f899c32aa90838768b0ce8d77b1171369ceb82d",
+        "target_hash": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd",
+        "acc": 1.0
+      },
+      {
+        "doc_id": 6,
+        "doc": {
+          "question_id": 76,
+          "question": " Pine and Gilmore (1999) derive four distinct realms of experience, based on two dimensions. What are these dimensions?",
+          "options": [
+            "Customer participation and environmental acquisition.",
+            "Environmental acquisition and environmental relationship.",
+            "Customer retention and environmental relationship.",
+            "Customer participation and environmental relationship.",
+            "Customer acquisition and customer retention.",
+            "Customer participation and customer relationship.",
+            "Customer acquisition and environmental participation.",
+            "Environmental participation and customer relationship.",
+            "Customer retention and customer relationship.",
+            "Customer acquisition and environmental relationship."
+          ],
+          "answer": "D",
+          "answer_index": 3,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-marketing"
+        },
+        "target": "D",
+        "arguments": [
+          [
+            " Pine and Gilmore (1999) derive four distinct realms of experience, based on two dimensions. What are these dimensions?\nA. Customer participation and environmental acquisition.\nB. Environmental acquisition and environmental relationship.\nC. Customer retention and environmental relationship.\nD. Customer participation and environmental relationship.\nE. Customer acquisition and customer retention.\nF. Customer participation and customer relationship.\nG. Customer acquisition and environmental participation.\nH. Environmental participation and customer relationship.\nI. Customer retention and customer relationship.\nJ. Customer acquisition and environmental relationship.\nAnswer:",
+            " A"
+          ],
+          [
+            " Pine and Gilmore (1999) derive four distinct realms of experience, based on two dimensions. What are these dimensions?\nA. Customer participation and environmental acquisition.\nB. Environmental acquisition and environmental relationship.\nC. Customer retention and environmental relationship.\nD. Customer participation and environmental relationship.\nE. Customer acquisition and customer retention.\nF. Customer participation and customer relationship.\nG. Customer acquisition and environmental participation.\nH. Environmental participation and customer relationship.\nI. Customer retention and customer relationship.\nJ. Customer acquisition and environmental relationship.\nAnswer:",
+            " B"
+          ],
+          [
+            " Pine and Gilmore (1999) derive four distinct realms of experience, based on two dimensions. What are these dimensions?\nA. Customer participation and environmental acquisition.\nB. Environmental acquisition and environmental relationship.\nC. Customer retention and environmental relationship.\nD. Customer participation and environmental relationship.\nE. Customer acquisition and customer retention.\nF. Customer participation and customer relationship.\nG. Customer acquisition and environmental participation.\nH. Environmental participation and customer relationship.\nI. Customer retention and customer relationship.\nJ. Customer acquisition and environmental relationship.\nAnswer:",
+            " C"
+          ],
+          [
+            " Pine and Gilmore (1999) derive four distinct realms of experience, based on two dimensions. What are these dimensions?\nA. Customer participation and environmental acquisition.\nB. Environmental acquisition and environmental relationship.\nC. Customer retention and environmental relationship.\nD. Customer participation and environmental relationship.\nE. Customer acquisition and customer retention.\nF. Customer participation and customer relationship.\nG. Customer acquisition and environmental participation.\nH. Environmental participation and customer relationship.\nI. Customer retention and customer relationship.\nJ. Customer acquisition and environmental relationship.\nAnswer:",
+            " D"
+          ],
+          [
+            " Pine and Gilmore (1999) derive four distinct realms of experience, based on two dimensions. What are these dimensions?\nA. Customer participation and environmental acquisition.\nB. Environmental acquisition and environmental relationship.\nC. Customer retention and environmental relationship.\nD. Customer participation and environmental relationship.\nE. Customer acquisition and customer retention.\nF. Customer participation and customer relationship.\nG. Customer acquisition and environmental participation.\nH. Environmental participation and customer relationship.\nI. Customer retention and customer relationship.\nJ. Customer acquisition and environmental relationship.\nAnswer:",
+            " E"
+          ],
+          [
+            " Pine and Gilmore (1999) derive four distinct realms of experience, based on two dimensions. What are these dimensions?\nA. Customer participation and environmental acquisition.\nB. Environmental acquisition and environmental relationship.\nC. Customer retention and environmental relationship.\nD. Customer participation and environmental relationship.\nE. Customer acquisition and customer retention.\nF. Customer participation and customer relationship.\nG. Customer acquisition and environmental participation.\nH. Environmental participation and customer relationship.\nI. Customer retention and customer relationship.\nJ. Customer acquisition and environmental relationship.\nAnswer:",
+            " F"
+          ],
+          [
+            " Pine and Gilmore (1999) derive four distinct realms of experience, based on two dimensions. What are these dimensions?\nA. Customer participation and environmental acquisition.\nB. Environmental acquisition and environmental relationship.\nC. Customer retention and environmental relationship.\nD. Customer participation and environmental relationship.\nE. Customer acquisition and customer retention.\nF. Customer participation and customer relationship.\nG. Customer acquisition and environmental participation.\nH. Environmental participation and customer relationship.\nI. Customer retention and customer relationship.\nJ. Customer acquisition and environmental relationship.\nAnswer:",
+            " G"
+          ],
+          [
+            " Pine and Gilmore (1999) derive four distinct realms of experience, based on two dimensions. What are these dimensions?\nA. Customer participation and environmental acquisition.\nB. Environmental acquisition and environmental relationship.\nC. Customer retention and environmental relationship.\nD. Customer participation and environmental relationship.\nE. Customer acquisition and customer retention.\nF. Customer participation and customer relationship.\nG. Customer acquisition and environmental participation.\nH. Environmental participation and customer relationship.\nI. Customer retention and customer relationship.\nJ. Customer acquisition and environmental relationship.\nAnswer:",
+            " H"
+          ],
+          [
+            " Pine and Gilmore (1999) derive four distinct realms of experience, based on two dimensions. What are these dimensions?\nA. Customer participation and environmental acquisition.\nB. Environmental acquisition and environmental relationship.\nC. Customer retention and environmental relationship.\nD. Customer participation and environmental relationship.\nE. Customer acquisition and customer retention.\nF. Customer participation and customer relationship.\nG. Customer acquisition and environmental participation.\nH. Environmental participation and customer relationship.\nI. Customer retention and customer relationship.\nJ. Customer acquisition and environmental relationship.\nAnswer:",
+            " I"
+          ],
+          [
+            " Pine and Gilmore (1999) derive four distinct realms of experience, based on two dimensions. What are these dimensions?\nA. Customer participation and environmental acquisition.\nB. Environmental acquisition and environmental relationship.\nC. Customer retention and environmental relationship.\nD. Customer participation and environmental relationship.\nE. Customer acquisition and customer retention.\nF. Customer participation and customer relationship.\nG. Customer acquisition and environmental participation.\nH. Environmental participation and customer relationship.\nI. Customer retention and customer relationship.\nJ. Customer acquisition and environmental relationship.\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -2.734375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.046875,
+              false
+            ]
+          ],
+          [
+            [
+              -3.359375,
+              false
+            ]
+          ],
+          [
+            [
+              -1.796875,
+              false
+            ]
+          ],
+          [
+            [
+              -3.921875,
+              false
+            ]
+          ],
+          [
+            [
+              -4.53125,
+              false
+            ]
+          ],
+          [
+            [
+              -4.40625,
+              false
+            ]
+          ],
+          [
+            [
+              -2.796875,
+              false
+            ]
+          ],
+          [
+            [
+              -4.34375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.671875,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -2.734375,
+            false
+          ],
+          [
+            -3.046875,
+            false
+          ],
+          [
+            -3.359375,
+            false
+          ],
+          [
+            -1.796875,
+            false
+          ],
+          [
+            -3.921875,
+            false
+          ],
+          [
+            -4.53125,
+            false
+          ],
+          [
+            -4.40625,
+            false
+          ],
+          [
+            -2.796875,
+            false
+          ],
+          [
+            -4.34375,
+            false
+          ],
+          [
+            -3.671875,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "009e049611c10f0f11430c6e9d83668f458bf87ce535c131bd99fe225bb61fff",
+        "prompt_hash": "84f06077d45f16bb2f2fd2a7a9c0d326f0a725be8b52a2b5554bb8e6481c1ba1",
+        "target_hash": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43",
+        "acc": 1.0
+      },
+      {
+        "doc_id": 7,
+        "doc": {
+          "question_id": 77,
+          "question": " Which type of research methods are designed to elicit responses to predetermined, standardized questions from many respondents?",
+          "options": [
+            "Non-probability.",
+            "Cross-sectional.",
+            "Qualitative.",
+            "Ethnographic.",
+            "Longitudinal.",
+            "Experimental.",
+            "Probability.",
+            "Observational.",
+            "Case Study.",
+            "Quantitative."
+          ],
+          "answer": "J",
+          "answer_index": 9,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-marketing"
+        },
+        "target": "J",
+        "arguments": [
+          [
+            " Which type of research methods are designed to elicit responses to predetermined, standardized questions from many respondents?\nA. Non-probability.\nB. Cross-sectional.\nC. Qualitative.\nD. Ethnographic.\nE. Longitudinal.\nF. Experimental.\nG. Probability.\nH. Observational.\nI. Case Study.\nJ. Quantitative.\nAnswer:",
+            " A"
+          ],
+          [
+            " Which type of research methods are designed to elicit responses to predetermined, standardized questions from many respondents?\nA. Non-probability.\nB. Cross-sectional.\nC. Qualitative.\nD. Ethnographic.\nE. Longitudinal.\nF. Experimental.\nG. Probability.\nH. Observational.\nI. Case Study.\nJ. Quantitative.\nAnswer:",
+            " B"
+          ],
+          [
+            " Which type of research methods are designed to elicit responses to predetermined, standardized questions from many respondents?\nA. Non-probability.\nB. Cross-sectional.\nC. Qualitative.\nD. Ethnographic.\nE. Longitudinal.\nF. Experimental.\nG. Probability.\nH. Observational.\nI. Case Study.\nJ. Quantitative.\nAnswer:",
+            " C"
+          ],
+          [
+            " Which type of research methods are designed to elicit responses to predetermined, standardized questions from many respondents?\nA. Non-probability.\nB. Cross-sectional.\nC. Qualitative.\nD. Ethnographic.\nE. Longitudinal.\nF. Experimental.\nG. Probability.\nH. Observational.\nI. Case Study.\nJ. Quantitative.\nAnswer:",
+            " D"
+          ],
+          [
+            " Which type of research methods are designed to elicit responses to predetermined, standardized questions from many respondents?\nA. Non-probability.\nB. Cross-sectional.\nC. Qualitative.\nD. Ethnographic.\nE. Longitudinal.\nF. Experimental.\nG. Probability.\nH. Observational.\nI. Case Study.\nJ. Quantitative.\nAnswer:",
+            " E"
+          ],
+          [
+            " Which type of research methods are designed to elicit responses to predetermined, standardized questions from many respondents?\nA. Non-probability.\nB. Cross-sectional.\nC. Qualitative.\nD. Ethnographic.\nE. Longitudinal.\nF. Experimental.\nG. Probability.\nH. Observational.\nI. Case Study.\nJ. Quantitative.\nAnswer:",
+            " F"
+          ],
+          [
+            " Which type of research methods are designed to elicit responses to predetermined, standardized questions from many respondents?\nA. Non-probability.\nB. Cross-sectional.\nC. Qualitative.\nD. Ethnographic.\nE. Longitudinal.\nF. Experimental.\nG. Probability.\nH. Observational.\nI. Case Study.\nJ. Quantitative.\nAnswer:",
+            " G"
+          ],
+          [
+            " Which type of research methods are designed to elicit responses to predetermined, standardized questions from many respondents?\nA. Non-probability.\nB. Cross-sectional.\nC. Qualitative.\nD. Ethnographic.\nE. Longitudinal.\nF. Experimental.\nG. Probability.\nH. Observational.\nI. Case Study.\nJ. Quantitative.\nAnswer:",
+            " H"
+          ],
+          [
+            " Which type of research methods are designed to elicit responses to predetermined, standardized questions from many respondents?\nA. Non-probability.\nB. Cross-sectional.\nC. Qualitative.\nD. Ethnographic.\nE. Longitudinal.\nF. Experimental.\nG. Probability.\nH. Observational.\nI. Case Study.\nJ. Quantitative.\nAnswer:",
+            " I"
+          ],
+          [
+            " Which type of research methods are designed to elicit responses to predetermined, standardized questions from many respondents?\nA. Non-probability.\nB. Cross-sectional.\nC. Qualitative.\nD. Ethnographic.\nE. Longitudinal.\nF. Experimental.\nG. Probability.\nH. Observational.\nI. Case Study.\nJ. Quantitative.\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -4.375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.9375,
+              false
+            ]
+          ],
+          [
+            [
+              -4.0,
+              false
+            ]
+          ],
+          [
+            [
+              -3.8125,
+              false
+            ]
+          ],
+          [
+            [
+              -4.0,
+              false
+            ]
+          ],
+          [
+            [
+              -2.125,
+              false
+            ]
+          ],
+          [
+            [
+              -2.6875,
+              false
+            ]
+          ],
+          [
+            [
+              -3.75,
+              false
+            ]
+          ],
+          [
+            [
+              -4.25,
+              false
+            ]
+          ],
+          [
+            [
+              -1.625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -4.375,
+            false
+          ],
+          [
+            -3.9375,
+            false
+          ],
+          [
+            -4.0,
+            false
+          ],
+          [
+            -3.8125,
+            false
+          ],
+          [
+            -4.0,
+            false
+          ],
+          [
+            -2.125,
+            false
+          ],
+          [
+            -2.6875,
+            false
+          ],
+          [
+            -3.75,
+            false
+          ],
+          [
+            -4.25,
+            false
+          ],
+          [
+            -1.625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "100ea575543fd77334f7745887f21c087fe6f051025d0fd6ccdcdb7d6aa21d33",
+        "prompt_hash": "258167312b239a9b5be490dd644200cf3ad3dad7e0a14c19c4224973a25f0865",
+        "target_hash": "6da43b944e494e885e69af021f93c6d9331c78aa228084711429160a5bbd15b5",
+        "acc": 1.0
+      },
+      {
+        "doc_id": 8,
+        "doc": {
+          "question_id": 78,
+          "question": "Where the price is set low relative to the competition to gain market share, this strategy is known as:",
+          "options": [
+            "Captive product pricing.",
+            "High-low pricing.",
+            "Price skimming.",
+            "Value added pricing.",
+            "Penetration pricing.",
+            "Premium pricing.",
+            "Cost-plus pricing.",
+            "Economy pricing.",
+            "Psychological pricing.",
+            "Competitive pricing."
+          ],
+          "answer": "E",
+          "answer_index": 4,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-marketing"
+        },
+        "target": "E",
+        "arguments": [
+          [
+            "Where the price is set low relative to the competition to gain market share, this strategy is known as:\nA. Captive product pricing.\nB. High-low pricing.\nC. Price skimming.\nD. Value added pricing.\nE. Penetration pricing.\nF. Premium pricing.\nG. Cost-plus pricing.\nH. Economy pricing.\nI. Psychological pricing.\nJ. Competitive pricing.\nAnswer:",
+            " A"
+          ],
+          [
+            "Where the price is set low relative to the competition to gain market share, this strategy is known as:\nA. Captive product pricing.\nB. High-low pricing.\nC. Price skimming.\nD. Value added pricing.\nE. Penetration pricing.\nF. Premium pricing.\nG. Cost-plus pricing.\nH. Economy pricing.\nI. Psychological pricing.\nJ. Competitive pricing.\nAnswer:",
+            " B"
+          ],
+          [
+            "Where the price is set low relative to the competition to gain market share, this strategy is known as:\nA. Captive product pricing.\nB. High-low pricing.\nC. Price skimming.\nD. Value added pricing.\nE. Penetration pricing.\nF. Premium pricing.\nG. Cost-plus pricing.\nH. Economy pricing.\nI. Psychological pricing.\nJ. Competitive pricing.\nAnswer:",
+            " C"
+          ],
+          [
+            "Where the price is set low relative to the competition to gain market share, this strategy is known as:\nA. Captive product pricing.\nB. High-low pricing.\nC. Price skimming.\nD. Value added pricing.\nE. Penetration pricing.\nF. Premium pricing.\nG. Cost-plus pricing.\nH. Economy pricing.\nI. Psychological pricing.\nJ. Competitive pricing.\nAnswer:",
+            " D"
+          ],
+          [
+            "Where the price is set low relative to the competition to gain market share, this strategy is known as:\nA. Captive product pricing.\nB. High-low pricing.\nC. Price skimming.\nD. Value added pricing.\nE. Penetration pricing.\nF. Premium pricing.\nG. Cost-plus pricing.\nH. Economy pricing.\nI. Psychological pricing.\nJ. Competitive pricing.\nAnswer:",
+            " E"
+          ],
+          [
+            "Where the price is set low relative to the competition to gain market share, this strategy is known as:\nA. Captive product pricing.\nB. High-low pricing.\nC. Price skimming.\nD. Value added pricing.\nE. Penetration pricing.\nF. Premium pricing.\nG. Cost-plus pricing.\nH. Economy pricing.\nI. Psychological pricing.\nJ. Competitive pricing.\nAnswer:",
+            " F"
+          ],
+          [
+            "Where the price is set low relative to the competition to gain market share, this strategy is known as:\nA. Captive product pricing.\nB. High-low pricing.\nC. Price skimming.\nD. Value added pricing.\nE. Penetration pricing.\nF. Premium pricing.\nG. Cost-plus pricing.\nH. Economy pricing.\nI. Psychological pricing.\nJ. Competitive pricing.\nAnswer:",
+            " G"
+          ],
+          [
+            "Where the price is set low relative to the competition to gain market share, this strategy is known as:\nA. Captive product pricing.\nB. High-low pricing.\nC. Price skimming.\nD. Value added pricing.\nE. Penetration pricing.\nF. Premium pricing.\nG. Cost-plus pricing.\nH. Economy pricing.\nI. Psychological pricing.\nJ. Competitive pricing.\nAnswer:",
+            " H"
+          ],
+          [
+            "Where the price is set low relative to the competition to gain market share, this strategy is known as:\nA. Captive product pricing.\nB. High-low pricing.\nC. Price skimming.\nD. Value added pricing.\nE. Penetration pricing.\nF. Premium pricing.\nG. Cost-plus pricing.\nH. Economy pricing.\nI. Psychological pricing.\nJ. Competitive pricing.\nAnswer:",
+            " I"
+          ],
+          [
+            "Where the price is set low relative to the competition to gain market share, this strategy is known as:\nA. Captive product pricing.\nB. High-low pricing.\nC. Price skimming.\nD. Value added pricing.\nE. Penetration pricing.\nF. Premium pricing.\nG. Cost-plus pricing.\nH. Economy pricing.\nI. Psychological pricing.\nJ. Competitive pricing.\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -4.6875,
+              false
+            ]
+          ],
+          [
+            [
+              -4.8125,
+              false
+            ]
+          ],
+          [
+            [
+              -4.9375,
+              false
+            ]
+          ],
+          [
+            [
+              -4.5,
+              false
+            ]
+          ],
+          [
+            [
+              -0.8203125,
+              true
+            ]
+          ],
+          [
+            [
+              -5.125,
+              false
+            ]
+          ],
+          [
+            [
+              -4.75,
+              false
+            ]
+          ],
+          [
+            [
+              -4.9375,
+              false
+            ]
+          ],
+          [
+            [
+              -5.1875,
+              false
+            ]
+          ],
+          [
+            [
+              -4.6875,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -4.6875,
+            false
+          ],
+          [
+            -4.8125,
+            false
+          ],
+          [
+            -4.9375,
+            false
+          ],
+          [
+            -4.5,
+            false
+          ],
+          [
+            -0.8203125,
+            true
+          ],
+          [
+            -5.125,
+            false
+          ],
+          [
+            -4.75,
+            false
+          ],
+          [
+            -4.9375,
+            false
+          ],
+          [
+            -5.1875,
+            false
+          ],
+          [
+            -4.6875,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "db8621c9e63a639d4c84bc7418e54dea95bb33a4139bca251c4218c6de4a4c84",
+        "prompt_hash": "dc97d7e44f3194929533f4a08bece5df4c28fc347d6a349409adb371309bc8b1",
+        "target_hash": "a9f51566bd6705f7ea6ad54bb9deb449f795582d6529a0e22207b8981233ec58",
+        "acc": 1.0
+      },
+      {
+        "doc_id": 9,
+        "doc": {
+          "question_id": 79,
+          "question": "Once a train pulls out of a station, or an aeroplane takes off or a film starts, those seats are lost and can never be sold. This is referred to as:",
+          "options": [
+            "Immeasurability.",
+            "Impalpability.",
+            "Variability.",
+            "Non-storability.",
+            "Indivisibility.",
+            "Perishability.",
+            "Non-recoverability.",
+            "Inseparability.",
+            "Heterogeneity.",
+            "Intangibility."
+          ],
+          "answer": "F",
+          "answer_index": 5,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-marketing"
+        },
+        "target": "F",
+        "arguments": [
+          [
+            "Once a train pulls out of a station, or an aeroplane takes off or a film starts, those seats are lost and can never be sold. This is referred to as:\nA. Immeasurability.\nB. Impalpability.\nC. Variability.\nD. Non-storability.\nE. Indivisibility.\nF. Perishability.\nG. Non-recoverability.\nH. Inseparability.\nI. Heterogeneity.\nJ. Intangibility.\nAnswer:",
+            " A"
+          ],
+          [
+            "Once a train pulls out of a station, or an aeroplane takes off or a film starts, those seats are lost and can never be sold. This is referred to as:\nA. Immeasurability.\nB. Impalpability.\nC. Variability.\nD. Non-storability.\nE. Indivisibility.\nF. Perishability.\nG. Non-recoverability.\nH. Inseparability.\nI. Heterogeneity.\nJ. Intangibility.\nAnswer:",
+            " B"
+          ],
+          [
+            "Once a train pulls out of a station, or an aeroplane takes off or a film starts, those seats are lost and can never be sold. This is referred to as:\nA. Immeasurability.\nB. Impalpability.\nC. Variability.\nD. Non-storability.\nE. Indivisibility.\nF. Perishability.\nG. Non-recoverability.\nH. Inseparability.\nI. Heterogeneity.\nJ. Intangibility.\nAnswer:",
+            " C"
+          ],
+          [
+            "Once a train pulls out of a station, or an aeroplane takes off or a film starts, those seats are lost and can never be sold. This is referred to as:\nA. Immeasurability.\nB. Impalpability.\nC. Variability.\nD. Non-storability.\nE. Indivisibility.\nF. Perishability.\nG. Non-recoverability.\nH. Inseparability.\nI. Heterogeneity.\nJ. Intangibility.\nAnswer:",
+            " D"
+          ],
+          [
+            "Once a train pulls out of a station, or an aeroplane takes off or a film starts, those seats are lost and can never be sold. This is referred to as:\nA. Immeasurability.\nB. Impalpability.\nC. Variability.\nD. Non-storability.\nE. Indivisibility.\nF. Perishability.\nG. Non-recoverability.\nH. Inseparability.\nI. Heterogeneity.\nJ. Intangibility.\nAnswer:",
+            " E"
+          ],
+          [
+            "Once a train pulls out of a station, or an aeroplane takes off or a film starts, those seats are lost and can never be sold. This is referred to as:\nA. Immeasurability.\nB. Impalpability.\nC. Variability.\nD. Non-storability.\nE. Indivisibility.\nF. Perishability.\nG. Non-recoverability.\nH. Inseparability.\nI. Heterogeneity.\nJ. Intangibility.\nAnswer:",
+            " F"
+          ],
+          [
+            "Once a train pulls out of a station, or an aeroplane takes off or a film starts, those seats are lost and can never be sold. This is referred to as:\nA. Immeasurability.\nB. Impalpability.\nC. Variability.\nD. Non-storability.\nE. Indivisibility.\nF. Perishability.\nG. Non-recoverability.\nH. Inseparability.\nI. Heterogeneity.\nJ. Intangibility.\nAnswer:",
+            " G"
+          ],
+          [
+            "Once a train pulls out of a station, or an aeroplane takes off or a film starts, those seats are lost and can never be sold. This is referred to as:\nA. Immeasurability.\nB. Impalpability.\nC. Variability.\nD. Non-storability.\nE. Indivisibility.\nF. Perishability.\nG. Non-recoverability.\nH. Inseparability.\nI. Heterogeneity.\nJ. Intangibility.\nAnswer:",
+            " H"
+          ],
+          [
+            "Once a train pulls out of a station, or an aeroplane takes off or a film starts, those seats are lost and can never be sold. This is referred to as:\nA. Immeasurability.\nB. Impalpability.\nC. Variability.\nD. Non-storability.\nE. Indivisibility.\nF. Perishability.\nG. Non-recoverability.\nH. Inseparability.\nI. Heterogeneity.\nJ. Intangibility.\nAnswer:",
+            " I"
+          ],
+          [
+            "Once a train pulls out of a station, or an aeroplane takes off or a film starts, those seats are lost and can never be sold. This is referred to as:\nA. Immeasurability.\nB. Impalpability.\nC. Variability.\nD. Non-storability.\nE. Indivisibility.\nF. Perishability.\nG. Non-recoverability.\nH. Inseparability.\nI. Heterogeneity.\nJ. Intangibility.\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -4.4375,
+              false
+            ]
+          ],
+          [
+            [
+              -5.3125,
+              false
+            ]
+          ],
+          [
+            [
+              -4.5625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.0625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.9375,
+              false
+            ]
+          ],
+          [
+            [
+              -1.8828125,
+              false
+            ]
+          ],
+          [
+            [
+              -4.5,
+              false
+            ]
+          ],
+          [
+            [
+              -3.875,
+              false
+            ]
+          ],
+          [
+            [
+              -4.6875,
+              false
+            ]
+          ],
+          [
+            [
+              -2.125,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -4.4375,
+            false
+          ],
+          [
+            -5.3125,
+            false
+          ],
+          [
+            -4.5625,
+            false
+          ],
+          [
+            -3.0625,
+            false
+          ],
+          [
+            -3.9375,
+            false
+          ],
+          [
+            -1.8828125,
+            false
+          ],
+          [
+            -4.5,
+            false
+          ],
+          [
+            -3.875,
+            false
+          ],
+          [
+            -4.6875,
+            false
+          ],
+          [
+            -2.125,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "72f108572f1893ee13320bfb1e93587a3eeadc932a2a7542378aad87fe4eea10",
+        "prompt_hash": "7adbe458486e6b6ba10e776bf692c14e80c531851979181792fc670b9876478d",
+        "target_hash": "f67ab10ad4e4c53121b6a5fe4da9c10ddee905b978d3788d2723d7bfacbe28a9",
+        "acc": 1.0
+      },
+      {
+        "doc_id": 10,
+        "doc": {
+          "question_id": 80,
+          "question": "A marketing research firm contracts with clients to conduct a complete marketing research project from data collection, analysis, and reporting. It is a__________ firm.",
+          "options": [
+            "Data collection firm.",
+            "Freelance agency.",
+            "Data analysis firm.",
+            "Survey firm.",
+            "Full-service agency.",
+            "Tabulation agency.",
+            "Marketing agency.",
+            "Research firm.",
+            "Consultant.",
+            "Field agency."
+          ],
+          "answer": "E",
+          "answer_index": 4,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-marketing"
+        },
+        "target": "E",
+        "arguments": [
+          [
+            "A marketing research firm contracts with clients to conduct a complete marketing research project from data collection, analysis, and reporting. It is a__________ firm.\nA. Data collection firm.\nB. Freelance agency.\nC. Data analysis firm.\nD. Survey firm.\nE. Full-service agency.\nF. Tabulation agency.\nG. Marketing agency.\nH. Research firm.\nI. Consultant.\nJ. Field agency.\nAnswer:",
+            " A"
+          ],
+          [
+            "A marketing research firm contracts with clients to conduct a complete marketing research project from data collection, analysis, and reporting. It is a__________ firm.\nA. Data collection firm.\nB. Freelance agency.\nC. Data analysis firm.\nD. Survey firm.\nE. Full-service agency.\nF. Tabulation agency.\nG. Marketing agency.\nH. Research firm.\nI. Consultant.\nJ. Field agency.\nAnswer:",
+            " B"
+          ],
+          [
+            "A marketing research firm contracts with clients to conduct a complete marketing research project from data collection, analysis, and reporting. It is a__________ firm.\nA. Data collection firm.\nB. Freelance agency.\nC. Data analysis firm.\nD. Survey firm.\nE. Full-service agency.\nF. Tabulation agency.\nG. Marketing agency.\nH. Research firm.\nI. Consultant.\nJ. Field agency.\nAnswer:",
+            " C"
+          ],
+          [
+            "A marketing research firm contracts with clients to conduct a complete marketing research project from data collection, analysis, and reporting. It is a__________ firm.\nA. Data collection firm.\nB. Freelance agency.\nC. Data analysis firm.\nD. Survey firm.\nE. Full-service agency.\nF. Tabulation agency.\nG. Marketing agency.\nH. Research firm.\nI. Consultant.\nJ. Field agency.\nAnswer:",
+            " D"
+          ],
+          [
+            "A marketing research firm contracts with clients to conduct a complete marketing research project from data collection, analysis, and reporting. It is a__________ firm.\nA. Data collection firm.\nB. Freelance agency.\nC. Data analysis firm.\nD. Survey firm.\nE. Full-service agency.\nF. Tabulation agency.\nG. Marketing agency.\nH. Research firm.\nI. Consultant.\nJ. Field agency.\nAnswer:",
+            " E"
+          ],
+          [
+            "A marketing research firm contracts with clients to conduct a complete marketing research project from data collection, analysis, and reporting. It is a__________ firm.\nA. Data collection firm.\nB. Freelance agency.\nC. Data analysis firm.\nD. Survey firm.\nE. Full-service agency.\nF. Tabulation agency.\nG. Marketing agency.\nH. Research firm.\nI. Consultant.\nJ. Field agency.\nAnswer:",
+            " F"
+          ],
+          [
+            "A marketing research firm contracts with clients to conduct a complete marketing research project from data collection, analysis, and reporting. It is a__________ firm.\nA. Data collection firm.\nB. Freelance agency.\nC. Data analysis firm.\nD. Survey firm.\nE. Full-service agency.\nF. Tabulation agency.\nG. Marketing agency.\nH. Research firm.\nI. Consultant.\nJ. Field agency.\nAnswer:",
+            " G"
+          ],
+          [
+            "A marketing research firm contracts with clients to conduct a complete marketing research project from data collection, analysis, and reporting. It is a__________ firm.\nA. Data collection firm.\nB. Freelance agency.\nC. Data analysis firm.\nD. Survey firm.\nE. Full-service agency.\nF. Tabulation agency.\nG. Marketing agency.\nH. Research firm.\nI. Consultant.\nJ. Field agency.\nAnswer:",
+            " H"
+          ],
+          [
+            "A marketing research firm contracts with clients to conduct a complete marketing research project from data collection, analysis, and reporting. It is a__________ firm.\nA. Data collection firm.\nB. Freelance agency.\nC. Data analysis firm.\nD. Survey firm.\nE. Full-service agency.\nF. Tabulation agency.\nG. Marketing agency.\nH. Research firm.\nI. Consultant.\nJ. Field agency.\nAnswer:",
+            " I"
+          ],
+          [
+            "A marketing research firm contracts with clients to conduct a complete marketing research project from data collection, analysis, and reporting. It is a__________ firm.\nA. Data collection firm.\nB. Freelance agency.\nC. Data analysis firm.\nD. Survey firm.\nE. Full-service agency.\nF. Tabulation agency.\nG. Marketing agency.\nH. Research firm.\nI. Consultant.\nJ. Field agency.\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -4.59375,
+              false
+            ]
+          ],
+          [
+            [
+              -6.09375,
+              false
+            ]
+          ],
+          [
+            [
+              -5.84375,
+              false
+            ]
+          ],
+          [
+            [
+              -4.90625,
+              false
+            ]
+          ],
+          [
+            [
+              -2.203125,
+              false
+            ]
+          ],
+          [
+            [
+              -4.90625,
+              false
+            ]
+          ],
+          [
+            [
+              -4.78125,
+              false
+            ]
+          ],
+          [
+            [
+              -1.0234375,
+              false
+            ]
+          ],
+          [
+            [
+              -4.90625,
+              false
+            ]
+          ],
+          [
+            [
+              -4.09375,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -4.59375,
+            false
+          ],
+          [
+            -6.09375,
+            false
+          ],
+          [
+            -5.84375,
+            false
+          ],
+          [
+            -4.90625,
+            false
+          ],
+          [
+            -2.203125,
+            false
+          ],
+          [
+            -4.90625,
+            false
+          ],
+          [
+            -4.78125,
+            false
+          ],
+          [
+            -1.0234375,
+            false
+          ],
+          [
+            -4.90625,
+            false
+          ],
+          [
+            -4.09375,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "66a36e4ec139e1e26d6b70a2d29d0eade3905dbba0c3463baf2b658aeea20422",
+        "prompt_hash": "99ff673c5f42ac4503ff03df4ba01b1532ce90dc9c4ef01711f8d8670f4b60d1",
+        "target_hash": "a9f51566bd6705f7ea6ad54bb9deb449f795582d6529a0e22207b8981233ec58",
+        "acc": 0.0
+      },
+      {
+        "doc_id": 11,
+        "doc": {
+          "question_id": 81,
+          "question": "The six dimensions usually considered to constitute the external marketing environment include all of the following except:",
+          "options": [
+            "Political considerations.",
+            "Weather conditions",
+            "Personal preferences of the marketing team",
+            "Economics issues.",
+            "Technology trends",
+            "Socio-cultural aspects.",
+            "Global factors.",
+            "Competitive landscape",
+            "Industry regulations",
+            "Environmental concerns"
+          ],
+          "answer": "G",
+          "answer_index": 6,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-marketing"
+        },
+        "target": "G",
+        "arguments": [
+          [
+            "The six dimensions usually considered to constitute the external marketing environment include all of the following except:\nA. Political considerations.\nB. Weather conditions\nC. Personal preferences of the marketing team\nD. Economics issues.\nE. Technology trends\nF. Socio-cultural aspects.\nG. Global factors.\nH. Competitive landscape\nI. Industry regulations\nJ. Environmental concerns\nAnswer:",
+            " A"
+          ],
+          [
+            "The six dimensions usually considered to constitute the external marketing environment include all of the following except:\nA. Political considerations.\nB. Weather conditions\nC. Personal preferences of the marketing team\nD. Economics issues.\nE. Technology trends\nF. Socio-cultural aspects.\nG. Global factors.\nH. Competitive landscape\nI. Industry regulations\nJ. Environmental concerns\nAnswer:",
+            " B"
+          ],
+          [
+            "The six dimensions usually considered to constitute the external marketing environment include all of the following except:\nA. Political considerations.\nB. Weather conditions\nC. Personal preferences of the marketing team\nD. Economics issues.\nE. Technology trends\nF. Socio-cultural aspects.\nG. Global factors.\nH. Competitive landscape\nI. Industry regulations\nJ. Environmental concerns\nAnswer:",
+            " C"
+          ],
+          [
+            "The six dimensions usually considered to constitute the external marketing environment include all of the following except:\nA. Political considerations.\nB. Weather conditions\nC. Personal preferences of the marketing team\nD. Economics issues.\nE. Technology trends\nF. Socio-cultural aspects.\nG. Global factors.\nH. Competitive landscape\nI. Industry regulations\nJ. Environmental concerns\nAnswer:",
+            " D"
+          ],
+          [
+            "The six dimensions usually considered to constitute the external marketing environment include all of the following except:\nA. Political considerations.\nB. Weather conditions\nC. Personal preferences of the marketing team\nD. Economics issues.\nE. Technology trends\nF. Socio-cultural aspects.\nG. Global factors.\nH. Competitive landscape\nI. Industry regulations\nJ. Environmental concerns\nAnswer:",
+            " E"
+          ],
+          [
+            "The six dimensions usually considered to constitute the external marketing environment include all of the following except:\nA. Political considerations.\nB. Weather conditions\nC. Personal preferences of the marketing team\nD. Economics issues.\nE. Technology trends\nF. Socio-cultural aspects.\nG. Global factors.\nH. Competitive landscape\nI. Industry regulations\nJ. Environmental concerns\nAnswer:",
+            " F"
+          ],
+          [
+            "The six dimensions usually considered to constitute the external marketing environment include all of the following except:\nA. Political considerations.\nB. Weather conditions\nC. Personal preferences of the marketing team\nD. Economics issues.\nE. Technology trends\nF. Socio-cultural aspects.\nG. Global factors.\nH. Competitive landscape\nI. Industry regulations\nJ. Environmental concerns\nAnswer:",
+            " G"
+          ],
+          [
+            "The six dimensions usually considered to constitute the external marketing environment include all of the following except:\nA. Political considerations.\nB. Weather conditions\nC. Personal preferences of the marketing team\nD. Economics issues.\nE. Technology trends\nF. Socio-cultural aspects.\nG. Global factors.\nH. Competitive landscape\nI. Industry regulations\nJ. Environmental concerns\nAnswer:",
+            " H"
+          ],
+          [
+            "The six dimensions usually considered to constitute the external marketing environment include all of the following except:\nA. Political considerations.\nB. Weather conditions\nC. Personal preferences of the marketing team\nD. Economics issues.\nE. Technology trends\nF. Socio-cultural aspects.\nG. Global factors.\nH. Competitive landscape\nI. Industry regulations\nJ. Environmental concerns\nAnswer:",
+            " I"
+          ],
+          [
+            "The six dimensions usually considered to constitute the external marketing environment include all of the following except:\nA. Political considerations.\nB. Weather conditions\nC. Personal preferences of the marketing team\nD. Economics issues.\nE. Technology trends\nF. Socio-cultural aspects.\nG. Global factors.\nH. Competitive landscape\nI. Industry regulations\nJ. Environmental concerns\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -2.78125,
+              false
+            ]
+          ],
+          [
+            [
+              -2.90625,
+              false
+            ]
+          ],
+          [
+            [
+              -1.5234375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.09375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.59375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.65625,
+              false
+            ]
+          ],
+          [
+            [
+              -4.09375,
+              false
+            ]
+          ],
+          [
+            [
+              -4.71875,
+              false
+            ]
+          ],
+          [
+            [
+              -4.59375,
+              false
+            ]
+          ],
+          [
+            [
+              -4.71875,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -2.78125,
+            false
+          ],
+          [
+            -2.90625,
+            false
+          ],
+          [
+            -1.5234375,
+            false
+          ],
+          [
+            -3.09375,
+            false
+          ],
+          [
+            -3.59375,
+            false
+          ],
+          [
+            -3.65625,
+            false
+          ],
+          [
+            -4.09375,
+            false
+          ],
+          [
+            -4.71875,
+            false
+          ],
+          [
+            -4.59375,
+            false
+          ],
+          [
+            -4.71875,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "44e766aa7b1ee209af5e3e53e51a7a9436003f6167572f3a0c210d422d0bce58",
+        "prompt_hash": "b67525f94221f34ce0c9dbf8ac45e48499cf190356c42749e85ec0b0e083b1f2",
+        "target_hash": "333e0a1e27815d0ceee55c473fe3dc93d56c63e3bee2b3b4aee8eed6d70191a3",
+        "acc": 0.0
+      },
+      {
+        "doc_id": 12,
+        "doc": {
+          "question_id": 82,
+          "question": "What is the term for the 'rule of thumb' type of bias in decision making?",
+          "options": [
+            "Framing bias",
+            "Availability bias",
+            "Representativeness bias",
+            "Self-serving bias",
+            "Hindsight bias",
+            "Over-confidence bias",
+            "Confirmation bias",
+            "Optimism bias",
+            "Anchoring bias",
+            "Heuristics"
+          ],
+          "answer": "J",
+          "answer_index": 9,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-management"
+        },
+        "target": "J",
+        "arguments": [
+          [
+            "What is the term for the 'rule of thumb' type of bias in decision making?\nA. Framing bias\nB. Availability bias\nC. Representativeness bias\nD. Self-serving bias\nE. Hindsight bias\nF. Over-confidence bias\nG. Confirmation bias\nH. Optimism bias\nI. Anchoring bias\nJ. Heuristics\nAnswer:",
+            " A"
+          ],
+          [
+            "What is the term for the 'rule of thumb' type of bias in decision making?\nA. Framing bias\nB. Availability bias\nC. Representativeness bias\nD. Self-serving bias\nE. Hindsight bias\nF. Over-confidence bias\nG. Confirmation bias\nH. Optimism bias\nI. Anchoring bias\nJ. Heuristics\nAnswer:",
+            " B"
+          ],
+          [
+            "What is the term for the 'rule of thumb' type of bias in decision making?\nA. Framing bias\nB. Availability bias\nC. Representativeness bias\nD. Self-serving bias\nE. Hindsight bias\nF. Over-confidence bias\nG. Confirmation bias\nH. Optimism bias\nI. Anchoring bias\nJ. Heuristics\nAnswer:",
+            " C"
+          ],
+          [
+            "What is the term for the 'rule of thumb' type of bias in decision making?\nA. Framing bias\nB. Availability bias\nC. Representativeness bias\nD. Self-serving bias\nE. Hindsight bias\nF. Over-confidence bias\nG. Confirmation bias\nH. Optimism bias\nI. Anchoring bias\nJ. Heuristics\nAnswer:",
+            " D"
+          ],
+          [
+            "What is the term for the 'rule of thumb' type of bias in decision making?\nA. Framing bias\nB. Availability bias\nC. Representativeness bias\nD. Self-serving bias\nE. Hindsight bias\nF. Over-confidence bias\nG. Confirmation bias\nH. Optimism bias\nI. Anchoring bias\nJ. Heuristics\nAnswer:",
+            " E"
+          ],
+          [
+            "What is the term for the 'rule of thumb' type of bias in decision making?\nA. Framing bias\nB. Availability bias\nC. Representativeness bias\nD. Self-serving bias\nE. Hindsight bias\nF. Over-confidence bias\nG. Confirmation bias\nH. Optimism bias\nI. Anchoring bias\nJ. Heuristics\nAnswer:",
+            " F"
+          ],
+          [
+            "What is the term for the 'rule of thumb' type of bias in decision making?\nA. Framing bias\nB. Availability bias\nC. Representativeness bias\nD. Self-serving bias\nE. Hindsight bias\nF. Over-confidence bias\nG. Confirmation bias\nH. Optimism bias\nI. Anchoring bias\nJ. Heuristics\nAnswer:",
+            " G"
+          ],
+          [
+            "What is the term for the 'rule of thumb' type of bias in decision making?\nA. Framing bias\nB. Availability bias\nC. Representativeness bias\nD. Self-serving bias\nE. Hindsight bias\nF. Over-confidence bias\nG. Confirmation bias\nH. Optimism bias\nI. Anchoring bias\nJ. Heuristics\nAnswer:",
+            " H"
+          ],
+          [
+            "What is the term for the 'rule of thumb' type of bias in decision making?\nA. Framing bias\nB. Availability bias\nC. Representativeness bias\nD. Self-serving bias\nE. Hindsight bias\nF. Over-confidence bias\nG. Confirmation bias\nH. Optimism bias\nI. Anchoring bias\nJ. Heuristics\nAnswer:",
+            " I"
+          ],
+          [
+            "What is the term for the 'rule of thumb' type of bias in decision making?\nA. Framing bias\nB. Availability bias\nC. Representativeness bias\nD. Self-serving bias\nE. Hindsight bias\nF. Over-confidence bias\nG. Confirmation bias\nH. Optimism bias\nI. Anchoring bias\nJ. Heuristics\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -3.1875,
+              false
+            ]
+          ],
+          [
+            [
+              -3.1875,
+              false
+            ]
+          ],
+          [
+            [
+              -2.5625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.375,
+              false
+            ]
+          ],
+          [
+            [
+              -4.0625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.4375,
+              false
+            ]
+          ],
+          [
+            [
+              -2.5,
+              false
+            ]
+          ],
+          [
+            [
+              -3.6875,
+              false
+            ]
+          ],
+          [
+            [
+              -2.5,
+              false
+            ]
+          ],
+          [
+            [
+              -2.875,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -3.1875,
+            false
+          ],
+          [
+            -3.1875,
+            false
+          ],
+          [
+            -2.5625,
+            false
+          ],
+          [
+            -3.375,
+            false
+          ],
+          [
+            -4.0625,
+            false
+          ],
+          [
+            -3.4375,
+            false
+          ],
+          [
+            -2.5,
+            false
+          ],
+          [
+            -3.6875,
+            false
+          ],
+          [
+            -2.5,
+            false
+          ],
+          [
+            -2.875,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "2feef2c90e2736474f1c5a220221241c5e47e78fc6d269a211c524b187812868",
+        "prompt_hash": "15b0c8615edbeefc9f5d0e0f3ab8d71b073cdc68d131ae82181741651d54fdcd",
+        "target_hash": "6da43b944e494e885e69af021f93c6d9331c78aa228084711429160a5bbd15b5",
+        "acc": 0.0
+      },
+      {
+        "doc_id": 13,
+        "doc": {
+          "question_id": 83,
+          "question": "As what is ensuring that one individual does not carry the burden of a whole work task referred to?",
+          "options": [
+            "Work delegation",
+            "Workload balancing",
+            "Work distribution",
+            "Work specialisation",
+            "Work rotation",
+            "Work redundancy",
+            "Work shift",
+            "Work division",
+            "Work schedule",
+            "Work design"
+          ],
+          "answer": "D",
+          "answer_index": 3,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-management"
+        },
+        "target": "D",
+        "arguments": [
+          [
+            "As what is ensuring that one individual does not carry the burden of a whole work task referred to?\nA. Work delegation\nB. Workload balancing\nC. Work distribution\nD. Work specialisation\nE. Work rotation\nF. Work redundancy\nG. Work shift\nH. Work division\nI. Work schedule\nJ. Work design\nAnswer:",
+            " A"
+          ],
+          [
+            "As what is ensuring that one individual does not carry the burden of a whole work task referred to?\nA. Work delegation\nB. Workload balancing\nC. Work distribution\nD. Work specialisation\nE. Work rotation\nF. Work redundancy\nG. Work shift\nH. Work division\nI. Work schedule\nJ. Work design\nAnswer:",
+            " B"
+          ],
+          [
+            "As what is ensuring that one individual does not carry the burden of a whole work task referred to?\nA. Work delegation\nB. Workload balancing\nC. Work distribution\nD. Work specialisation\nE. Work rotation\nF. Work redundancy\nG. Work shift\nH. Work division\nI. Work schedule\nJ. Work design\nAnswer:",
+            " C"
+          ],
+          [
+            "As what is ensuring that one individual does not carry the burden of a whole work task referred to?\nA. Work delegation\nB. Workload balancing\nC. Work distribution\nD. Work specialisation\nE. Work rotation\nF. Work redundancy\nG. Work shift\nH. Work division\nI. Work schedule\nJ. Work design\nAnswer:",
+            " D"
+          ],
+          [
+            "As what is ensuring that one individual does not carry the burden of a whole work task referred to?\nA. Work delegation\nB. Workload balancing\nC. Work distribution\nD. Work specialisation\nE. Work rotation\nF. Work redundancy\nG. Work shift\nH. Work division\nI. Work schedule\nJ. Work design\nAnswer:",
+            " E"
+          ],
+          [
+            "As what is ensuring that one individual does not carry the burden of a whole work task referred to?\nA. Work delegation\nB. Workload balancing\nC. Work distribution\nD. Work specialisation\nE. Work rotation\nF. Work redundancy\nG. Work shift\nH. Work division\nI. Work schedule\nJ. Work design\nAnswer:",
+            " F"
+          ],
+          [
+            "As what is ensuring that one individual does not carry the burden of a whole work task referred to?\nA. Work delegation\nB. Workload balancing\nC. Work distribution\nD. Work specialisation\nE. Work rotation\nF. Work redundancy\nG. Work shift\nH. Work division\nI. Work schedule\nJ. Work design\nAnswer:",
+            " G"
+          ],
+          [
+            "As what is ensuring that one individual does not carry the burden of a whole work task referred to?\nA. Work delegation\nB. Workload balancing\nC. Work distribution\nD. Work specialisation\nE. Work rotation\nF. Work redundancy\nG. Work shift\nH. Work division\nI. Work schedule\nJ. Work design\nAnswer:",
+            " H"
+          ],
+          [
+            "As what is ensuring that one individual does not carry the burden of a whole work task referred to?\nA. Work delegation\nB. Workload balancing\nC. Work distribution\nD. Work specialisation\nE. Work rotation\nF. Work redundancy\nG. Work shift\nH. Work division\nI. Work schedule\nJ. Work design\nAnswer:",
+            " I"
+          ],
+          [
+            "As what is ensuring that one individual does not carry the burden of a whole work task referred to?\nA. Work delegation\nB. Workload balancing\nC. Work distribution\nD. Work specialisation\nE. Work rotation\nF. Work redundancy\nG. Work shift\nH. Work division\nI. Work schedule\nJ. Work design\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -2.5,
+              false
+            ]
+          ],
+          [
+            [
+              -2.9375,
+              false
+            ]
+          ],
+          [
+            [
+              -2.125,
+              false
+            ]
+          ],
+          [
+            [
+              -2.25,
+              false
+            ]
+          ],
+          [
+            [
+              -3.9375,
+              false
+            ]
+          ],
+          [
+            [
+              -4.75,
+              false
+            ]
+          ],
+          [
+            [
+              -5.0,
+              false
+            ]
+          ],
+          [
+            [
+              -4.0625,
+              false
+            ]
+          ],
+          [
+            [
+              -5.375,
+              false
+            ]
+          ],
+          [
+            [
+              -2.25,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -2.5,
+            false
+          ],
+          [
+            -2.9375,
+            false
+          ],
+          [
+            -2.125,
+            false
+          ],
+          [
+            -2.25,
+            false
+          ],
+          [
+            -3.9375,
+            false
+          ],
+          [
+            -4.75,
+            false
+          ],
+          [
+            -5.0,
+            false
+          ],
+          [
+            -4.0625,
+            false
+          ],
+          [
+            -5.375,
+            false
+          ],
+          [
+            -2.25,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "e33702814bb78c5a634de7d0d943e5fb14c53008264203bc4cbdd84c58ae4c76",
+        "prompt_hash": "d9c2016a0db4fb3a9b7e09eb8c36b2d72203c936cf7af2b3905314e482bc6cfc",
+        "target_hash": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43",
+        "acc": 0.0
+      },
+      {
+        "doc_id": 14,
+        "doc": {
+          "question_id": 84,
+          "question": "What theory is built around the principle that 'people make choices regarding how to behave based on values and beliefs'?",
+          "options": [
+            "Social Learning",
+            "Contingency",
+            "Operant Conditioning",
+            "Evolutionary",
+            "Classical",
+            "Expectancy",
+            "Psychoanalytic",
+            "Instrumental",
+            "Cognitive Dissonance",
+            "Humanistic"
+          ],
+          "answer": "F",
+          "answer_index": 5,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-management"
+        },
+        "target": "F",
+        "arguments": [
+          [
+            "What theory is built around the principle that 'people make choices regarding how to behave based on values and beliefs'?\nA. Social Learning\nB. Contingency\nC. Operant Conditioning\nD. Evolutionary\nE. Classical\nF. Expectancy\nG. Psychoanalytic\nH. Instrumental\nI. Cognitive Dissonance\nJ. Humanistic\nAnswer:",
+            " A"
+          ],
+          [
+            "What theory is built around the principle that 'people make choices regarding how to behave based on values and beliefs'?\nA. Social Learning\nB. Contingency\nC. Operant Conditioning\nD. Evolutionary\nE. Classical\nF. Expectancy\nG. Psychoanalytic\nH. Instrumental\nI. Cognitive Dissonance\nJ. Humanistic\nAnswer:",
+            " B"
+          ],
+          [
+            "What theory is built around the principle that 'people make choices regarding how to behave based on values and beliefs'?\nA. Social Learning\nB. Contingency\nC. Operant Conditioning\nD. Evolutionary\nE. Classical\nF. Expectancy\nG. Psychoanalytic\nH. Instrumental\nI. Cognitive Dissonance\nJ. Humanistic\nAnswer:",
+            " C"
+          ],
+          [
+            "What theory is built around the principle that 'people make choices regarding how to behave based on values and beliefs'?\nA. Social Learning\nB. Contingency\nC. Operant Conditioning\nD. Evolutionary\nE. Classical\nF. Expectancy\nG. Psychoanalytic\nH. Instrumental\nI. Cognitive Dissonance\nJ. Humanistic\nAnswer:",
+            " D"
+          ],
+          [
+            "What theory is built around the principle that 'people make choices regarding how to behave based on values and beliefs'?\nA. Social Learning\nB. Contingency\nC. Operant Conditioning\nD. Evolutionary\nE. Classical\nF. Expectancy\nG. Psychoanalytic\nH. Instrumental\nI. Cognitive Dissonance\nJ. Humanistic\nAnswer:",
+            " E"
+          ],
+          [
+            "What theory is built around the principle that 'people make choices regarding how to behave based on values and beliefs'?\nA. Social Learning\nB. Contingency\nC. Operant Conditioning\nD. Evolutionary\nE. Classical\nF. Expectancy\nG. Psychoanalytic\nH. Instrumental\nI. Cognitive Dissonance\nJ. Humanistic\nAnswer:",
+            " F"
+          ],
+          [
+            "What theory is built around the principle that 'people make choices regarding how to behave based on values and beliefs'?\nA. Social Learning\nB. Contingency\nC. Operant Conditioning\nD. Evolutionary\nE. Classical\nF. Expectancy\nG. Psychoanalytic\nH. Instrumental\nI. Cognitive Dissonance\nJ. Humanistic\nAnswer:",
+            " G"
+          ],
+          [
+            "What theory is built around the principle that 'people make choices regarding how to behave based on values and beliefs'?\nA. Social Learning\nB. Contingency\nC. Operant Conditioning\nD. Evolutionary\nE. Classical\nF. Expectancy\nG. Psychoanalytic\nH. Instrumental\nI. Cognitive Dissonance\nJ. Humanistic\nAnswer:",
+            " H"
+          ],
+          [
+            "What theory is built around the principle that 'people make choices regarding how to behave based on values and beliefs'?\nA. Social Learning\nB. Contingency\nC. Operant Conditioning\nD. Evolutionary\nE. Classical\nF. Expectancy\nG. Psychoanalytic\nH. Instrumental\nI. Cognitive Dissonance\nJ. Humanistic\nAnswer:",
+            " I"
+          ],
+          [
+            "What theory is built around the principle that 'people make choices regarding how to behave based on values and beliefs'?\nA. Social Learning\nB. Contingency\nC. Operant Conditioning\nD. Evolutionary\nE. Classical\nF. Expectancy\nG. Psychoanalytic\nH. Instrumental\nI. Cognitive Dissonance\nJ. Humanistic\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -1.2890625,
+              true
+            ]
+          ],
+          [
+            [
+              -3.609375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.671875,
+              false
+            ]
+          ],
+          [
+            [
+              -3.609375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.734375,
+              false
+            ]
+          ],
+          [
+            [
+              -2.171875,
+              false
+            ]
+          ],
+          [
+            [
+              -3.359375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.671875,
+              false
+            ]
+          ],
+          [
+            [
+              -4.21875,
+              false
+            ]
+          ],
+          [
+            [
+              -3.109375,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -1.2890625,
+            true
+          ],
+          [
+            -3.609375,
+            false
+          ],
+          [
+            -3.671875,
+            false
+          ],
+          [
+            -3.609375,
+            false
+          ],
+          [
+            -3.734375,
+            false
+          ],
+          [
+            -2.171875,
+            false
+          ],
+          [
+            -3.359375,
+            false
+          ],
+          [
+            -3.671875,
+            false
+          ],
+          [
+            -4.21875,
+            false
+          ],
+          [
+            -3.109375,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "355b282e000c7fbc28c31bebbb5aa686d566292cc5fe903bcea93435ceb31db3",
+        "prompt_hash": "bd36b85ce0d3c47d2024d0acbef1168fcd9440ddbbd7e1a7e875c0f8b2d91fbc",
+        "target_hash": "f67ab10ad4e4c53121b6a5fe4da9c10ddee905b978d3788d2723d7bfacbe28a9",
+        "acc": 0.0
+      },
+      {
+        "doc_id": 15,
+        "doc": {
+          "question_id": 85,
+          "question": "How does lateral communication in an organisation occur?",
+          "options": [
+            "Information is shared only during official meetings.",
+            "Information is restricted within a single department.",
+            "Information is transferred through external stakeholders.",
+            "Information is transferred only through the head of the organisation.",
+            "Information is disseminated through public announcements.",
+            "Information passes upwards.",
+            "Information passes downwards.",
+            "Information is a two-way process.",
+            "Information passes diagonally between different levels of hierarchy.",
+            "Information passes between different departments and functions."
+          ],
+          "answer": "J",
+          "answer_index": 9,
+          "cot_content": "",
+          "category": "business",
+          "src": "ori_mmlu-management"
+        },
+        "target": "J",
+        "arguments": [
+          [
+            "How does lateral communication in an organisation occur?\nA. Information is shared only during official meetings.\nB. Information is restricted within a single department.\nC. Information is transferred through external stakeholders.\nD. Information is transferred only through the head of the organisation.\nE. Information is disseminated through public announcements.\nF. Information passes upwards.\nG. Information passes downwards.\nH. Information is a two-way process.\nI. Information passes diagonally between different levels of hierarchy.\nJ. Information passes between different departments and functions.\nAnswer:",
+            " A"
+          ],
+          [
+            "How does lateral communication in an organisation occur?\nA. Information is shared only during official meetings.\nB. Information is restricted within a single department.\nC. Information is transferred through external stakeholders.\nD. Information is transferred only through the head of the organisation.\nE. Information is disseminated through public announcements.\nF. Information passes upwards.\nG. Information passes downwards.\nH. Information is a two-way process.\nI. Information passes diagonally between different levels of hierarchy.\nJ. Information passes between different departments and functions.\nAnswer:",
+            " B"
+          ],
+          [
+            "How does lateral communication in an organisation occur?\nA. Information is shared only during official meetings.\nB. Information is restricted within a single department.\nC. Information is transferred through external stakeholders.\nD. Information is transferred only through the head of the organisation.\nE. Information is disseminated through public announcements.\nF. Information passes upwards.\nG. Information passes downwards.\nH. Information is a two-way process.\nI. Information passes diagonally between different levels of hierarchy.\nJ. Information passes between different departments and functions.\nAnswer:",
+            " C"
+          ],
+          [
+            "How does lateral communication in an organisation occur?\nA. Information is shared only during official meetings.\nB. Information is restricted within a single department.\nC. Information is transferred through external stakeholders.\nD. Information is transferred only through the head of the organisation.\nE. Information is disseminated through public announcements.\nF. Information passes upwards.\nG. Information passes downwards.\nH. Information is a two-way process.\nI. Information passes diagonally between different levels of hierarchy.\nJ. Information passes between different departments and functions.\nAnswer:",
+            " D"
+          ],
+          [
+            "How does lateral communication in an organisation occur?\nA. Information is shared only during official meetings.\nB. Information is restricted within a single department.\nC. Information is transferred through external stakeholders.\nD. Information is transferred only through the head of the organisation.\nE. Information is disseminated through public announcements.\nF. Information passes upwards.\nG. Information passes downwards.\nH. Information is a two-way process.\nI. Information passes diagonally between different levels of hierarchy.\nJ. Information passes between different departments and functions.\nAnswer:",
+            " E"
+          ],
+          [
+            "How does lateral communication in an organisation occur?\nA. Information is shared only during official meetings.\nB. Information is restricted within a single department.\nC. Information is transferred through external stakeholders.\nD. Information is transferred only through the head of the organisation.\nE. Information is disseminated through public announcements.\nF. Information passes upwards.\nG. Information passes downwards.\nH. Information is a two-way process.\nI. Information passes diagonally between different levels of hierarchy.\nJ. Information passes between different departments and functions.\nAnswer:",
+            " F"
+          ],
+          [
+            "How does lateral communication in an organisation occur?\nA. Information is shared only during official meetings.\nB. Information is restricted within a single department.\nC. Information is transferred through external stakeholders.\nD. Information is transferred only through the head of the organisation.\nE. Information is disseminated through public announcements.\nF. Information passes upwards.\nG. Information passes downwards.\nH. Information is a two-way process.\nI. Information passes diagonally between different levels of hierarchy.\nJ. Information passes between different departments and functions.\nAnswer:",
+            " G"
+          ],
+          [
+            "How does lateral communication in an organisation occur?\nA. Information is shared only during official meetings.\nB. Information is restricted within a single department.\nC. Information is transferred through external stakeholders.\nD. Information is transferred only through the head of the organisation.\nE. Information is disseminated through public announcements.\nF. Information passes upwards.\nG. Information passes downwards.\nH. Information is a two-way process.\nI. Information passes diagonally between different levels of hierarchy.\nJ. Information passes between different departments and functions.\nAnswer:",
+            " H"
+          ],
+          [
+            "How does lateral communication in an organisation occur?\nA. Information is shared only during official meetings.\nB. Information is restricted within a single department.\nC. Information is transferred through external stakeholders.\nD. Information is transferred only through the head of the organisation.\nE. Information is disseminated through public announcements.\nF. Information passes upwards.\nG. Information passes downwards.\nH. Information is a two-way process.\nI. Information passes diagonally between different levels of hierarchy.\nJ. Information passes between different departments and functions.\nAnswer:",
+            " I"
+          ],
+          [
+            "How does lateral communication in an organisation occur?\nA. Information is shared only during official meetings.\nB. Information is restricted within a single department.\nC. Information is transferred through external stakeholders.\nD. Information is transferred only through the head of the organisation.\nE. Information is disseminated through public announcements.\nF. Information passes upwards.\nG. Information passes downwards.\nH. Information is a two-way process.\nI. Information passes diagonally between different levels of hierarchy.\nJ. Information passes between different departments and functions.\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -3.75,
+              false
+            ]
+          ],
+          [
+            [
+              -3.5,
+              false
+            ]
+          ],
+          [
+            [
+              -3.8125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.9375,
+              false
+            ]
+          ],
+          [
+            [
+              -4.8125,
+              false
+            ]
+          ],
+          [
+            [
+              -4.75,
+              false
+            ]
+          ],
+          [
+            [
+              -4.0625,
+              false
+            ]
+          ],
+          [
+            [
+              -2.625,
+              false
+            ]
+          ],
+          [
+            [
+              -2.875,
+              false
+            ]
+          ],
+          [
+            [
+              -1.7421875,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -3.75,
+            false
+          ],
+          [
+            -3.5,
+            false
+          ],
+          [
+            -3.8125,
+            false
+          ],
+          [
+            -3.9375,
+            false
+          ],
+          [
+            -4.8125,
+            false
+          ],
+          [
+            -4.75,
+            false
+          ],
+          [
+            -4.0625,
+            false
+          ],
+          [
+            -2.625,
+            false
+          ],
+          [
+            -2.875,
+            false
+          ],
+          [
+            -1.7421875,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "62262076fa6942b34d615d051571af87fea7a447439a3415faff98a672eb3ac6",
+        "prompt_hash": "a2eccaad7a3d85ee38f475094957eb9d08644f3f8fd047df2802c5e0def07a16",
+        "target_hash": "6da43b944e494e885e69af021f93c6d9331c78aa228084711429160a5bbd15b5",
+        "acc": 1.0
+      },
+      {
+        "doc_id": 16,
+        "doc": {
+          "question_id": 86,
+          "question": "The stock of the CCC Corporation is currently valued at $12 and is assumed to possess all the properties of geometric Brownian motion. It has an expected annual return of 15%, an annual volatility of 20%, and the annual risk-free is 10%. Using a binomial lattice, determine the price of a call option on CCC stock maturing in 10 monthes time with a strike price of $14 (Let the distance between nodes on your tree be 1 month in length).",
+          "options": [
+            "50.0",
+            "60.0",
+            "55.0",
+            "44.0",
+            "48.0",
+            "53.0",
+            "42.0",
+            "46.0",
+            "51.0",
+            "45.0"
+          ],
+          "answer": "F",
+          "answer_index": 5,
+          "cot_content": "",
+          "category": "business",
+          "src": "theoremQA-Finance"
+        },
+        "target": "F",
+        "arguments": [
+          [
+            "The stock of the CCC Corporation is currently valued at $12 and is assumed to possess all the properties of geometric Brownian motion. It has an expected annual return of 15%, an annual volatility of 20%, and the annual risk-free is 10%. Using a binomial lattice, determine the price of a call option on CCC stock maturing in 10 monthes time with a strike price of $14 (Let the distance between nodes on your tree be 1 month in length).\nA. 50.0\nB. 60.0\nC. 55.0\nD. 44.0\nE. 48.0\nF. 53.0\nG. 42.0\nH. 46.0\nI. 51.0\nJ. 45.0\nAnswer:",
+            " A"
+          ],
+          [
+            "The stock of the CCC Corporation is currently valued at $12 and is assumed to possess all the properties of geometric Brownian motion. It has an expected annual return of 15%, an annual volatility of 20%, and the annual risk-free is 10%. Using a binomial lattice, determine the price of a call option on CCC stock maturing in 10 monthes time with a strike price of $14 (Let the distance between nodes on your tree be 1 month in length).\nA. 50.0\nB. 60.0\nC. 55.0\nD. 44.0\nE. 48.0\nF. 53.0\nG. 42.0\nH. 46.0\nI. 51.0\nJ. 45.0\nAnswer:",
+            " B"
+          ],
+          [
+            "The stock of the CCC Corporation is currently valued at $12 and is assumed to possess all the properties of geometric Brownian motion. It has an expected annual return of 15%, an annual volatility of 20%, and the annual risk-free is 10%. Using a binomial lattice, determine the price of a call option on CCC stock maturing in 10 monthes time with a strike price of $14 (Let the distance between nodes on your tree be 1 month in length).\nA. 50.0\nB. 60.0\nC. 55.0\nD. 44.0\nE. 48.0\nF. 53.0\nG. 42.0\nH. 46.0\nI. 51.0\nJ. 45.0\nAnswer:",
+            " C"
+          ],
+          [
+            "The stock of the CCC Corporation is currently valued at $12 and is assumed to possess all the properties of geometric Brownian motion. It has an expected annual return of 15%, an annual volatility of 20%, and the annual risk-free is 10%. Using a binomial lattice, determine the price of a call option on CCC stock maturing in 10 monthes time with a strike price of $14 (Let the distance between nodes on your tree be 1 month in length).\nA. 50.0\nB. 60.0\nC. 55.0\nD. 44.0\nE. 48.0\nF. 53.0\nG. 42.0\nH. 46.0\nI. 51.0\nJ. 45.0\nAnswer:",
+            " D"
+          ],
+          [
+            "The stock of the CCC Corporation is currently valued at $12 and is assumed to possess all the properties of geometric Brownian motion. It has an expected annual return of 15%, an annual volatility of 20%, and the annual risk-free is 10%. Using a binomial lattice, determine the price of a call option on CCC stock maturing in 10 monthes time with a strike price of $14 (Let the distance between nodes on your tree be 1 month in length).\nA. 50.0\nB. 60.0\nC. 55.0\nD. 44.0\nE. 48.0\nF. 53.0\nG. 42.0\nH. 46.0\nI. 51.0\nJ. 45.0\nAnswer:",
+            " E"
+          ],
+          [
+            "The stock of the CCC Corporation is currently valued at $12 and is assumed to possess all the properties of geometric Brownian motion. It has an expected annual return of 15%, an annual volatility of 20%, and the annual risk-free is 10%. Using a binomial lattice, determine the price of a call option on CCC stock maturing in 10 monthes time with a strike price of $14 (Let the distance between nodes on your tree be 1 month in length).\nA. 50.0\nB. 60.0\nC. 55.0\nD. 44.0\nE. 48.0\nF. 53.0\nG. 42.0\nH. 46.0\nI. 51.0\nJ. 45.0\nAnswer:",
+            " F"
+          ],
+          [
+            "The stock of the CCC Corporation is currently valued at $12 and is assumed to possess all the properties of geometric Brownian motion. It has an expected annual return of 15%, an annual volatility of 20%, and the annual risk-free is 10%. Using a binomial lattice, determine the price of a call option on CCC stock maturing in 10 monthes time with a strike price of $14 (Let the distance between nodes on your tree be 1 month in length).\nA. 50.0\nB. 60.0\nC. 55.0\nD. 44.0\nE. 48.0\nF. 53.0\nG. 42.0\nH. 46.0\nI. 51.0\nJ. 45.0\nAnswer:",
+            " G"
+          ],
+          [
+            "The stock of the CCC Corporation is currently valued at $12 and is assumed to possess all the properties of geometric Brownian motion. It has an expected annual return of 15%, an annual volatility of 20%, and the annual risk-free is 10%. Using a binomial lattice, determine the price of a call option on CCC stock maturing in 10 monthes time with a strike price of $14 (Let the distance between nodes on your tree be 1 month in length).\nA. 50.0\nB. 60.0\nC. 55.0\nD. 44.0\nE. 48.0\nF. 53.0\nG. 42.0\nH. 46.0\nI. 51.0\nJ. 45.0\nAnswer:",
+            " H"
+          ],
+          [
+            "The stock of the CCC Corporation is currently valued at $12 and is assumed to possess all the properties of geometric Brownian motion. It has an expected annual return of 15%, an annual volatility of 20%, and the annual risk-free is 10%. Using a binomial lattice, determine the price of a call option on CCC stock maturing in 10 monthes time with a strike price of $14 (Let the distance between nodes on your tree be 1 month in length).\nA. 50.0\nB. 60.0\nC. 55.0\nD. 44.0\nE. 48.0\nF. 53.0\nG. 42.0\nH. 46.0\nI. 51.0\nJ. 45.0\nAnswer:",
+            " I"
+          ],
+          [
+            "The stock of the CCC Corporation is currently valued at $12 and is assumed to possess all the properties of geometric Brownian motion. It has an expected annual return of 15%, an annual volatility of 20%, and the annual risk-free is 10%. Using a binomial lattice, determine the price of a call option on CCC stock maturing in 10 monthes time with a strike price of $14 (Let the distance between nodes on your tree be 1 month in length).\nA. 50.0\nB. 60.0\nC. 55.0\nD. 44.0\nE. 48.0\nF. 53.0\nG. 42.0\nH. 46.0\nI. 51.0\nJ. 45.0\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -2.140625,
+              false
+            ]
+          ],
+          [
+            [
+              -2.328125,
+              false
+            ]
+          ],
+          [
+            [
+              -2.203125,
+              false
+            ]
+          ],
+          [
+            [
+              -2.578125,
+              false
+            ]
+          ],
+          [
+            [
+              -2.828125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.140625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.453125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.453125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.578125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.265625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -2.140625,
+            false
+          ],
+          [
+            -2.328125,
+            false
+          ],
+          [
+            -2.203125,
+            false
+          ],
+          [
+            -2.578125,
+            false
+          ],
+          [
+            -2.828125,
+            false
+          ],
+          [
+            -3.140625,
+            false
+          ],
+          [
+            -3.453125,
+            false
+          ],
+          [
+            -3.453125,
+            false
+          ],
+          [
+            -3.578125,
+            false
+          ],
+          [
+            -3.265625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "67bfaeac323b45414c5d938dfa716568682b6bd1e652f7e24546308b3c6f0a08",
+        "prompt_hash": "70a95067bfea082941d6136f30539cf51a8dad48a4bf159d35d78a6cf165b442",
+        "target_hash": "f67ab10ad4e4c53121b6a5fe4da9c10ddee905b978d3788d2723d7bfacbe28a9",
+        "acc": 0.0
+      },
+      {
+        "doc_id": 17,
+        "doc": {
+          "question_id": 87,
+          "question": "George is seen to place an even-money $100,000 bet on the Bulls to win the NBA Finals. If George has a logarithmic utility-of-wealth function and if his current wealth is $1,000,000, what must he believe is the minimum probability that the Bulls will win?",
+          "options": [
+            "0.525",
+            "0.800",
+            "0.450",
+            "0.575",
+            "0.750",
+            "0.350",
+            "0.650",
+            "0.300",
+            "0.700",
+            "0.400"
+          ],
+          "answer": "A",
+          "answer_index": 0,
+          "cot_content": "",
+          "category": "business",
+          "src": "theoremQA-Finance"
+        },
+        "target": "A",
+        "arguments": [
+          [
+            "George is seen to place an even-money $100,000 bet on the Bulls to win the NBA Finals. If George has a logarithmic utility-of-wealth function and if his current wealth is $1,000,000, what must he believe is the minimum probability that the Bulls will win?\nA. 0.525\nB. 0.800\nC. 0.450\nD. 0.575\nE. 0.750\nF. 0.350\nG. 0.650\nH. 0.300\nI. 0.700\nJ. 0.400\nAnswer:",
+            " A"
+          ],
+          [
+            "George is seen to place an even-money $100,000 bet on the Bulls to win the NBA Finals. If George has a logarithmic utility-of-wealth function and if his current wealth is $1,000,000, what must he believe is the minimum probability that the Bulls will win?\nA. 0.525\nB. 0.800\nC. 0.450\nD. 0.575\nE. 0.750\nF. 0.350\nG. 0.650\nH. 0.300\nI. 0.700\nJ. 0.400\nAnswer:",
+            " B"
+          ],
+          [
+            "George is seen to place an even-money $100,000 bet on the Bulls to win the NBA Finals. If George has a logarithmic utility-of-wealth function and if his current wealth is $1,000,000, what must he believe is the minimum probability that the Bulls will win?\nA. 0.525\nB. 0.800\nC. 0.450\nD. 0.575\nE. 0.750\nF. 0.350\nG. 0.650\nH. 0.300\nI. 0.700\nJ. 0.400\nAnswer:",
+            " C"
+          ],
+          [
+            "George is seen to place an even-money $100,000 bet on the Bulls to win the NBA Finals. If George has a logarithmic utility-of-wealth function and if his current wealth is $1,000,000, what must he believe is the minimum probability that the Bulls will win?\nA. 0.525\nB. 0.800\nC. 0.450\nD. 0.575\nE. 0.750\nF. 0.350\nG. 0.650\nH. 0.300\nI. 0.700\nJ. 0.400\nAnswer:",
+            " D"
+          ],
+          [
+            "George is seen to place an even-money $100,000 bet on the Bulls to win the NBA Finals. If George has a logarithmic utility-of-wealth function and if his current wealth is $1,000,000, what must he believe is the minimum probability that the Bulls will win?\nA. 0.525\nB. 0.800\nC. 0.450\nD. 0.575\nE. 0.750\nF. 0.350\nG. 0.650\nH. 0.300\nI. 0.700\nJ. 0.400\nAnswer:",
+            " E"
+          ],
+          [
+            "George is seen to place an even-money $100,000 bet on the Bulls to win the NBA Finals. If George has a logarithmic utility-of-wealth function and if his current wealth is $1,000,000, what must he believe is the minimum probability that the Bulls will win?\nA. 0.525\nB. 0.800\nC. 0.450\nD. 0.575\nE. 0.750\nF. 0.350\nG. 0.650\nH. 0.300\nI. 0.700\nJ. 0.400\nAnswer:",
+            " F"
+          ],
+          [
+            "George is seen to place an even-money $100,000 bet on the Bulls to win the NBA Finals. If George has a logarithmic utility-of-wealth function and if his current wealth is $1,000,000, what must he believe is the minimum probability that the Bulls will win?\nA. 0.525\nB. 0.800\nC. 0.450\nD. 0.575\nE. 0.750\nF. 0.350\nG. 0.650\nH. 0.300\nI. 0.700\nJ. 0.400\nAnswer:",
+            " G"
+          ],
+          [
+            "George is seen to place an even-money $100,000 bet on the Bulls to win the NBA Finals. If George has a logarithmic utility-of-wealth function and if his current wealth is $1,000,000, what must he believe is the minimum probability that the Bulls will win?\nA. 0.525\nB. 0.800\nC. 0.450\nD. 0.575\nE. 0.750\nF. 0.350\nG. 0.650\nH. 0.300\nI. 0.700\nJ. 0.400\nAnswer:",
+            " H"
+          ],
+          [
+            "George is seen to place an even-money $100,000 bet on the Bulls to win the NBA Finals. If George has a logarithmic utility-of-wealth function and if his current wealth is $1,000,000, what must he believe is the minimum probability that the Bulls will win?\nA. 0.525\nB. 0.800\nC. 0.450\nD. 0.575\nE. 0.750\nF. 0.350\nG. 0.650\nH. 0.300\nI. 0.700\nJ. 0.400\nAnswer:",
+            " I"
+          ],
+          [
+            "George is seen to place an even-money $100,000 bet on the Bulls to win the NBA Finals. If George has a logarithmic utility-of-wealth function and if his current wealth is $1,000,000, what must he believe is the minimum probability that the Bulls will win?\nA. 0.525\nB. 0.800\nC. 0.450\nD. 0.575\nE. 0.750\nF. 0.350\nG. 0.650\nH. 0.300\nI. 0.700\nJ. 0.400\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -1.71875,
+              true
+            ]
+          ],
+          [
+            [
+              -1.90625,
+              false
+            ]
+          ],
+          [
+            [
+              -2.21875,
+              false
+            ]
+          ],
+          [
+            [
+              -2.28125,
+              false
+            ]
+          ],
+          [
+            [
+              -2.84375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.28125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.34375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.46875,
+              false
+            ]
+          ],
+          [
+            [
+              -3.65625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.59375,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -1.71875,
+            true
+          ],
+          [
+            -1.90625,
+            false
+          ],
+          [
+            -2.21875,
+            false
+          ],
+          [
+            -2.28125,
+            false
+          ],
+          [
+            -2.84375,
+            false
+          ],
+          [
+            -3.28125,
+            false
+          ],
+          [
+            -3.34375,
+            false
+          ],
+          [
+            -3.46875,
+            false
+          ],
+          [
+            -3.65625,
+            false
+          ],
+          [
+            -3.59375,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "dbe0533106f836987e07b70b63a4a11920cc4915726f8eb6c7db838bb057c97b",
+        "prompt_hash": "35aa30db5bc236cf0a737e0cefba4af4ab3edc50e7caa131d7fca497b7d00c49",
+        "target_hash": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd",
+        "acc": 1.0
+      },
+      {
+        "doc_id": 18,
+        "doc": {
+          "question_id": 88,
+          "question": "Boy Alcott and Jon Buxton are partners in a steel company. They share the net income in proportion to their average investments. On January 1, Alcott invested $4,000 and Buxton invested $5,000. On May 1, Alcott invested an additional $2,000 and Buxton invested $1,750. On September 1, Alcott withdrew $500. On November 1, each partner invested an additional $2,000. The net profit for the year was $8,736. Find each partner's share of the profit.",
+          "options": [
+            "Alcott's share: $3,936, Buxton's share: $4,800",
+            "Alcott's share: $4,004, Buxton's share: $4,732",
+            "Alcott's share: $4,200, Buxton's share: $4,536",
+            "Alcott's share: $4,800, Buxton's share: $3,936",
+            "Alcott's share: $5,000, Buxton's share: $3,736",
+            "Alcott's share: $3,868, Buxton's share: $4,868",
+            "Alcott's share: $4,368, Buxton's share: $4,368",
+            "Alcott's share: $4,732, Buxton's share: $4,004",
+            "Alcott's share: $4,500, Buxton's share: $4,236",
+            "Alcott's share: $5,236, Buxton's share: $3,500"
+          ],
+          "answer": "B",
+          "answer_index": 1,
+          "cot_content": "",
+          "category": "business",
+          "src": "stemez-Business"
+        },
+        "target": "B",
+        "arguments": [
+          [
+            "Boy Alcott and Jon Buxton are partners in a steel company. They share the net income in proportion to their average investments. On January 1, Alcott invested $4,000 and Buxton invested $5,000. On May 1, Alcott invested an additional $2,000 and Buxton invested $1,750. On September 1, Alcott withdrew $500. On November 1, each partner invested an additional $2,000. The net profit for the year was $8,736. Find each partner's share of the profit.\nA. Alcott's share: $3,936, Buxton's share: $4,800\nB. Alcott's share: $4,004, Buxton's share: $4,732\nC. Alcott's share: $4,200, Buxton's share: $4,536\nD. Alcott's share: $4,800, Buxton's share: $3,936\nE. Alcott's share: $5,000, Buxton's share: $3,736\nF. Alcott's share: $3,868, Buxton's share: $4,868\nG. Alcott's share: $4,368, Buxton's share: $4,368\nH. Alcott's share: $4,732, Buxton's share: $4,004\nI. Alcott's share: $4,500, Buxton's share: $4,236\nJ. Alcott's share: $5,236, Buxton's share: $3,500\nAnswer:",
+            " A"
+          ],
+          [
+            "Boy Alcott and Jon Buxton are partners in a steel company. They share the net income in proportion to their average investments. On January 1, Alcott invested $4,000 and Buxton invested $5,000. On May 1, Alcott invested an additional $2,000 and Buxton invested $1,750. On September 1, Alcott withdrew $500. On November 1, each partner invested an additional $2,000. The net profit for the year was $8,736. Find each partner's share of the profit.\nA. Alcott's share: $3,936, Buxton's share: $4,800\nB. Alcott's share: $4,004, Buxton's share: $4,732\nC. Alcott's share: $4,200, Buxton's share: $4,536\nD. Alcott's share: $4,800, Buxton's share: $3,936\nE. Alcott's share: $5,000, Buxton's share: $3,736\nF. Alcott's share: $3,868, Buxton's share: $4,868\nG. Alcott's share: $4,368, Buxton's share: $4,368\nH. Alcott's share: $4,732, Buxton's share: $4,004\nI. Alcott's share: $4,500, Buxton's share: $4,236\nJ. Alcott's share: $5,236, Buxton's share: $3,500\nAnswer:",
+            " B"
+          ],
+          [
+            "Boy Alcott and Jon Buxton are partners in a steel company. They share the net income in proportion to their average investments. On January 1, Alcott invested $4,000 and Buxton invested $5,000. On May 1, Alcott invested an additional $2,000 and Buxton invested $1,750. On September 1, Alcott withdrew $500. On November 1, each partner invested an additional $2,000. The net profit for the year was $8,736. Find each partner's share of the profit.\nA. Alcott's share: $3,936, Buxton's share: $4,800\nB. Alcott's share: $4,004, Buxton's share: $4,732\nC. Alcott's share: $4,200, Buxton's share: $4,536\nD. Alcott's share: $4,800, Buxton's share: $3,936\nE. Alcott's share: $5,000, Buxton's share: $3,736\nF. Alcott's share: $3,868, Buxton's share: $4,868\nG. Alcott's share: $4,368, Buxton's share: $4,368\nH. Alcott's share: $4,732, Buxton's share: $4,004\nI. Alcott's share: $4,500, Buxton's share: $4,236\nJ. Alcott's share: $5,236, Buxton's share: $3,500\nAnswer:",
+            " C"
+          ],
+          [
+            "Boy Alcott and Jon Buxton are partners in a steel company. They share the net income in proportion to their average investments. On January 1, Alcott invested $4,000 and Buxton invested $5,000. On May 1, Alcott invested an additional $2,000 and Buxton invested $1,750. On September 1, Alcott withdrew $500. On November 1, each partner invested an additional $2,000. The net profit for the year was $8,736. Find each partner's share of the profit.\nA. Alcott's share: $3,936, Buxton's share: $4,800\nB. Alcott's share: $4,004, Buxton's share: $4,732\nC. Alcott's share: $4,200, Buxton's share: $4,536\nD. Alcott's share: $4,800, Buxton's share: $3,936\nE. Alcott's share: $5,000, Buxton's share: $3,736\nF. Alcott's share: $3,868, Buxton's share: $4,868\nG. Alcott's share: $4,368, Buxton's share: $4,368\nH. Alcott's share: $4,732, Buxton's share: $4,004\nI. Alcott's share: $4,500, Buxton's share: $4,236\nJ. Alcott's share: $5,236, Buxton's share: $3,500\nAnswer:",
+            " D"
+          ],
+          [
+            "Boy Alcott and Jon Buxton are partners in a steel company. They share the net income in proportion to their average investments. On January 1, Alcott invested $4,000 and Buxton invested $5,000. On May 1, Alcott invested an additional $2,000 and Buxton invested $1,750. On September 1, Alcott withdrew $500. On November 1, each partner invested an additional $2,000. The net profit for the year was $8,736. Find each partner's share of the profit.\nA. Alcott's share: $3,936, Buxton's share: $4,800\nB. Alcott's share: $4,004, Buxton's share: $4,732\nC. Alcott's share: $4,200, Buxton's share: $4,536\nD. Alcott's share: $4,800, Buxton's share: $3,936\nE. Alcott's share: $5,000, Buxton's share: $3,736\nF. Alcott's share: $3,868, Buxton's share: $4,868\nG. Alcott's share: $4,368, Buxton's share: $4,368\nH. Alcott's share: $4,732, Buxton's share: $4,004\nI. Alcott's share: $4,500, Buxton's share: $4,236\nJ. Alcott's share: $5,236, Buxton's share: $3,500\nAnswer:",
+            " E"
+          ],
+          [
+            "Boy Alcott and Jon Buxton are partners in a steel company. They share the net income in proportion to their average investments. On January 1, Alcott invested $4,000 and Buxton invested $5,000. On May 1, Alcott invested an additional $2,000 and Buxton invested $1,750. On September 1, Alcott withdrew $500. On November 1, each partner invested an additional $2,000. The net profit for the year was $8,736. Find each partner's share of the profit.\nA. Alcott's share: $3,936, Buxton's share: $4,800\nB. Alcott's share: $4,004, Buxton's share: $4,732\nC. Alcott's share: $4,200, Buxton's share: $4,536\nD. Alcott's share: $4,800, Buxton's share: $3,936\nE. Alcott's share: $5,000, Buxton's share: $3,736\nF. Alcott's share: $3,868, Buxton's share: $4,868\nG. Alcott's share: $4,368, Buxton's share: $4,368\nH. Alcott's share: $4,732, Buxton's share: $4,004\nI. Alcott's share: $4,500, Buxton's share: $4,236\nJ. Alcott's share: $5,236, Buxton's share: $3,500\nAnswer:",
+            " F"
+          ],
+          [
+            "Boy Alcott and Jon Buxton are partners in a steel company. They share the net income in proportion to their average investments. On January 1, Alcott invested $4,000 and Buxton invested $5,000. On May 1, Alcott invested an additional $2,000 and Buxton invested $1,750. On September 1, Alcott withdrew $500. On November 1, each partner invested an additional $2,000. The net profit for the year was $8,736. Find each partner's share of the profit.\nA. Alcott's share: $3,936, Buxton's share: $4,800\nB. Alcott's share: $4,004, Buxton's share: $4,732\nC. Alcott's share: $4,200, Buxton's share: $4,536\nD. Alcott's share: $4,800, Buxton's share: $3,936\nE. Alcott's share: $5,000, Buxton's share: $3,736\nF. Alcott's share: $3,868, Buxton's share: $4,868\nG. Alcott's share: $4,368, Buxton's share: $4,368\nH. Alcott's share: $4,732, Buxton's share: $4,004\nI. Alcott's share: $4,500, Buxton's share: $4,236\nJ. Alcott's share: $5,236, Buxton's share: $3,500\nAnswer:",
+            " G"
+          ],
+          [
+            "Boy Alcott and Jon Buxton are partners in a steel company. They share the net income in proportion to their average investments. On January 1, Alcott invested $4,000 and Buxton invested $5,000. On May 1, Alcott invested an additional $2,000 and Buxton invested $1,750. On September 1, Alcott withdrew $500. On November 1, each partner invested an additional $2,000. The net profit for the year was $8,736. Find each partner's share of the profit.\nA. Alcott's share: $3,936, Buxton's share: $4,800\nB. Alcott's share: $4,004, Buxton's share: $4,732\nC. Alcott's share: $4,200, Buxton's share: $4,536\nD. Alcott's share: $4,800, Buxton's share: $3,936\nE. Alcott's share: $5,000, Buxton's share: $3,736\nF. Alcott's share: $3,868, Buxton's share: $4,868\nG. Alcott's share: $4,368, Buxton's share: $4,368\nH. Alcott's share: $4,732, Buxton's share: $4,004\nI. Alcott's share: $4,500, Buxton's share: $4,236\nJ. Alcott's share: $5,236, Buxton's share: $3,500\nAnswer:",
+            " H"
+          ],
+          [
+            "Boy Alcott and Jon Buxton are partners in a steel company. They share the net income in proportion to their average investments. On January 1, Alcott invested $4,000 and Buxton invested $5,000. On May 1, Alcott invested an additional $2,000 and Buxton invested $1,750. On September 1, Alcott withdrew $500. On November 1, each partner invested an additional $2,000. The net profit for the year was $8,736. Find each partner's share of the profit.\nA. Alcott's share: $3,936, Buxton's share: $4,800\nB. Alcott's share: $4,004, Buxton's share: $4,732\nC. Alcott's share: $4,200, Buxton's share: $4,536\nD. Alcott's share: $4,800, Buxton's share: $3,936\nE. Alcott's share: $5,000, Buxton's share: $3,736\nF. Alcott's share: $3,868, Buxton's share: $4,868\nG. Alcott's share: $4,368, Buxton's share: $4,368\nH. Alcott's share: $4,732, Buxton's share: $4,004\nI. Alcott's share: $4,500, Buxton's share: $4,236\nJ. Alcott's share: $5,236, Buxton's share: $3,500\nAnswer:",
+            " I"
+          ],
+          [
+            "Boy Alcott and Jon Buxton are partners in a steel company. They share the net income in proportion to their average investments. On January 1, Alcott invested $4,000 and Buxton invested $5,000. On May 1, Alcott invested an additional $2,000 and Buxton invested $1,750. On September 1, Alcott withdrew $500. On November 1, each partner invested an additional $2,000. The net profit for the year was $8,736. Find each partner's share of the profit.\nA. Alcott's share: $3,936, Buxton's share: $4,800\nB. Alcott's share: $4,004, Buxton's share: $4,732\nC. Alcott's share: $4,200, Buxton's share: $4,536\nD. Alcott's share: $4,800, Buxton's share: $3,936\nE. Alcott's share: $5,000, Buxton's share: $3,736\nF. Alcott's share: $3,868, Buxton's share: $4,868\nG. Alcott's share: $4,368, Buxton's share: $4,368\nH. Alcott's share: $4,732, Buxton's share: $4,004\nI. Alcott's share: $4,500, Buxton's share: $4,236\nJ. Alcott's share: $5,236, Buxton's share: $3,500\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -2.6875,
+              false
+            ]
+          ],
+          [
+            [
+              -2.9375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.0,
+              false
+            ]
+          ],
+          [
+            [
+              -3.125,
+              false
+            ]
+          ],
+          [
+            [
+              -3.5625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.25,
+              false
+            ]
+          ],
+          [
+            [
+              -3.5625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.0,
+              false
+            ]
+          ],
+          [
+            [
+              -3.875,
+              false
+            ]
+          ],
+          [
+            [
+              -3.75,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -2.6875,
+            false
+          ],
+          [
+            -2.9375,
+            false
+          ],
+          [
+            -3.0,
+            false
+          ],
+          [
+            -3.125,
+            false
+          ],
+          [
+            -3.5625,
+            false
+          ],
+          [
+            -3.25,
+            false
+          ],
+          [
+            -3.5625,
+            false
+          ],
+          [
+            -3.0,
+            false
+          ],
+          [
+            -3.875,
+            false
+          ],
+          [
+            -3.75,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "61b2d6b3a3d17efdefd817f5a213007ae30f9c3b688515849155d0d98a7c3f20",
+        "prompt_hash": "4ef529d5c5cb45187e37d6010880b81e81c369466a165258955e3ee57429e58d",
+        "target_hash": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c",
+        "acc": 0.0
+      },
+      {
+        "doc_id": 19,
+        "doc": {
+          "question_id": 89,
+          "question": "TheAlforsCompany had a beginning inventory of $30,000, Jan 1, 1974. During the year, purchases amounted to $87,500, net sales to $102,000. Assuming that the gross profit rate is 40% of the net sales, what is the ending inventory using the gross profit method of inventory evaluation?",
+          "options": [
+            "$50,200",
+            "$45,100",
+            "$60,400",
+            "$56,300",
+            "$58,800",
+            "$54,400",
+            "$65,500",
+            "$62,900",
+            "$48,700",
+            "$52,600"
+          ],
+          "answer": "D",
+          "answer_index": 3,
+          "cot_content": "",
+          "category": "business",
+          "src": "stemez-Business"
+        },
+        "target": "D",
+        "arguments": [
+          [
+            "TheAlforsCompany had a beginning inventory of $30,000, Jan 1, 1974. During the year, purchases amounted to $87,500, net sales to $102,000. Assuming that the gross profit rate is 40% of the net sales, what is the ending inventory using the gross profit method of inventory evaluation?\nA. $50,200\nB. $45,100\nC. $60,400\nD. $56,300\nE. $58,800\nF. $54,400\nG. $65,500\nH. $62,900\nI. $48,700\nJ. $52,600\nAnswer:",
+            " A"
+          ],
+          [
+            "TheAlforsCompany had a beginning inventory of $30,000, Jan 1, 1974. During the year, purchases amounted to $87,500, net sales to $102,000. Assuming that the gross profit rate is 40% of the net sales, what is the ending inventory using the gross profit method of inventory evaluation?\nA. $50,200\nB. $45,100\nC. $60,400\nD. $56,300\nE. $58,800\nF. $54,400\nG. $65,500\nH. $62,900\nI. $48,700\nJ. $52,600\nAnswer:",
+            " B"
+          ],
+          [
+            "TheAlforsCompany had a beginning inventory of $30,000, Jan 1, 1974. During the year, purchases amounted to $87,500, net sales to $102,000. Assuming that the gross profit rate is 40% of the net sales, what is the ending inventory using the gross profit method of inventory evaluation?\nA. $50,200\nB. $45,100\nC. $60,400\nD. $56,300\nE. $58,800\nF. $54,400\nG. $65,500\nH. $62,900\nI. $48,700\nJ. $52,600\nAnswer:",
+            " C"
+          ],
+          [
+            "TheAlforsCompany had a beginning inventory of $30,000, Jan 1, 1974. During the year, purchases amounted to $87,500, net sales to $102,000. Assuming that the gross profit rate is 40% of the net sales, what is the ending inventory using the gross profit method of inventory evaluation?\nA. $50,200\nB. $45,100\nC. $60,400\nD. $56,300\nE. $58,800\nF. $54,400\nG. $65,500\nH. $62,900\nI. $48,700\nJ. $52,600\nAnswer:",
+            " D"
+          ],
+          [
+            "TheAlforsCompany had a beginning inventory of $30,000, Jan 1, 1974. During the year, purchases amounted to $87,500, net sales to $102,000. Assuming that the gross profit rate is 40% of the net sales, what is the ending inventory using the gross profit method of inventory evaluation?\nA. $50,200\nB. $45,100\nC. $60,400\nD. $56,300\nE. $58,800\nF. $54,400\nG. $65,500\nH. $62,900\nI. $48,700\nJ. $52,600\nAnswer:",
+            " E"
+          ],
+          [
+            "TheAlforsCompany had a beginning inventory of $30,000, Jan 1, 1974. During the year, purchases amounted to $87,500, net sales to $102,000. Assuming that the gross profit rate is 40% of the net sales, what is the ending inventory using the gross profit method of inventory evaluation?\nA. $50,200\nB. $45,100\nC. $60,400\nD. $56,300\nE. $58,800\nF. $54,400\nG. $65,500\nH. $62,900\nI. $48,700\nJ. $52,600\nAnswer:",
+            " F"
+          ],
+          [
+            "TheAlforsCompany had a beginning inventory of $30,000, Jan 1, 1974. During the year, purchases amounted to $87,500, net sales to $102,000. Assuming that the gross profit rate is 40% of the net sales, what is the ending inventory using the gross profit method of inventory evaluation?\nA. $50,200\nB. $45,100\nC. $60,400\nD. $56,300\nE. $58,800\nF. $54,400\nG. $65,500\nH. $62,900\nI. $48,700\nJ. $52,600\nAnswer:",
+            " G"
+          ],
+          [
+            "TheAlforsCompany had a beginning inventory of $30,000, Jan 1, 1974. During the year, purchases amounted to $87,500, net sales to $102,000. Assuming that the gross profit rate is 40% of the net sales, what is the ending inventory using the gross profit method of inventory evaluation?\nA. $50,200\nB. $45,100\nC. $60,400\nD. $56,300\nE. $58,800\nF. $54,400\nG. $65,500\nH. $62,900\nI. $48,700\nJ. $52,600\nAnswer:",
+            " H"
+          ],
+          [
+            "TheAlforsCompany had a beginning inventory of $30,000, Jan 1, 1974. During the year, purchases amounted to $87,500, net sales to $102,000. Assuming that the gross profit rate is 40% of the net sales, what is the ending inventory using the gross profit method of inventory evaluation?\nA. $50,200\nB. $45,100\nC. $60,400\nD. $56,300\nE. $58,800\nF. $54,400\nG. $65,500\nH. $62,900\nI. $48,700\nJ. $52,600\nAnswer:",
+            " I"
+          ],
+          [
+            "TheAlforsCompany had a beginning inventory of $30,000, Jan 1, 1974. During the year, purchases amounted to $87,500, net sales to $102,000. Assuming that the gross profit rate is 40% of the net sales, what is the ending inventory using the gross profit method of inventory evaluation?\nA. $50,200\nB. $45,100\nC. $60,400\nD. $56,300\nE. $58,800\nF. $54,400\nG. $65,500\nH. $62,900\nI. $48,700\nJ. $52,600\nAnswer:",
+            " J"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -2.03125,
+              false
+            ]
+          ],
+          [
+            [
+              -1.96875,
+              false
+            ]
+          ],
+          [
+            [
+              -2.21875,
+              false
+            ]
+          ],
+          [
+            [
+              -2.34375,
+              false
+            ]
+          ],
+          [
+            [
+              -2.84375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.09375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.40625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.46875,
+              false
+            ]
+          ],
+          [
+            [
+              -3.59375,
+              false
+            ]
+          ],
+          [
+            [
+              -3.34375,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -2.03125,
+            false
+          ],
+          [
+            -1.96875,
+            false
+          ],
+          [
+            -2.21875,
+            false
+          ],
+          [
+            -2.34375,
+            false
+          ],
+          [
+            -2.84375,
+            false
+          ],
+          [
+            -3.09375,
+            false
+          ],
+          [
+            -3.40625,
+            false
+          ],
+          [
+            -3.46875,
+            false
+          ],
+          [
+            -3.59375,
+            false
+          ],
+          [
+            -3.34375,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc"
+        ],
+        "doc_hash": "5ff7495e5d47d7c86f69a83b60e82af49155f8b453acaa3269811dc939a32181",
+        "prompt_hash": "6ef1f3f2f380bd61bbe01cbc81386f96dcecb19959a0e0ca45f8ea5fedb53211",
+        "target_hash": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43",
+        "acc": 0.0
+      }
+    ]
+  },
+  "config": {
+    "model": "hf",
+    "model_args": "pretrained=mistralai/Mistral-7B-v0.1",
+    "model_num_parameters": 7241732096,
+    "model_dtype": "torch.bfloat16",
+    "model_revision": "main",
+    "model_sha": "7231864981174d9bee8c7687c24c8344414eae6b",
+    "batch_size": 4,
+    "batch_sizes": [],
+    "device": "cuda",
+    "use_cache": null,
+    "limit": 20,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": null,
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": "5831ca9",
+  "date": 1748614272.5696976,
+  "pretty_env_info": "PyTorch version: 2.7.0+cu128\nIs debug build: False\nCUDA used to build PyTorch: 12.8\nROCM used to build PyTorch: N/A\n\nOS: Ubuntu 24.04.2 LTS (x86_64)\nGCC version: (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0\nClang version: Could not collect\nCMake version: version 3.31.6\nLibc version: glibc-2.39\n\nPython version: 3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0] (64-bit runtime)\nPython platform: Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39\nIs CUDA available: True\nCUDA runtime version: 12.9.41\nCUDA_MODULE_LOADING set to: LAZY\nGPU models and configuration: \nGPU 0: NVIDIA GeForce RTX 5090\nGPU 1: NVIDIA GeForce RTX 4090\n\nNvidia driver version: 576.52\ncuDNN version: Probably one of the following:\n/usr/lib/x86_64-linux-gnu/libcudnn.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_adv.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_cnn.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_engines_precompiled.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_engines_runtime_compiled.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_graph.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_heuristic.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_ops.so.9.9.0\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: True\n\nCPU:\nArchitecture:                         x86_64\nCPU op-mode(s):                       32-bit, 64-bit\nAddress sizes:                        46 bits physical, 48 bits virtual\nByte Order:                           Little Endian\nCPU(s):                               28\nOn-line CPU(s) list:                  0-27\nVendor ID:                            GenuineIntel\nModel name:                           13th Gen Intel(R) Core(TM) i9-13900K\nCPU family:                           6\nModel:                                183\nThread(s) per core:                   2\nCore(s) per socket:                   14\nSocket(s):                            1\nStepping:                             1\nBogoMIPS:                             5990.39\nFlags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves avx_vnni umip waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize flush_l1d arch_capabilities\nVirtualization:                       VT-x\nHypervisor vendor:                    Microsoft\nVirtualization type:                  full\nL1d cache:                            672 KiB (14 instances)\nL1i cache:                            448 KiB (14 instances)\nL2 cache:                             28 MiB (14 instances)\nL3 cache:                             36 MiB (1 instance)\nVulnerability Gather data sampling:   Not affected\nVulnerability Itlb multihit:          Not affected\nVulnerability L1tf:                   Not affected\nVulnerability Mds:                    Not affected\nVulnerability Meltdown:               Not affected\nVulnerability Mmio stale data:        Not affected\nVulnerability Reg file data sampling: Mitigation; Clear Register File\nVulnerability Retbleed:               Mitigation; Enhanced IBRS\nVulnerability Spec rstack overflow:   Not affected\nVulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl and seccomp\nVulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:             Mitigation; Enhanced / Automatic IBRS; IBPB conditional; RSB filling; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S\nVulnerability Srbds:                  Not affected\nVulnerability Tsx async abort:        Not affected\n\nVersions of relevant libraries:\n[pip3] numpy==2.1.2\n[pip3] nvidia-cublas-cu12==12.8.3.14\n[pip3] nvidia-cuda-cupti-cu12==12.8.57\n[pip3] nvidia-cuda-nvrtc-cu12==12.8.61\n[pip3] nvidia-cuda-runtime-cu12==12.8.57\n[pip3] nvidia-cudnn-cu12==9.7.1.26\n[pip3] nvidia-cufft-cu12==11.3.3.41\n[pip3] nvidia-curand-cu12==10.3.9.55\n[pip3] nvidia-cusolver-cu12==11.7.2.55\n[pip3] nvidia-cusparse-cu12==12.5.7.53\n[pip3] nvidia-cusparselt-cu12==0.6.3\n[pip3] nvidia-nccl-cu12==2.26.2\n[pip3] nvidia-nvjitlink-cu12==12.8.61\n[pip3] nvidia-nvtx-cu12==12.8.55\n[pip3] torch==2.7.0+cu128\n[pip3] torchaudio==2.7.0+cu128\n[pip3] torchvision==0.22.0+cu128\n[pip3] triton==3.3.0\n[conda] Could not collect",
+  "transformers_version": "4.52.4",
+  "lm_eval_version": "0.4.8",
+  "upper_git_hash": null,
+  "tokenizer_pad_token": [
+    "<unk>",
+    "0"
+  ],
+  "tokenizer_eos_token": [
+    "</s>",
+    "2"
+  ],
+  "tokenizer_bos_token": [
+    "<s>",
+    "1"
+  ],
+  "eot_token_id": 2,
+  "max_length": 32768,
+  "normalized_scores": {
+    "normalized_leaderboard_mmlu_pro": 33.333333333333336,
+    "normalized_overall_average": 33.333333333333336
+  }
+}

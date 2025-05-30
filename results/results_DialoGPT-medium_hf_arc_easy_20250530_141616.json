@@ -1,0 +1,2017 @@
+{
+  "results": {
+    "arc_easy": {
+      "alias": "arc_easy",
+      "acc,none": 0.4,
+      "acc_stderr,none": 0.11239029738980327,
+      "acc_norm,none": 0.4,
+      "acc_norm_stderr,none": 0.11239029738980327
+    }
+  },
+  "group_subtasks": {
+    "arc_easy": []
+  },
+  "configs": {
+    "arc_easy": {
+      "task": "arc_easy",
+      "tag": [
+        "ai2_arc"
+      ],
+      "dataset_path": "allenai/ai2_arc",
+      "dataset_name": "ARC-Easy",
+      "training_split": "train",
+      "validation_split": "validation",
+      "test_split": "test",
+      "doc_to_text": "Question: {{question}}\nAnswer:",
+      "doc_to_target": "{{choices.label.index(answerKey)}}",
+      "unsafe_code": false,
+      "doc_to_choice": "{{choices.text}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        },
+        {
+          "metric": "acc_norm",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "Question: {{question}}\nAnswer:",
+      "metadata": {
+        "version": 1.0,
+        "pretrained": "microsoft/DialoGPT-medium"
+      }
+    }
+  },
+  "versions": {
+    "arc_easy": 1.0
+  },
+  "n-shot": {
+    "arc_easy": 0
+  },
+  "higher_is_better": {
+    "arc_easy": {
+      "acc": true,
+      "acc_norm": true
+    }
+  },
+  "n-samples": {
+    "arc_easy": {
+      "original": 2376,
+      "effective": 20
+    }
+  },
+  "samples": {
+    "arc_easy": [
+      {
+        "doc_id": 0,
+        "doc": {
+          "id": "Mercury_417466",
+          "question": "Which statement best explains why photosynthesis is the foundation of most food webs?",
+          "choices": {
+            "text": [
+              "Sunlight is the source of energy for nearly all ecosystems.",
+              "Most ecosystems are found on land instead of in water.",
+              "Carbon dioxide is more available than other gases.",
+              "The producers in all ecosystems are plants."
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "A"
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: Which statement best explains why photosynthesis is the foundation of most food webs?\nAnswer:",
+            " Sunlight is the source of energy for nearly all ecosystems."
+          ],
+          [
+            "Question: Which statement best explains why photosynthesis is the foundation of most food webs?\nAnswer:",
+            " Most ecosystems are found on land instead of in water."
+          ],
+          [
+            "Question: Which statement best explains why photosynthesis is the foundation of most food webs?\nAnswer:",
+            " Carbon dioxide is more available than other gases."
+          ],
+          [
+            "Question: Which statement best explains why photosynthesis is the foundation of most food webs?\nAnswer:",
+            " The producers in all ecosystems are plants."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -42.0,
+              false
+            ]
+          ],
+          [
+            [
+              -50.21875,
+              false
+            ]
+          ],
+          [
+            [
+              -39.28125,
+              false
+            ]
+          ],
+          [
+            [
+              -43.625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -42.0,
+            false
+          ],
+          [
+            -50.21875,
+            false
+          ],
+          [
+            -39.28125,
+            false
+          ],
+          [
+            -43.625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "b91fe1a8fdc40a80b9364f6256ac729d010ba076b02e75a362c2cf7ad3303bdf",
+        "prompt_hash": "f804da9f5e214341d08d56228bb255177a0e5740f82e61b45887fcb5dc5c08ce",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 0.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 1,
+        "doc": {
+          "id": "Mercury_7081673",
+          "question": "Which piece of safety equipment is used to keep mold spores from entering the respiratory system?",
+          "choices": {
+            "text": [
+              "safety goggles",
+              "breathing mask",
+              "rubber gloves",
+              "lead apron"
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "B"
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: Which piece of safety equipment is used to keep mold spores from entering the respiratory system?\nAnswer:",
+            " safety goggles"
+          ],
+          [
+            "Question: Which piece of safety equipment is used to keep mold spores from entering the respiratory system?\nAnswer:",
+            " breathing mask"
+          ],
+          [
+            "Question: Which piece of safety equipment is used to keep mold spores from entering the respiratory system?\nAnswer:",
+            " rubber gloves"
+          ],
+          [
+            "Question: Which piece of safety equipment is used to keep mold spores from entering the respiratory system?\nAnswer:",
+            " lead apron"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -8.6015625,
+              false
+            ]
+          ],
+          [
+            [
+              -12.625,
+              false
+            ]
+          ],
+          [
+            [
+              -7.39453125,
+              false
+            ]
+          ],
+          [
+            [
+              -25.625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -8.6015625,
+            false
+          ],
+          [
+            -12.625,
+            false
+          ],
+          [
+            -7.39453125,
+            false
+          ],
+          [
+            -25.625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "864be3c890aba1a77f2d3e9592fa7ec90942afb66250f0e99ac11b30a1330e5a",
+        "prompt_hash": "6a93081b5b26e4862753ccd0003303f0323bda7ba6ca7c495000f9905a37fce5",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 2,
+        "doc": {
+          "id": "Mercury_7239733",
+          "question": "Meiosis is a type of cell division in which germ cells divide to produce haploid cells. Where does meiosis occur?",
+          "choices": {
+            "text": [
+              "brain cells",
+              "bone cells",
+              "muscle cells",
+              "ovary cells"
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "D"
+        },
+        "target": 3,
+        "arguments": [
+          [
+            "Question: Meiosis is a type of cell division in which germ cells divide to produce haploid cells. Where does meiosis occur?\nAnswer:",
+            " brain cells"
+          ],
+          [
+            "Question: Meiosis is a type of cell division in which germ cells divide to produce haploid cells. Where does meiosis occur?\nAnswer:",
+            " bone cells"
+          ],
+          [
+            "Question: Meiosis is a type of cell division in which germ cells divide to produce haploid cells. Where does meiosis occur?\nAnswer:",
+            " muscle cells"
+          ],
+          [
+            "Question: Meiosis is a type of cell division in which germ cells divide to produce haploid cells. Where does meiosis occur?\nAnswer:",
+            " ovary cells"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -9.171875,
+              false
+            ]
+          ],
+          [
+            [
+              -11.984375,
+              false
+            ]
+          ],
+          [
+            [
+              -11.921875,
+              false
+            ]
+          ],
+          [
+            [
+              -9.953125,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -9.171875,
+            false
+          ],
+          [
+            -11.984375,
+            false
+          ],
+          [
+            -11.921875,
+            false
+          ],
+          [
+            -9.953125,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "c79937cfecd9c1d852b0a65a6816710ce98507019ed48c57239077092a4963b6",
+        "prompt_hash": "f24174cef34920abaa4009384735df768e4b3832cb8b18246fcd6917f6c1f945",
+        "target_hash": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 3,
+        "doc": {
+          "id": "NYSEDREGENTS_2015_4_8",
+          "question": "Which characteristic describes the texture of a kitten's fur?",
+          "choices": {
+            "text": [
+              "gray",
+              "warm",
+              "long",
+              "soft"
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "D"
+        },
+        "target": 3,
+        "arguments": [
+          [
+            "Question: Which characteristic describes the texture of a kitten's fur?\nAnswer:",
+            " gray"
+          ],
+          [
+            "Question: Which characteristic describes the texture of a kitten's fur?\nAnswer:",
+            " warm"
+          ],
+          [
+            "Question: Which characteristic describes the texture of a kitten's fur?\nAnswer:",
+            " long"
+          ],
+          [
+            "Question: Which characteristic describes the texture of a kitten's fur?\nAnswer:",
+            " soft"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -9.4140625,
+              false
+            ]
+          ],
+          [
+            [
+              -7.06640625,
+              false
+            ]
+          ],
+          [
+            [
+              -9.65625,
+              false
+            ]
+          ],
+          [
+            [
+              -6.65625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -9.4140625,
+            false
+          ],
+          [
+            -7.06640625,
+            false
+          ],
+          [
+            -9.65625,
+            false
+          ],
+          [
+            -6.65625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "0b1d32d8fff63c6f801aa24ea0d27d565a4433b59fa7720e7d2682c8b772594f",
+        "prompt_hash": "6e97b5b88ed30269249a32f617efecbdde79e2d13d39061ce3fce23c0f152888",
+        "target_hash": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 4,
+        "doc": {
+          "id": "Mercury_7037258",
+          "question": "Which best describes the structure of an atom?",
+          "choices": {
+            "text": [
+              "a lightweight core surrounded by neutral particles",
+              "a massive core surrounded by negatively-charged particles",
+              "a network of interacting positive and negative particles",
+              "overlapping layers of neutral, positive, and negative particles"
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "B"
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: Which best describes the structure of an atom?\nAnswer:",
+            " a lightweight core surrounded by neutral particles"
+          ],
+          [
+            "Question: Which best describes the structure of an atom?\nAnswer:",
+            " a massive core surrounded by negatively-charged particles"
+          ],
+          [
+            "Question: Which best describes the structure of an atom?\nAnswer:",
+            " a network of interacting positive and negative particles"
+          ],
+          [
+            "Question: Which best describes the structure of an atom?\nAnswer:",
+            " overlapping layers of neutral, positive, and negative particles"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -38.96875,
+              false
+            ]
+          ],
+          [
+            [
+              -70.875,
+              false
+            ]
+          ],
+          [
+            [
+              -30.1875,
+              false
+            ]
+          ],
+          [
+            [
+              -56.40625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -38.96875,
+            false
+          ],
+          [
+            -70.875,
+            false
+          ],
+          [
+            -30.1875,
+            false
+          ],
+          [
+            -56.40625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "d864a18b0f67ac89ae51c69c131dfb95a8d866e5b751391658f795dd173e0c28",
+        "prompt_hash": "db2e78924b0f06335f46af5876767f1f8dd92425f9c80597c94a9895607fd67d",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 5,
+        "doc": {
+          "id": "CSZ20679",
+          "question": "To express the distance between the Milky Way galaxy and other galaxies, the most appropriate unit of measurement is the",
+          "choices": {
+            "text": [
+              "meter.",
+              "kilometer.",
+              "light-year.",
+              "astronomical unit."
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "C"
+        },
+        "target": 2,
+        "arguments": [
+          [
+            "Question: To express the distance between the Milky Way galaxy and other galaxies, the most appropriate unit of measurement is the\nAnswer:",
+            " meter."
+          ],
+          [
+            "Question: To express the distance between the Milky Way galaxy and other galaxies, the most appropriate unit of measurement is the\nAnswer:",
+            " kilometer."
+          ],
+          [
+            "Question: To express the distance between the Milky Way galaxy and other galaxies, the most appropriate unit of measurement is the\nAnswer:",
+            " light-year."
+          ],
+          [
+            "Question: To express the distance between the Milky Way galaxy and other galaxies, the most appropriate unit of measurement is the\nAnswer:",
+            " astronomical unit."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -13.9921875,
+              false
+            ]
+          ],
+          [
+            [
+              -14.5546875,
+              false
+            ]
+          ],
+          [
+            [
+              -45.8125,
+              false
+            ]
+          ],
+          [
+            [
+              -16.953125,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -13.9921875,
+            false
+          ],
+          [
+            -14.5546875,
+            false
+          ],
+          [
+            -45.8125,
+            false
+          ],
+          [
+            -16.953125,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "2ad43d968ffc99e1b2a73c7757f38b272afcb3b9647a05c76ec5cf8f26281310",
+        "prompt_hash": "ca6340c0a56291c8fff926247ca0684c52d1ffed3cbf974f8064a5f777fa5978",
+        "target_hash": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 6,
+        "doc": {
+          "id": "Mercury_182158",
+          "question": "A student has just completed a laboratory activity. What is the last action that the student should perform before leaving the lab area?",
+          "choices": {
+            "text": [
+              "wash hands",
+              "turn off all equipment",
+              "put away all glassware",
+              "wash instruments and table tops"
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "A"
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: A student has just completed a laboratory activity. What is the last action that the student should perform before leaving the lab area?\nAnswer:",
+            " wash hands"
+          ],
+          [
+            "Question: A student has just completed a laboratory activity. What is the last action that the student should perform before leaving the lab area?\nAnswer:",
+            " turn off all equipment"
+          ],
+          [
+            "Question: A student has just completed a laboratory activity. What is the last action that the student should perform before leaving the lab area?\nAnswer:",
+            " put away all glassware"
+          ],
+          [
+            "Question: A student has just completed a laboratory activity. What is the last action that the student should perform before leaving the lab area?\nAnswer:",
+            " wash instruments and table tops"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -13.0625,
+              false
+            ]
+          ],
+          [
+            [
+              -18.859375,
+              false
+            ]
+          ],
+          [
+            [
+              -22.359375,
+              false
+            ]
+          ],
+          [
+            [
+              -38.15625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -13.0625,
+            false
+          ],
+          [
+            -18.859375,
+            false
+          ],
+          [
+            -22.359375,
+            false
+          ],
+          [
+            -38.15625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "f4474d28f6064f40d5343be38d4da2976befc1813be9490ec7b4772360cdac7d",
+        "prompt_hash": "447745ef526f1caf3279975333fb886cd4cab80f5d8f066f8176a04a1ab25510",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 7,
+        "doc": {
+          "id": "Mercury_7216668",
+          "question": "Students are investigating the effects of different fertilizers on plant growth. Which units would be best to measure the mass of the fertilizer used?",
+          "choices": {
+            "text": [
+              "meters",
+              "centimeters",
+              "grams",
+              "milligrams"
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "C"
+        },
+        "target": 2,
+        "arguments": [
+          [
+            "Question: Students are investigating the effects of different fertilizers on plant growth. Which units would be best to measure the mass of the fertilizer used?\nAnswer:",
+            " meters"
+          ],
+          [
+            "Question: Students are investigating the effects of different fertilizers on plant growth. Which units would be best to measure the mass of the fertilizer used?\nAnswer:",
+            " centimeters"
+          ],
+          [
+            "Question: Students are investigating the effects of different fertilizers on plant growth. Which units would be best to measure the mass of the fertilizer used?\nAnswer:",
+            " grams"
+          ],
+          [
+            "Question: Students are investigating the effects of different fertilizers on plant growth. Which units would be best to measure the mass of the fertilizer used?\nAnswer:",
+            " milligrams"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -8.375,
+              false
+            ]
+          ],
+          [
+            [
+              -9.8828125,
+              false
+            ]
+          ],
+          [
+            [
+              -7.5078125,
+              false
+            ]
+          ],
+          [
+            [
+              -12.6484375,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -8.375,
+            false
+          ],
+          [
+            -9.8828125,
+            false
+          ],
+          [
+            -7.5078125,
+            false
+          ],
+          [
+            -12.6484375,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "bdf22e417c39d42f49cafeb9731041d701e027adc75ffb8c8607ccfd9173b968",
+        "prompt_hash": "5ef14b419dda9e87350e95fecc17b8aec2372bb763922340826e65f03b1ec54c",
+        "target_hash": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+        "acc": 1.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 8,
+        "doc": {
+          "id": "MCAS_2001_5_19",
+          "question": "Plants use sunlight to make",
+          "choices": {
+            "text": [
+              "soil.",
+              "minerals.",
+              "food.",
+              "water."
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "C"
+        },
+        "target": 2,
+        "arguments": [
+          [
+            "Question: Plants use sunlight to make\nAnswer:",
+            " soil."
+          ],
+          [
+            "Question: Plants use sunlight to make\nAnswer:",
+            " minerals."
+          ],
+          [
+            "Question: Plants use sunlight to make\nAnswer:",
+            " food."
+          ],
+          [
+            "Question: Plants use sunlight to make\nAnswer:",
+            " water."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -15.59375,
+              false
+            ]
+          ],
+          [
+            [
+              -18.8125,
+              false
+            ]
+          ],
+          [
+            [
+              -17.0625,
+              false
+            ]
+          ],
+          [
+            [
+              -13.671875,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -15.59375,
+            false
+          ],
+          [
+            -18.8125,
+            false
+          ],
+          [
+            -17.0625,
+            false
+          ],
+          [
+            -13.671875,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "53c446572bbe1742d595bca18fbb48e2afcd59aff9cd14aee84a7b08cd0b93f0",
+        "prompt_hash": "7fefaad40aafcb4acd97c590c6868ffcb0fd0170a5ac9b44a0c10cc376bec409",
+        "target_hash": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 9,
+        "doc": {
+          "id": "Mercury_SC_413631",
+          "question": "Which of these correctly identifies the way materials are transported in a plant?",
+          "choices": {
+            "text": [
+              "Xylem carries water from the roots to the leaves.",
+              "Phloem carries minerals from the roots to the leaves.",
+              "Xylem carries sugars from the flowers to the stems.",
+              "Phloem carries water from the flowers to the stems."
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "A"
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: Which of these correctly identifies the way materials are transported in a plant?\nAnswer:",
+            " Xylem carries water from the roots to the leaves."
+          ],
+          [
+            "Question: Which of these correctly identifies the way materials are transported in a plant?\nAnswer:",
+            " Phloem carries minerals from the roots to the leaves."
+          ],
+          [
+            "Question: Which of these correctly identifies the way materials are transported in a plant?\nAnswer:",
+            " Xylem carries sugars from the flowers to the stems."
+          ],
+          [
+            "Question: Which of these correctly identifies the way materials are transported in a plant?\nAnswer:",
+            " Phloem carries water from the flowers to the stems."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -52.03125,
+              false
+            ]
+          ],
+          [
+            [
+              -56.5,
+              false
+            ]
+          ],
+          [
+            [
+              -59.5625,
+              false
+            ]
+          ],
+          [
+            [
+              -59.9375,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -52.03125,
+            false
+          ],
+          [
+            -56.5,
+            false
+          ],
+          [
+            -59.5625,
+            false
+          ],
+          [
+            -59.9375,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "7f47698765741ab2d9dafc93bf09f3530b534f061a2319760dce0e0f55a6c91c",
+        "prompt_hash": "f091d181c484319e55a300cf050aff6c69cd3c24901f1c85874c41d53e500ba7",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 10,
+        "doc": {
+          "id": "MCAS_2005_5_10",
+          "question": "When trees develop leaves in the spring, 10 changes occur on the forest floor. Why does the development of leaves cause changes on the forest floor?",
+          "choices": {
+            "text": [
+              "Rainfall increases.",
+              "Sunlight is reduced.",
+              "Wind speed increases.",
+              "Animal migration is stopped."
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "B"
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: When trees develop leaves in the spring, 10 changes occur on the forest floor. Why does the development of leaves cause changes on the forest floor?\nAnswer:",
+            " Rainfall increases."
+          ],
+          [
+            "Question: When trees develop leaves in the spring, 10 changes occur on the forest floor. Why does the development of leaves cause changes on the forest floor?\nAnswer:",
+            " Sunlight is reduced."
+          ],
+          [
+            "Question: When trees develop leaves in the spring, 10 changes occur on the forest floor. Why does the development of leaves cause changes on the forest floor?\nAnswer:",
+            " Wind speed increases."
+          ],
+          [
+            "Question: When trees develop leaves in the spring, 10 changes occur on the forest floor. Why does the development of leaves cause changes on the forest floor?\nAnswer:",
+            " Animal migration is stopped."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -27.5,
+              false
+            ]
+          ],
+          [
+            [
+              -30.0,
+              false
+            ]
+          ],
+          [
+            [
+              -26.265625,
+              false
+            ]
+          ],
+          [
+            [
+              -37.1875,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -27.5,
+            false
+          ],
+          [
+            -30.0,
+            false
+          ],
+          [
+            -26.265625,
+            false
+          ],
+          [
+            -37.1875,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "834bd1c15768df73c4a854009254c40a7ae85fa795a5512aed97bbddcd537000",
+        "prompt_hash": "8a49b05a1b06cba1367f07d27c518012aec4385a441358b7da3e35447055c526",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 11,
+        "doc": {
+          "id": "Mercury_7166145",
+          "question": "The circulatory system and the endocrine system work together in the human body. Which describes one way in which these systems interact?",
+          "choices": {
+            "text": [
+              "taking in oxygen and transporting it to cells of the body",
+              "releasing hormones and transporting them to cells of the body",
+              "absorbing nutrients from food and transporting them to cells in the body",
+              "collecting waste products from the cells and transporting it out of the body"
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "B"
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: The circulatory system and the endocrine system work together in the human body. Which describes one way in which these systems interact?\nAnswer:",
+            " taking in oxygen and transporting it to cells of the body"
+          ],
+          [
+            "Question: The circulatory system and the endocrine system work together in the human body. Which describes one way in which these systems interact?\nAnswer:",
+            " releasing hormones and transporting them to cells of the body"
+          ],
+          [
+            "Question: The circulatory system and the endocrine system work together in the human body. Which describes one way in which these systems interact?\nAnswer:",
+            " absorbing nutrients from food and transporting them to cells in the body"
+          ],
+          [
+            "Question: The circulatory system and the endocrine system work together in the human body. Which describes one way in which these systems interact?\nAnswer:",
+            " collecting waste products from the cells and transporting it out of the body"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -46.96875,
+              false
+            ]
+          ],
+          [
+            [
+              -43.34375,
+              false
+            ]
+          ],
+          [
+            [
+              -42.0625,
+              false
+            ]
+          ],
+          [
+            [
+              -48.1875,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -46.96875,
+            false
+          ],
+          [
+            -43.34375,
+            false
+          ],
+          [
+            -42.0625,
+            false
+          ],
+          [
+            -48.1875,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "2b87c31ea5d82bb13d4092b0727d61d7647c5deffc31a3241a9f621e008cb5a5",
+        "prompt_hash": "64c6b3bacb0668bad86894cbea653fd2db20685e827556a26405b3df4526f6e0",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 12,
+        "doc": {
+          "id": "MSA_2013_5_6",
+          "question": "A student throws a ball into the air. While the ball travels up, the speed of the ball decreases. What force causes the ball to slow while traveling up?",
+          "choices": {
+            "text": [
+              "electricity",
+              "gravity",
+              "magnetism",
+              "tension"
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "B"
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: A student throws a ball into the air. While the ball travels up, the speed of the ball decreases. What force causes the ball to slow while traveling up?\nAnswer:",
+            " electricity"
+          ],
+          [
+            "Question: A student throws a ball into the air. While the ball travels up, the speed of the ball decreases. What force causes the ball to slow while traveling up?\nAnswer:",
+            " gravity"
+          ],
+          [
+            "Question: A student throws a ball into the air. While the ball travels up, the speed of the ball decreases. What force causes the ball to slow while traveling up?\nAnswer:",
+            " magnetism"
+          ],
+          [
+            "Question: A student throws a ball into the air. While the ball travels up, the speed of the ball decreases. What force causes the ball to slow while traveling up?\nAnswer:",
+            " tension"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -8.5625,
+              false
+            ]
+          ],
+          [
+            [
+              -3.66015625,
+              false
+            ]
+          ],
+          [
+            [
+              -9.59375,
+              false
+            ]
+          ],
+          [
+            [
+              -8.59375,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -8.5625,
+            false
+          ],
+          [
+            -3.66015625,
+            false
+          ],
+          [
+            -9.59375,
+            false
+          ],
+          [
+            -8.59375,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "39771cb49c5e425f2564a4719a0a746d8961e79d9d5ee3ac5f0d65bbf08f635c",
+        "prompt_hash": "d3ca56721ef5e0cd71cffa63ac0e6b44e8a86095fd3cbbb73d4b62838bf03aee",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 13,
+        "doc": {
+          "id": "Mercury_SC_405199",
+          "question": "Which of these will most likely harm a habitat?",
+          "choices": {
+            "text": [
+              "planting trees",
+              "water pollution",
+              "rainfall",
+              "sunlight"
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "B"
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: Which of these will most likely harm a habitat?\nAnswer:",
+            " planting trees"
+          ],
+          [
+            "Question: Which of these will most likely harm a habitat?\nAnswer:",
+            " water pollution"
+          ],
+          [
+            "Question: Which of these will most likely harm a habitat?\nAnswer:",
+            " rainfall"
+          ],
+          [
+            "Question: Which of these will most likely harm a habitat?\nAnswer:",
+            " sunlight"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -14.703125,
+              false
+            ]
+          ],
+          [
+            [
+              -13.09375,
+              false
+            ]
+          ],
+          [
+            [
+              -11.7265625,
+              false
+            ]
+          ],
+          [
+            [
+              -10.1953125,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -14.703125,
+            false
+          ],
+          [
+            -13.09375,
+            false
+          ],
+          [
+            -11.7265625,
+            false
+          ],
+          [
+            -10.1953125,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "62fdf7ac0d5a7ee975b0b63b98d86419f36b1b30541beeea62417ea961276dec",
+        "prompt_hash": "d7007b687cf0556bd16b2cbe46877fb5fc62d28ba039021b580dc78f383ddb35",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 14,
+        "doc": {
+          "id": "NYSEDREGENTS_2015_8_28",
+          "question": "All living and nonliving material is composed of",
+          "choices": {
+            "text": [
+              "air",
+              "elements",
+              "water",
+              "soil"
+            ],
+            "label": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ]
+          },
+          "answerKey": "2"
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: All living and nonliving material is composed of\nAnswer:",
+            " air"
+          ],
+          [
+            "Question: All living and nonliving material is composed of\nAnswer:",
+            " elements"
+          ],
+          [
+            "Question: All living and nonliving material is composed of\nAnswer:",
+            " water"
+          ],
+          [
+            "Question: All living and nonliving material is composed of\nAnswer:",
+            " soil"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -9.984375,
+              false
+            ]
+          ],
+          [
+            [
+              -9.796875,
+              false
+            ]
+          ],
+          [
+            [
+              -7.92578125,
+              false
+            ]
+          ],
+          [
+            [
+              -11.21875,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -9.984375,
+            false
+          ],
+          [
+            -9.796875,
+            false
+          ],
+          [
+            -7.92578125,
+            false
+          ],
+          [
+            -11.21875,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "d6cefe3b3986a9b85fe6e68cd556b0ad5e5857b192f3a896d0cb8d87840e4e31",
+        "prompt_hash": "82626b146948fb241ce3ca70a294453f6b0a25c8d8ef3aee6d33457a3086a655",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 15,
+        "doc": {
+          "id": "Mercury_SC_401777",
+          "question": "Which process best explains how the Grand Canyon became so wide?",
+          "choices": {
+            "text": [
+              "folding",
+              "erosion",
+              "deposition",
+              "sedimentation"
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "B"
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: Which process best explains how the Grand Canyon became so wide?\nAnswer:",
+            " folding"
+          ],
+          [
+            "Question: Which process best explains how the Grand Canyon became so wide?\nAnswer:",
+            " erosion"
+          ],
+          [
+            "Question: Which process best explains how the Grand Canyon became so wide?\nAnswer:",
+            " deposition"
+          ],
+          [
+            "Question: Which process best explains how the Grand Canyon became so wide?\nAnswer:",
+            " sedimentation"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -10.3125,
+              false
+            ]
+          ],
+          [
+            [
+              -4.34765625,
+              false
+            ]
+          ],
+          [
+            [
+              -9.1328125,
+              false
+            ]
+          ],
+          [
+            [
+              -10.375,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -10.3125,
+            false
+          ],
+          [
+            -4.34765625,
+            false
+          ],
+          [
+            -9.1328125,
+            false
+          ],
+          [
+            -10.375,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "dc2b1148e9b6439baa628da48472ce75e4f269a987667a3b6b51cffcfc133147",
+        "prompt_hash": "e1aed4f5f9d32f3a24cec0df6548526098790e0bf11e9b6eada6133fb0031e46",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 16,
+        "doc": {
+          "id": "Mercury_7198188",
+          "question": "As global temperatures increase, certain organisms will be more affected than others. The changes associated with global warming may result in an increase in sea level. Which organisms will be affected most as a result of the change in sea level?",
+          "choices": {
+            "text": [
+              "birds that eat fish from shallow waters",
+              "fish that live in coral reefs in shallow waters",
+              "mammals that swim in cold, deep ocean waters",
+              "crustaceans at the bottom of deep sea ocean waters"
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "B"
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: As global temperatures increase, certain organisms will be more affected than others. The changes associated with global warming may result in an increase in sea level. Which organisms will be affected most as a result of the change in sea level?\nAnswer:",
+            " birds that eat fish from shallow waters"
+          ],
+          [
+            "Question: As global temperatures increase, certain organisms will be more affected than others. The changes associated with global warming may result in an increase in sea level. Which organisms will be affected most as a result of the change in sea level?\nAnswer:",
+            " fish that live in coral reefs in shallow waters"
+          ],
+          [
+            "Question: As global temperatures increase, certain organisms will be more affected than others. The changes associated with global warming may result in an increase in sea level. Which organisms will be affected most as a result of the change in sea level?\nAnswer:",
+            " mammals that swim in cold, deep ocean waters"
+          ],
+          [
+            "Question: As global temperatures increase, certain organisms will be more affected than others. The changes associated with global warming may result in an increase in sea level. Which organisms will be affected most as a result of the change in sea level?\nAnswer:",
+            " crustaceans at the bottom of deep sea ocean waters"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -36.28125,
+              false
+            ]
+          ],
+          [
+            [
+              -41.6875,
+              false
+            ]
+          ],
+          [
+            [
+              -55.78125,
+              false
+            ]
+          ],
+          [
+            [
+              -46.15625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -36.28125,
+            false
+          ],
+          [
+            -41.6875,
+            false
+          ],
+          [
+            -55.78125,
+            false
+          ],
+          [
+            -46.15625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "ed9246f5dba2f6092643addd83791292ff22941fb348a9bc056bf367dc972119",
+        "prompt_hash": "d9558f7613d5c601031b0bcf6119adb33e2adbeef01871a5836f6c071c37470a",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 17,
+        "doc": {
+          "id": "MCAS_1998_4_11",
+          "question": "A dish of sugar water was left on a window sill. One week later, there were only sugar crystals left in the dish. The water was gone. The best explanation for the appearance of sugar crystals is",
+          "choices": {
+            "text": [
+              "some of the water was absorbed by the dish.",
+              "the air condensed.",
+              "the light shining on the window sill produced more sugar.",
+              "the water evaporated."
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "D"
+        },
+        "target": 3,
+        "arguments": [
+          [
+            "Question: A dish of sugar water was left on a window sill. One week later, there were only sugar crystals left in the dish. The water was gone. The best explanation for the appearance of sugar crystals is\nAnswer:",
+            " some of the water was absorbed by the dish."
+          ],
+          [
+            "Question: A dish of sugar water was left on a window sill. One week later, there were only sugar crystals left in the dish. The water was gone. The best explanation for the appearance of sugar crystals is\nAnswer:",
+            " the air condensed."
+          ],
+          [
+            "Question: A dish of sugar water was left on a window sill. One week later, there were only sugar crystals left in the dish. The water was gone. The best explanation for the appearance of sugar crystals is\nAnswer:",
+            " the light shining on the window sill produced more sugar."
+          ],
+          [
+            "Question: A dish of sugar water was left on a window sill. One week later, there were only sugar crystals left in the dish. The water was gone. The best explanation for the appearance of sugar crystals is\nAnswer:",
+            " the water evaporated."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -39.15625,
+              false
+            ]
+          ],
+          [
+            [
+              -34.5625,
+              false
+            ]
+          ],
+          [
+            [
+              -54.34375,
+              false
+            ]
+          ],
+          [
+            [
+              -19.21875,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -39.15625,
+            false
+          ],
+          [
+            -34.5625,
+            false
+          ],
+          [
+            -54.34375,
+            false
+          ],
+          [
+            -19.21875,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "91a03b17fb5115c962419c23e1c9f7ef2eef8a134b52af47bb37db2d53f9564b",
+        "prompt_hash": "8d12c6ab497c6dbaceb590e6632e001c88df85359bab72e962b9d1514e493a18",
+        "target_hash": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+        "acc": 1.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 18,
+        "doc": {
+          "id": "Mercury_SC_LBS10784",
+          "question": "Using a softball bat to hit a softball is an example of using which simple machine?",
+          "choices": {
+            "text": [
+              "pulley",
+              "lever",
+              "inclined plane",
+              "wheel and axle"
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "B"
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: Using a softball bat to hit a softball is an example of using which simple machine?\nAnswer:",
+            " pulley"
+          ],
+          [
+            "Question: Using a softball bat to hit a softball is an example of using which simple machine?\nAnswer:",
+            " lever"
+          ],
+          [
+            "Question: Using a softball bat to hit a softball is an example of using which simple machine?\nAnswer:",
+            " inclined plane"
+          ],
+          [
+            "Question: Using a softball bat to hit a softball is an example of using which simple machine?\nAnswer:",
+            " wheel and axle"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -11.5234375,
+              false
+            ]
+          ],
+          [
+            [
+              -11.0546875,
+              false
+            ]
+          ],
+          [
+            [
+              -19.84375,
+              false
+            ]
+          ],
+          [
+            [
+              -20.25,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -11.5234375,
+            false
+          ],
+          [
+            -11.0546875,
+            false
+          ],
+          [
+            -19.84375,
+            false
+          ],
+          [
+            -20.25,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "48f5e7962156a90e34214ae5fd0dca3d01abcb005c791842e1cbc2243ab1b225",
+        "prompt_hash": "84dc8e6871253e6a7c0ee4cf569efc0211fcf6104f6954a133893c05c3e3f613",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 19,
+        "doc": {
+          "id": "Mercury_7033548",
+          "question": "When an igneous intrusion comes into contact with surrounding rock, the surrounding rock will",
+          "choices": {
+            "text": [
+              "erode.",
+              "foliate.",
+              "precipitate.",
+              "recrystallize."
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "answerKey": "D"
+        },
+        "target": 3,
+        "arguments": [
+          [
+            "Question: When an igneous intrusion comes into contact with surrounding rock, the surrounding rock will\nAnswer:",
+            " erode."
+          ],
+          [
+            "Question: When an igneous intrusion comes into contact with surrounding rock, the surrounding rock will\nAnswer:",
+            " foliate."
+          ],
+          [
+            "Question: When an igneous intrusion comes into contact with surrounding rock, the surrounding rock will\nAnswer:",
+            " precipitate."
+          ],
+          [
+            "Question: When an igneous intrusion comes into contact with surrounding rock, the surrounding rock will\nAnswer:",
+            " recrystallize."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -22.953125,
+              false
+            ]
+          ],
+          [
+            [
+              -25.3125,
+              false
+            ]
+          ],
+          [
+            [
+              -18.984375,
+              false
+            ]
+          ],
+          [
+            [
+              -26.890625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -22.953125,
+            false
+          ],
+          [
+            -25.3125,
+            false
+          ],
+          [
+            -18.984375,
+            false
+          ],
+          [
+            -26.890625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "af7a5e94647391d05e8954031a71cf27e8f8ad46d1310c749afcc3d5e2161bf6",
+        "prompt_hash": "74899fa59189bf88a1bd2b9b9920fc9ee742e816ec084592ca2fd9afac145bd3",
+        "target_hash": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      }
+    ]
+  },
+  "config": {
+    "model": "hf",
+    "model_args": "pretrained=microsoft/DialoGPT-medium",
+    "model_num_parameters": 354823168,
+    "model_dtype": "torch.float16",
+    "model_revision": "main",
+    "model_sha": "7b40bb0f92c45fefa957d088000d8648e5c7fa33",
+    "batch_size": 4,
+    "batch_sizes": [],
+    "device": "cuda",
+    "use_cache": null,
+    "limit": 20,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": null,
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": "5831ca9",
+  "date": 1748614576.2049742,
+  "pretty_env_info": "PyTorch version: 2.7.0+cu128\nIs debug build: False\nCUDA used to build PyTorch: 12.8\nROCM used to build PyTorch: N/A\n\nOS: Ubuntu 24.04.2 LTS (x86_64)\nGCC version: (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0\nClang version: Could not collect\nCMake version: version 3.31.6\nLibc version: glibc-2.39\n\nPython version: 3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0] (64-bit runtime)\nPython platform: Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39\nIs CUDA available: True\nCUDA runtime version: 12.9.41\nCUDA_MODULE_LOADING set to: LAZY\nGPU models and configuration: \nGPU 0: NVIDIA GeForce RTX 5090\nGPU 1: NVIDIA GeForce RTX 4090\n\nNvidia driver version: 576.52\ncuDNN version: Probably one of the following:\n/usr/lib/x86_64-linux-gnu/libcudnn.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_adv.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_cnn.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_engines_precompiled.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_engines_runtime_compiled.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_graph.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_heuristic.so.9.9.0\n/usr/lib/x86_64-linux-gnu/libcudnn_ops.so.9.9.0\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: True\n\nCPU:\nArchitecture:                         x86_64\nCPU op-mode(s):                       32-bit, 64-bit\nAddress sizes:                        46 bits physical, 48 bits virtual\nByte Order:                           Little Endian\nCPU(s):                               28\nOn-line CPU(s) list:                  0-27\nVendor ID:                            GenuineIntel\nModel name:                           13th Gen Intel(R) Core(TM) i9-13900K\nCPU family:                           6\nModel:                                183\nThread(s) per core:                   2\nCore(s) per socket:                   14\nSocket(s):                            1\nStepping:                             1\nBogoMIPS:                             5990.39\nFlags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves avx_vnni umip waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize flush_l1d arch_capabilities\nVirtualization:                       VT-x\nHypervisor vendor:                    Microsoft\nVirtualization type:                  full\nL1d cache:                            672 KiB (14 instances)\nL1i cache:                            448 KiB (14 instances)\nL2 cache:                             28 MiB (14 instances)\nL3 cache:                             36 MiB (1 instance)\nVulnerability Gather data sampling:   Not affected\nVulnerability Itlb multihit:          Not affected\nVulnerability L1tf:                   Not affected\nVulnerability Mds:                    Not affected\nVulnerability Meltdown:               Not affected\nVulnerability Mmio stale data:        Not affected\nVulnerability Reg file data sampling: Mitigation; Clear Register File\nVulnerability Retbleed:               Mitigation; Enhanced IBRS\nVulnerability Spec rstack overflow:   Not affected\nVulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl and seccomp\nVulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:             Mitigation; Enhanced / Automatic IBRS; IBPB conditional; RSB filling; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S\nVulnerability Srbds:                  Not affected\nVulnerability Tsx async abort:        Not affected\n\nVersions of relevant libraries:\n[pip3] numpy==2.1.2\n[pip3] nvidia-cublas-cu12==12.8.3.14\n[pip3] nvidia-cuda-cupti-cu12==12.8.57\n[pip3] nvidia-cuda-nvrtc-cu12==12.8.61\n[pip3] nvidia-cuda-runtime-cu12==12.8.57\n[pip3] nvidia-cudnn-cu12==9.7.1.26\n[pip3] nvidia-cufft-cu12==11.3.3.41\n[pip3] nvidia-curand-cu12==10.3.9.55\n[pip3] nvidia-cusolver-cu12==11.7.2.55\n[pip3] nvidia-cusparse-cu12==12.5.7.53\n[pip3] nvidia-cusparselt-cu12==0.6.3\n[pip3] nvidia-nccl-cu12==2.26.2\n[pip3] nvidia-nvjitlink-cu12==12.8.61\n[pip3] nvidia-nvtx-cu12==12.8.55\n[pip3] torch==2.7.0+cu128\n[pip3] torchaudio==2.7.0+cu128\n[pip3] torchvision==0.22.0+cu128\n[pip3] triton==3.3.0\n[conda] Could not collect",
+  "transformers_version": "4.52.4",
+  "lm_eval_version": "0.4.8",
+  "upper_git_hash": null,
+  "tokenizer_pad_token": [
+    "<|endoftext|>",
+    "50256"
+  ],
+  "tokenizer_eos_token": [
+    "<|endoftext|>",
+    "50256"
+  ],
+  "tokenizer_bos_token": [
+    "<|endoftext|>",
+    "50256"
+  ],
+  "eot_token_id": 50256,
+  "max_length": 1024,
+  "normalized_scores": {}
+}

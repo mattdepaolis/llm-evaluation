@@ -13,6 +13,14 @@ import numpy as np
 from collections import defaultdict
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
+# Import the professional report generator
+try:
+    from .professional_report_generator import generate_professional_report, generate_professional_report_from_json
+    PROFESSIONAL_REPORTS_AVAILABLE = True
+except ImportError:
+    PROFESSIONAL_REPORTS_AVAILABLE = False
+    print("Warning: Professional report generator not available")
+
 # Define CET timezone
 try:
     CET = ZoneInfo("Europe/Berlin")
@@ -565,7 +573,8 @@ def get_simplified_leaderboard_filename(model_name: str, timestamp: Optional[str
 def generate_report(
     results: Dict[str, Any],
     json_path: str,
-    generate_markdown: bool = True
+    generate_markdown: bool = True,
+    use_professional_format: bool = True
 ) -> Optional[str]:
     """
     Generate a report from evaluation results.
@@ -574,6 +583,7 @@ def generate_report(
         results: The evaluation results
         json_path: Path to the JSON results
         generate_markdown: Whether to generate a markdown report
+        use_professional_format: Whether to use the enhanced professional report format
         
     Returns:
         Path to the markdown report if generated, None otherwise
@@ -582,7 +592,51 @@ def generate_report(
         return None
     
     try:
-        # Generate markdown directly from results
+        # Try professional format first if available and requested
+        if use_professional_format and PROFESSIONAL_REPORTS_AVAILABLE:
+            try:
+                basename = os.path.basename(json_path)
+                basename = os.path.splitext(basename)[0]
+                
+                # Check if this is a leaderboard evaluation for filename formatting
+                is_leaderboard = False
+                if 'config' in results and 'tasks' in results['config']:
+                    tasks = results['config']['tasks']
+                    if isinstance(tasks, str) and 'leaderboard' in tasks:
+                        is_leaderboard = True
+                    elif isinstance(tasks, list) and any('leaderboard' in task for task in tasks if isinstance(task, str)):
+                        is_leaderboard = True
+                
+                # For leaderboard tasks, simplify the filename
+                if is_leaderboard:
+                    model_name = results.get('config', {}).get('model_args', '').replace('pretrained=', '')
+                    if not model_name:
+                        model_name = "unknown_model"
+                        
+                    timestamp_match = re.search(r'_(\d{8}_\d{6})(?:_|$)', basename)
+                    if timestamp_match:
+                        timestamp = timestamp_match.group(1)
+                    else:
+                        now = datetime.now(CET) if CET else datetime.now()
+                        timestamp = now.strftime('%Y%m%d_%H%M%S')
+                        
+                    basename = f"results_{model_name}_leaderboard_{timestamp}"
+                
+                reports_dir = get_reports_dir()
+                professional_report_path = os.path.join(reports_dir, f"{basename}_professional_report.md")
+                
+                # Generate professional report
+                result_path = generate_professional_report(results, professional_report_path)
+                if result_path:
+                    print(f"✅ Professional report generated successfully: {result_path}")
+                    return result_path
+                else:
+                    print("⚠️ Professional report generation failed, falling back to standard format")
+            except Exception as prof_error:
+                print(f"⚠️ Professional report generation error: {prof_error}")
+                print("📄 Falling back to standard report format")
+        
+        # Fall back to standard markdown report generation
         basename = os.path.basename(json_path)
         basename = os.path.splitext(basename)[0]
         
