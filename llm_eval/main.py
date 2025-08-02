@@ -7,7 +7,7 @@ import argparse
 import sys
 import os
 from datetime import datetime
-from typing import List, Optional, Dict, Any, Union
+from typing import List, Optional, Dict, Any, Union, Tuple
 
 from .evaluation.evaluator import evaluate_model
 from .tasks.task_config import TASK_NAME_MAPPING, BBH_SUBTASKS, list_available_tasks
@@ -64,10 +64,10 @@ def process_tasks(tasks_input: List[str]) -> List[str]:
     return valid_tasks
 
 
-def generate_output_path(model_name: str, model_type: str, tasks: List[str], 
-                         quantize: bool = False, quantization_method: Optional[str] = None) -> str:
+def generate_organized_evaluation_paths(model_name: str, model_type: str, tasks: List[str], 
+                                       quantize: bool = False, quantization_method: Optional[str] = None) -> Tuple[str, str, str]:
     """
-    Generate an output path for the evaluation results.
+    Generate organized evaluation paths for results and reports.
     
     Args:
         model_name: Name of the model
@@ -77,22 +77,51 @@ def generate_output_path(model_name: str, model_type: str, tasks: List[str],
         quantization_method: Quantization method
     
     Returns:
-        Generated output path
+        Tuple of (evaluation_folder, results_path, report_path)
     """
+    from .reporting.report_generator import get_results_dir
+    
+    # Extract model name and create readable format
     model_name_short = model_name.split('/')[-1]
-    tasks_str = '_'.join(tasks)
-    if len(tasks_str) > 40:
-        tasks_str = tasks_str[:37] + '...'
-    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    timestamp = datetime.now().strftime('%Y-%m-%d_%H%M%S')
     
-    # Add backend and quantization info to filename
-    backend_suffix = f"_{model_type}"
-    quant_suffix = f"_quant_{quantization_method}" if quantize and model_type == "hf" else ""
-    filename = f"results_{model_name_short}{backend_suffix}{quant_suffix}_{tasks_str}_{timestamp}.json"
+    # Create evaluation folder name: ModelName_YYYY-MM-DD_HHMMSS
+    eval_folder_name = f"{model_name_short}_{timestamp}"
     
-    # Place in the results directory
-    results_dir = get_results_dir()
-    return os.path.join(results_dir, filename)
+    # Get base directory and create evaluations folder
+    base_dir = os.path.dirname(get_results_dir())
+    evaluations_dir = os.path.join(base_dir, "evaluations")
+    eval_folder_path = os.path.join(evaluations_dir, eval_folder_name)
+    
+    # Create the evaluation folder
+    os.makedirs(eval_folder_path, exist_ok=True)
+    
+    # Define file paths
+    results_path = os.path.join(eval_folder_path, "results.json")
+    report_path = os.path.join(eval_folder_path, "report.md")
+    
+    return eval_folder_path, results_path, report_path
+
+
+def generate_output_path(model_name: str, model_type: str, tasks: List[str], 
+                         quantize: bool = False, quantization_method: Optional[str] = None) -> str:
+    """
+    Generate an output path for the evaluation results using organized structure.
+    
+    Args:
+        model_name: Name of the model
+        model_type: Type of the model (hf/vllm)
+        tasks: List of tasks
+        quantize: Whether quantization is enabled
+        quantization_method: Quantization method
+    
+    Returns:
+        Generated output path for results.json
+    """
+    _, results_path, _ = generate_organized_evaluation_paths(
+        model_name, model_type, tasks, quantize, quantization_method
+    )
+    return results_path
 
 
 def main():
@@ -143,6 +172,16 @@ def main():
     # Add report format option
     parser.add_argument("--report_format", type=str, choices=["standard", "professional"], default="professional", 
                        help="Report format to use: 'professional' for enhanced visual reports or 'standard' for basic reports")
+    
+    # Add text output capture option
+    parser.add_argument("--capture_text_outputs", action="store_true", default=True,
+                       help="Capture model text outputs for comparison with targets (default: True)")
+    parser.add_argument("--no_capture_text_outputs", dest="capture_text_outputs", action="store_false",
+                       help="Disable text output capture for faster evaluation")
+    
+    # Add seed option for reproducible evaluation
+    parser.add_argument("--seed", type=int, default=42,
+                       help="Random seed for reproducible sample selection (default: 42)")
 
     args = parser.parse_args()
     
@@ -240,7 +279,9 @@ def main():
             vllm_quantization=args.vllm_quantization,
             additional_model_args=args.additional_model_args,
             preserve_default_fewshot=is_leaderboard_task,
-            report_format=args.report_format
+            report_format=args.report_format,
+            capture_text_outputs=args.capture_text_outputs,
+            seed=args.seed
         )
     except KeyboardInterrupt:
         print("\nEvaluation interrupted by user. Exiting...")

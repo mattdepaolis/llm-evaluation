@@ -9,6 +9,7 @@ __version__ = "0.1.0"
 
 # Import key functionality for easier access
 from .evaluation.evaluator import evaluate_model
+from .evaluation.enhanced_evaluator import enhanced_evaluate_model
 from .tasks.task_config import list_available_tasks, TASK_NAME_MAPPING
 from .normalization.score_normalizer import normalize_scores
 from .reporting.report_generator import generate_report

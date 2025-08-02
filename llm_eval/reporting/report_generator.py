@@ -327,6 +327,89 @@ def generate_markdown_report(results_data: Dict[str, Any], output_path: Optional
         markdown.extend(norm_table)
         markdown.append("")
 
+    # ✅ NEW: Model Output Analysis section
+    if 'samples' in results_data:
+        markdown.append("## Model Output Analysis\n")
+        
+        # Collect statistics about model outputs
+        total_samples = 0
+        samples_with_outputs = 0
+        correct_outputs = 0
+        incorrect_outputs = 0
+        task_stats = {}
+        
+        for task_name, samples_list in results_data.get('samples', {}).items():
+            task_correct = 0
+            task_total = 0
+            task_with_outputs = 0
+            
+            for sample in samples_list:
+                if isinstance(sample, dict):
+                    total_samples += 1
+                    task_total += 1
+                    
+                    if 'model_output' in sample:
+                        samples_with_outputs += 1
+                        task_with_outputs += 1
+                        
+                        if 'output_matches_target' in sample:
+                            if sample['output_matches_target']:
+                                correct_outputs += 1
+                                task_correct += 1
+                            else:
+                                incorrect_outputs += 1
+            
+            if task_total > 0:
+                task_accuracy = (task_correct / task_with_outputs * 100) if task_with_outputs > 0 else 0
+                task_stats[task_name] = {
+                    'total': task_total,
+                    'with_outputs': task_with_outputs,
+                    'correct': task_correct,
+                    'accuracy': task_accuracy
+                }
+        
+        # Overall statistics
+        overall_accuracy = (correct_outputs / samples_with_outputs * 100) if samples_with_outputs > 0 else 0
+        coverage = (samples_with_outputs / total_samples * 100) if total_samples > 0 else 0
+        
+        markdown.append("### Text Output Summary\n")
+        summary_table = [
+            "| Metric | Value |",
+            "| ------ | ----- |",
+            f"| Total Samples | {total_samples} |",
+            f"| Samples with Text Outputs | {samples_with_outputs} ({coverage:.1f}%) |",
+            f"| Correct Responses | {correct_outputs} |",
+            f"| Incorrect Responses | {incorrect_outputs} |",
+            f"| **Overall Accuracy** | **{overall_accuracy:.1f}%** |"
+        ]
+        markdown.extend(summary_table)
+        markdown.append("")
+        
+        # Per-task breakdown if we have multiple tasks
+        if len(task_stats) > 1:
+            markdown.append("### Per-Task Text Output Accuracy\n")
+            task_table = ["| Task | Samples | With Outputs | Correct | Accuracy |", "| ---- | ------- | ------------ | ------- | -------- |"]
+            
+            for task_name, stats in task_stats.items():
+                # Shorten task names for better readability
+                display_name = task_name.replace('leaderboard_', '').replace('_', ' ')
+                task_table.append(
+                    f"| {display_name} | {stats['total']} | {stats['with_outputs']} | {stats['correct']} | {stats['accuracy']:.1f}% |"
+                )
+            
+            markdown.extend(task_table)
+            markdown.append("")
+            
+            # Create a visual chart for task accuracy if we have multiple tasks
+            if len(task_stats) > 1:
+                task_accuracy_data = {
+                    task_name.replace('leaderboard_', '').replace('_', ' ')[:20]: stats['accuracy'] 
+                    for task_name, stats in task_stats.items() 
+                    if stats['with_outputs'] > 0
+                }
+                if task_accuracy_data:
+                    markdown.append(create_ascii_bar_chart(task_accuracy_data, "Task Accuracy (%)"))
+
     # 3) Show sample details per task if available
     if 'samples' in results_data:
         markdown.append("# Task Samples\n")
@@ -448,9 +531,22 @@ def generate_markdown_report(results_data: Dict[str, Any], output_path: Optional
                 
                 if ground_truth:
                     has_shown_sample = True
-                    markdown.append(f"**Ground Truth:**\n\n{format_code_blocks(ground_truth)}\n")
+                    markdown.append(f"**Target Answer:**\n\n{format_code_blocks(ground_truth)}\n")
                 
-                # Display model response
+                # ✅ NEW: Display enhanced model output if available (from our enhanced evaluator)
+                if 'model_output' in sample:
+                    has_shown_sample = True
+                    model_output = sample['model_output']
+                    
+                    # Add correctness indicator based on enhanced evaluation
+                    correctness_indicator = ""
+                    if 'output_matches_target' in sample:
+                        is_correct = sample['output_matches_target']
+                        correctness_indicator = " ✅ (Correct)" if is_correct else " ❌ (Incorrect)"
+                    
+                    markdown.append(f"**Model Output{correctness_indicator}:**\n\n{format_code_blocks(model_output)}\n")
+                
+                # Display model response (raw/detailed)
                 response = None
                 if 'filtered_resps' in sample and sample['filtered_resps']:
                     response = sample['filtered_resps'][0]
@@ -507,7 +603,7 @@ def generate_markdown_report(results_data: Dict[str, Any], output_path: Optional
                         else:
                             formatted_response = f"Confidence score: {confidence_score}\nCorrect: {is_correct}"
                         
-                        markdown.append(f"**Model Response [{filter_name}]{correctness}:**\n\n{format_code_blocks(formatted_response)}\n")
+                        markdown.append(f"**Model Response Details [{filter_name}]{correctness}:**\n\n{format_code_blocks(formatted_response)}\n")
                         
                         # If we have confidence scores for all options, display them
                         if 'filtered_resps' in sample and len(sample['filtered_resps']) > 1:
@@ -529,7 +625,9 @@ def generate_markdown_report(results_data: Dict[str, Any], output_path: Optional
                                         scores_text += f"{opt}: {score}\n"
                                 markdown.append(f"**Option Confidence Scores:**\n\n{format_code_blocks(scores_text)}\n")
                     else:
-                        markdown.append(f"**Model Response [{filter_name}]{correctness}:**\n\n{format_code_blocks(response)}\n")
+                        # Only show detailed response if we don't already have the enhanced model_output
+                        if 'model_output' not in sample:
+                            markdown.append(f"**Model Response [{filter_name}]{correctness}:**\n\n{format_code_blocks(response)}\n")
                 
                 # Only count this as a displayed sample if we actually showed something
                 if has_shown_sample:
