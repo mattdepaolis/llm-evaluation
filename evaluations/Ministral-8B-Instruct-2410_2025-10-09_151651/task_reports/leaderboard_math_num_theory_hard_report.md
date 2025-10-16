@@ -1,0 +1,177 @@
+# 📚 Task Report: Math Num Theory Hard
+
+**Model:** mistralai/Ministral-8B-Instruct-2410
+**Generated:** October 09, 2025 at 17:33:29
+**Total Samples:** 10
+
+---
+
+## 📊 Task Performance Summary
+
+| Metric | Value |
+| ------ | ----- |
+| **Total Samples** | 10 |
+| **Correct Responses** | 0 |
+| **Accuracy** | 0.0% |
+| **Performance** | 🔴 **NEEDS IMPROVEMENT** |
+
+---
+
+📝 Sample 1
+❓ Question
+Compute $17^{-1}\pmod{83}$. Express your answer as a residue from $0$ to $82$, inclusive.
+
+(You may find it helpful to consider the fact that $17\cdot 5=85$.)
+
+✅ Expected Answer
+44
+
+🤖 Model Output (❌ Incorrect)
+Response: [ERROR: Could not decode response]
+
+💬 Analysis:
+The model responded with "[ERROR: Could not decode response]" but the correct answer is "44".
+
+⸻
+
+📝 Sample 2
+❓ Question
+What is the largest integer less than $2010$ that has a remainder of $5$ when divided by $7,$ a remainder of $10$ when divided by $11,$ and a remainder of $10$ when divided by $13$?
+
+✅ Expected Answer
+1440
+
+🤖 Model Output (❌ Incorrect)
+Response: [ERROR: Could not decode response]
+
+💬 Analysis:
+The model responded with "[ERROR: Could not decode response]" but the correct answer is "1440".
+
+⸻
+
+📝 Sample 3
+❓ Question
+The greatest common divisor of two positive integers less than $100$ is equal to $3$. Their least common multiple is twelve times one of the integers. What is the largest possible sum of the two integers?
+
+✅ Expected Answer
+129
+
+🤖 Model Output (❌ Incorrect)
+Response: [ERROR: Could not decode response]
+
+💬 Analysis:
+The model responded with "[ERROR: Could not decode response]" but the correct answer is "129".
+
+⸻
+
+📝 Sample 4
+❓ Question
+What is the smallest positive integer $n$ such that, out of the $n$ unit fractions $\frac{1}{k}$ where $1 \le k \le n$, exactly half of the fractions give a terminating decimal?
+
+✅ Expected Answer
+12
+
+🤖 Model Output (❌ Incorrect)
+Response: [ERROR: Could not decode response]
+
+💬 Analysis:
+The model responded with "[ERROR: Could not decode response]" but the correct answer is "12".
+
+⸻
+
+📝 Sample 5
+❓ Question
+Suppose that $a$ is a positive integer for which the least common multiple of $a+1$ and $a-5$ is $10508$. What is $a^2 - 4a + 1$?
+
+✅ Expected Answer
+21022
+
+🤖 Model Output (❌ Incorrect)
+Response: [ERROR: Could not decode response]
+
+💬 Analysis:
+The model responded with "[ERROR: Could not decode response]" but the correct answer is "21022".
+
+⸻
+
+📝 Sample 6
+❓ Question
+Suppose that a $30$-digit integer $N$ is composed of thirteen $7$s and seventeen $3$s. What is the remainder when $N$ is divided by $36$?
+
+✅ Expected Answer
+25
+
+🤖 Model Output (❌ Incorrect)
+Response: [ERROR: Could not decode response]
+
+💬 Analysis:
+The model responded with "[ERROR: Could not decode response]" but the correct answer is "25".
+
+⸻
+
+📝 Sample 7
+❓ Question
+The double factorial, denoted by $n!!$, returns the product of all of the odd integers that are less than or equal to $n$. For example, $7!! = 7 \times 5 \times 3 \times 1$. What is the units digit of $1!! + 3!! + 5!! + 7!! + \cdots + 49!!$?
+
+✅ Expected Answer
+9
+
+🤖 Model Output (❌ Incorrect)
+Response: [ERROR: Could not decode response]
+
+💬 Analysis:
+The model responded with "[ERROR: Could not decode response]" but the correct answer is "9".
+
+⸻
+
+📝 Sample 8
+❓ Question
+You have seven bags of gold coins. Each bag has the same number of gold coins. One day, you find a bag of 53 coins. You decide to redistribute the number of coins you have so that all eight bags you hold have the same number of coins. You successfully manage to redistribute all the coins, and you also note that you have more than 200 coins. What is the smallest number of coins you could have had before finding the bag of 53 coins?
+
+✅ Expected Answer
+203
+
+🤖 Model Output (❌ Incorrect)
+Response: [ERROR: Could not decode response]
+
+💬 Analysis:
+The model responded with "[ERROR: Could not decode response]" but the correct answer is "203".
+
+⸻
+
+📝 Sample 9
+❓ Question
+Determine the number of solutions in $x$ of the congruence $64x\equiv 2\pmod {66}$ such that $0< x\le 100$.
+
+✅ Expected Answer
+3
+
+🤖 Model Output (❌ Incorrect)
+Response: [ERROR: Could not decode response]
+
+💬 Analysis:
+The model responded with "[ERROR: Could not decode response]" but the correct answer is "3".
+
+⸻
+
+📝 Sample 10
+❓ Question
+If the least common multiple of $A$ and $B$ is $1575$, and the ratio of $A$ to $B$ is $3:7$, then what is their greatest common divisor?
+
+✅ Expected Answer
+75
+
+🤖 Model Output (❌ Incorrect)
+Response: [ERROR: Could not decode response]
+
+💬 Analysis:
+The model responded with "[ERROR: Could not decode response]" but the correct answer is "75".
+
+⸻
+
+---
+
+**Task:** Math Num Theory Hard
+**Model:** mistralai/Ministral-8B-Instruct-2410
+**Generated by:** LLM Evaluation Framework
+**Timestamp:** 2025-10-09T15:33:29.005620
